@@ -1,0 +1,88 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 720px; height: 520px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #0d1117; color: #e6edf3; overflow: hidden;
+}
+.app { display: flex; flex-direction: column; height: 100%; }
+
+/* Toolbar */
+.toolbar {
+  display: flex; align-items: center; gap: 8px; padding: 8px 10px;
+  background: #161b22; border-bottom: 1px solid #30363d; flex-shrink: 0; flex-wrap: wrap;
+}
+select {
+  background: #21262d; border: 1px solid #30363d; border-radius: 6px;
+  color: #e6edf3; font-size: 12px; padding: 5px 8px; outline: none; cursor: pointer;
+}
+select:focus { border-color: #58a6ff; }
+.indent-opt { display: flex; align-items: center; gap: 5px; font-size: 11px; color: #8b949e; }
+.action-group { display: flex; gap: 4px; margin-left: auto; }
+.act-btn {
+  padding: 6px 12px; background: #21262d; border: 1px solid #30363d;
+  border-radius: 7px; color: #8b949e; font-size: 12px; font-weight: 600; cursor: pointer;
+  transition: all 0.15s;
+}
+.act-btn:hover { background: #30363d; color: #e6edf3; }
+.act-btn.primary { background: #0d419d; border-color: #58a6ff; color: #58a6ff; }
+.act-btn.primary:hover { background: #1158c7; }
+
+/* Panes */
+.panes { display: flex; flex: 1; overflow: hidden; gap: 0; }
+.pane { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+.pane-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 5px 10px; background: #161b22; border-bottom: 1px solid #21262d;
+  font-size: 11px; color: #8b949e; flex-shrink: 0;
+}
+.pane-actions { display: flex; gap: 3px; }
+.mini-btn {
+  background: #21262d; border: 1px solid #30363d; border-radius: 5px;
+  color: #8b949e; font-size: 10px; padding: 2px 7px; cursor: pointer;
+}
+.mini-btn:hover { border-color: #58a6ff; color: #58a6ff; }
+.mini-btn.copied { border-color: #3fb950; color: #3fb950; }
+
+#input-code {
+  flex: 1; background: #0d1117; border: none; color: #e6edf3;
+  font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace; font-size: 12px;
+  padding: 10px 12px; resize: none; outline: none; line-height: 1.6; tab-size: 2;
+}
+
+.output-pre {
+  flex: 1; background: #0d1117; overflow: auto; margin: 0;
+  padding: 10px 12px; font-family: 'SF Mono', 'Fira Code', monospace; font-size: 12px;
+  line-height: 1.6;
+}
+#output-hl { display: block; }
+
+/* Syntax highlight colors (inspired by GitHub Dark) */
+.hl-key     { color: #ff7b72; }  /* keywords */
+.hl-str     { color: #a5d6ff; }  /* strings */
+.hl-num     { color: #79c0ff; }  /* numbers */
+.hl-cmnt    { color: #8b949e; font-style: italic; } /* comments */
+.hl-prop    { color: #ffa657; }  /* properties / attributes */
+.hl-tag     { color: #7ee787; }  /* HTML tags */
+.hl-fn      { color: #d2a8ff; }  /* functions */
+.hl-op      { color: #ff7b72; }  /* operators */
+.hl-punc    { color: #e6edf3; }  /* punctuation */
+
+.divider-col {
+  width: 1px; background: #21262d; display: flex; align-items: center; justify-content: center;
+  position: relative;
+}
+.arrow {
+  position: absolute; background: #21262d; color: #484f58; font-size: 12px;
+  padding: 4px 2px; border-radius: 3px;
+}
+
+/* Status bar */
+.status-bar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 4px 10px; background: #161b22; border-top: 1px solid #21262d;
+  font-size: 10px; flex-shrink: 0;
+}
+#status-msg { color: #8b949e; }
+#status-msg.ok    { color: #3fb950; }
+#status-msg.error { color: #f85149; }
+.size-info { color: #484f58; }

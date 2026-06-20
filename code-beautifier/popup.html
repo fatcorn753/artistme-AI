@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Code Beautifier</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app">
+    <div class="toolbar">
+      <select id="lang-select">
+        <option value="json">JSON</option>
+        <option value="js">JavaScript</option>
+        <option value="css">CSS</option>
+        <option value="html">HTML</option>
+        <option value="sql">SQL</option>
+        <option value="xml">XML</option>
+      </select>
+      <div class="indent-opt">
+        <span>インデント:</span>
+        <select id="indent-size">
+          <option value="2">2sp</option>
+          <option value="4">4sp</option>
+          <option value="tab">Tab</option>
+        </select>
+      </div>
+      <div class="action-group">
+        <button id="btn-beautify" class="act-btn primary">✨ 整形</button>
+        <button id="btn-minify"   class="act-btn">📦 最小化</button>
+        <button id="btn-validate" class="act-btn">✅ 検証</button>
+      </div>
+    </div>
+
+    <div class="panes">
+      <div class="pane">
+        <div class="pane-header">
+          <span>入力</span>
+          <div class="pane-actions">
+            <button id="btn-paste" class="mini-btn">貼付</button>
+            <button id="btn-clear-in" class="mini-btn">クリア</button>
+            <button id="btn-sample" class="mini-btn">サンプル</button>
+          </div>
+        </div>
+        <textarea id="input-code" spellcheck="false" placeholder="コードを貼り付けてください..."></textarea>
+      </div>
+
+      <div class="divider-col">
+        <div class="arrow">▶</div>
+      </div>
+
+      <div class="pane">
+        <div class="pane-header">
+          <span>出力</span>
+          <div class="pane-actions">
+            <button id="btn-copy-out" class="mini-btn">コピー</button>
+            <button id="btn-swap" class="mini-btn">⇄</button>
+          </div>
+        </div>
+        <pre id="output-code" class="output-pre"><code id="output-hl"></code></pre>
+      </div>
+    </div>
+
+    <div id="status-bar" class="status-bar">
+      <span id="status-msg"></span>
+      <span id="size-info" class="size-info"></span>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

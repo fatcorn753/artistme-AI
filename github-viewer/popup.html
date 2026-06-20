@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>GitHub Viewer</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app">
+    <div class="search-bar">
+      <span class="gh-icon">⬡</span>
+      <input type="text" id="username-input" placeholder="GitHubユーザー名を入力...">
+      <button id="btn-search">検索</button>
+    </div>
+
+    <div id="loading" class="loading hidden">読み込み中...</div>
+    <div id="error-msg" class="error hidden"></div>
+
+    <div id="profile-section" class="hidden">
+      <!-- User card -->
+      <div class="user-card">
+        <img id="user-avatar" class="avatar" src="" alt="">
+        <div class="user-info">
+          <div class="user-name" id="user-name"></div>
+          <div class="user-login" id="user-login"></div>
+          <div class="user-bio" id="user-bio"></div>
+          <div class="user-meta" id="user-meta"></div>
+        </div>
+        <a id="user-link" href="#" target="_blank" class="gh-link">↗</a>
+      </div>
+
+      <!-- Stats row -->
+      <div class="stats-row" id="stats-row"></div>
+
+      <!-- Tabs -->
+      <div class="tabs">
+        <button class="tab active" data-tab="repos">リポジトリ</button>
+        <button class="tab" data-tab="langs">言語統計</button>
+        <button class="tab" data-tab="contrib">貢献活動</button>
+      </div>
+
+      <!-- Repos -->
+      <div id="tab-repos" class="tab-content">
+        <div class="repo-filter">
+          <input type="text" id="repo-search" placeholder="リポジトリ検索...">
+          <select id="repo-sort">
+            <option value="stars">⭐ Stars</option>
+            <option value="updated">🕐 更新順</option>
+            <option value="name">名前順</option>
+          </select>
+        </div>
+        <div id="repo-list" class="repo-list"></div>
+      </div>
+
+      <!-- Languages -->
+      <div id="tab-langs" class="tab-content hidden">
+        <canvas id="lang-chart" width="340" height="180"></canvas>
+        <div id="lang-legend" class="lang-legend"></div>
+      </div>
+
+      <!-- Contributions -->
+      <div id="tab-contrib" class="tab-content hidden">
+        <div class="contrib-note">※ GitHub APIの制限によりコントリビューションは概算表示</div>
+        <div id="contrib-stats" class="contrib-stats"></div>
+        <canvas id="contrib-canvas" width="340" height="80"></canvas>
+      </div>
+    </div>
+
+    <!-- Recent searches -->
+    <div class="recent-section" id="recent-section">
+      <div class="recent-label">最近の検索</div>
+      <div id="recent-list" class="recent-list"></div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

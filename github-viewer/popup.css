@@ -1,0 +1,117 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 420px; max-height: 580px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #0d1117; color: #e6edf3;
+}
+.app { display: flex; flex-direction: column; height: 100%; }
+
+.search-bar {
+  display: flex; align-items: center; gap: 6px;
+  padding: 12px 12px 8px; border-bottom: 1px solid #21262d;
+}
+.gh-icon { font-size: 18px; color: #e6edf3; }
+#username-input {
+  flex: 1; background: #161b22; border: 1px solid #30363d; border-radius: 8px;
+  color: #e6edf3; font-size: 13px; padding: 7px 10px; outline: none;
+}
+#username-input:focus { border-color: #58a6ff; }
+#btn-search {
+  background: #238636; border: none; border-radius: 7px;
+  color: white; font-size: 12px; font-weight: 700; padding: 7px 14px; cursor: pointer;
+}
+#btn-search:hover { background: #2ea043; }
+
+.loading { text-align: center; padding: 20px; color: #484f58; font-size: 12px; }
+.error   { color: #f85149; font-size: 12px; padding: 8px 12px; }
+.hidden  { display: none; }
+
+/* User card */
+.user-card {
+  display: flex; align-items: flex-start; gap: 12px; padding: 12px;
+  background: #161b22; border-bottom: 1px solid #21262d; position: relative;
+}
+.avatar { width: 56px; height: 56px; border-radius: 50%; border: 2px solid #30363d; flex-shrink: 0; }
+.user-info { flex: 1; min-width: 0; }
+.user-name  { font-size: 16px; font-weight: 800; color: #e6edf3; }
+.user-login { font-size: 12px; color: #8b949e; margin-top: 1px; }
+.user-bio   { font-size: 12px; color: #8b949e; margin-top: 4px; line-height: 1.4; }
+.user-meta  { font-size: 11px; color: #484f58; margin-top: 4px; display: flex; flex-wrap: wrap; gap: 8px; }
+.gh-link {
+  position: absolute; top: 10px; right: 10px;
+  background: #21262d; border: 1px solid #30363d; border-radius: 6px;
+  color: #8b949e; font-size: 14px; text-decoration: none; padding: 3px 8px;
+}
+.gh-link:hover { border-color: #58a6ff; color: #58a6ff; }
+
+/* Stats */
+.stats-row { display: flex; padding: 8px 12px; gap: 4px; border-bottom: 1px solid #21262d; }
+.stat-item {
+  flex: 1; text-align: center; padding: 6px 4px;
+  background: #161b22; border-radius: 7px;
+}
+.stat-val { font-size: 16px; font-weight: 800; color: #58a6ff; }
+.stat-lbl { font-size: 9px; color: #484f58; margin-top: 1px; }
+
+/* Tabs */
+.tabs { display: flex; gap: 2px; padding: 6px 10px; }
+.tab {
+  flex: 1; padding: 5px; background: #161b22; border: 1px solid #21262d;
+  border-radius: 6px; color: #484f58; font-size: 11px; font-weight: 600; cursor: pointer;
+}
+.tab.active { background: #0d2235; border-color: #58a6ff; color: #58a6ff; }
+.tab-content { padding: 0 10px 10px; overflow-y: auto; max-height: 260px; }
+.tab-content.hidden { display: none; }
+
+/* Repos */
+.repo-filter { display: flex; gap: 5px; margin-bottom: 6px; }
+#repo-search {
+  flex: 1; background: #161b22; border: 1px solid #21262d; border-radius: 6px;
+  color: #e6edf3; font-size: 11px; padding: 5px 8px; outline: none;
+}
+#repo-search:focus { border-color: #58a6ff; }
+#repo-sort {
+  background: #161b22; border: 1px solid #21262d; border-radius: 6px;
+  color: #8b949e; font-size: 10px; padding: 4px 6px; outline: none; cursor: pointer;
+}
+
+.repo-list { display: flex; flex-direction: column; gap: 4px; }
+.repo-card {
+  background: #161b22; border: 1px solid #21262d; border-radius: 8px;
+  padding: 9px 11px; transition: border-color 0.15s; cursor: pointer;
+}
+.repo-card:hover { border-color: #58a6ff; }
+.repo-top { display: flex; align-items: center; gap: 6px; margin-bottom: 4px; }
+.repo-name { font-size: 13px; font-weight: 700; color: #58a6ff; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.repo-fork-badge { font-size: 9px; background: #21262d; color: #8b949e; border-radius: 8px; padding: 1px 6px; flex-shrink: 0; }
+.repo-desc { font-size: 11px; color: #8b949e; line-height: 1.4; margin-bottom: 5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.repo-meta { display: flex; gap: 10px; font-size: 11px; color: #484f58; }
+.repo-lang { display: flex; align-items: center; gap: 3px; }
+.lang-dot  { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.repo-stars, .repo-forks { display: flex; align-items: center; gap: 3px; }
+.repo-updated { margin-left: auto; font-size: 10px; color: #30363d; }
+.repo-topic { font-size: 9px; background: #0d2235; color: #58a6ff; border-radius: 8px; padding: 1px 7px; }
+
+/* Language chart */
+.lang-legend { display: flex; flex-wrap: wrap; gap: 6px; padding: 8px 0; }
+.lang-item { display: flex; align-items: center; gap: 4px; font-size: 11px; }
+.lang-item-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.lang-pct { color: #484f58; }
+
+/* Contrib */
+.contrib-note { font-size: 10px; color: #30363d; margin-bottom: 8px; }
+.contrib-stats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 5px; margin-bottom: 8px; }
+.cs-item { background: #161b22; border-radius: 7px; padding: 7px 10px; text-align: center; }
+.cs-val { font-size: 16px; font-weight: 800; color: #4ade80; }
+.cs-lbl { font-size: 9px; color: #484f58; }
+
+/* Recent */
+.recent-section { padding: 8px 12px; border-top: 1px solid #21262d; }
+.recent-label { font-size: 10px; color: #30363d; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 5px; }
+.recent-list { display: flex; flex-wrap: wrap; gap: 4px; }
+.recent-chip {
+  background: #161b22; border: 1px solid #21262d; border-radius: 10px;
+  color: #8b949e; font-size: 11px; padding: 3px 9px; cursor: pointer; display: flex; align-items: center; gap: 4px;
+}
+.recent-chip:hover { border-color: #58a6ff; color: #58a6ff; }
+.recent-avatar { width: 14px; height: 14px; border-radius: 50%; }

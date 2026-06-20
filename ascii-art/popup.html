@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ASCII Art Generator</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🎨 ASCII Art Generator</h1>
+
+    <div class="tabs">
+      <button class="tab active" data-tab="text">テキスト→ASCII</button>
+      <button class="tab" data-tab="image">画像→ASCII</button>
+      <button class="tab" data-tab="shapes">図形</button>
+    </div>
+
+    <!-- Text to ASCII -->
+    <div id="tab-text" class="tab-pane">
+      <div class="input-row">
+        <input type="text" id="text-input" placeholder="テキストを入力..." value="HELLO" maxlength="12">
+        <select id="font-select" class="sel">
+          <option value="block">ブロック</option>
+          <option value="shadow">シャドウ</option>
+          <option value="slant">スラント</option>
+          <option value="mini">ミニ</option>
+          <option value="banner">バナー</option>
+        </select>
+      </div>
+      <div class="options-row">
+        <label>文字: <select id="char-set" class="sel-sm">
+          <option value="dense">█▓▒░</option>
+          <option value="alpha">@#Oo. </option>
+          <option value="lines">|/\-</option>
+          <option value="braille">⠿⠷⠯⠟</option>
+        </select></label>
+        <label><input type="checkbox" id="invert-chk"> 反転</label>
+        <label><input type="checkbox" id="color-chk"> カラー</label>
+      </div>
+    </div>
+
+    <!-- Image to ASCII -->
+    <div id="tab-image" class="tab-pane hidden">
+      <div class="drop-zone" id="img-drop">
+        <div class="drop-icon">🖼</div>
+        <div class="drop-text">画像をドロップ またはクリック</div>
+        <input type="file" id="img-file" accept="image/*" style="display:none">
+      </div>
+      <div class="img-options">
+        <label>幅: <input type="number" id="img-width" value="60" min="10" max="120" class="num-input"> 文字</label>
+        <label><input type="checkbox" id="img-color"> カラー</label>
+      </div>
+      <canvas id="img-canvas" style="display:none"></canvas>
+    </div>
+
+    <!-- Shapes -->
+    <div id="tab-shapes" class="tab-pane hidden">
+      <div class="shapes-grid" id="shapes-grid"></div>
+    </div>
+
+    <!-- Output -->
+    <div class="output-section">
+      <div class="output-header">
+        <span class="out-label">出力</span>
+        <button id="btn-copy-art" class="copy-art-btn">コピー</button>
+        <button id="btn-download" class="copy-art-btn dl">TXT保存</button>
+        <select id="output-size" class="sel-sm">
+          <option value="8">8px</option>
+          <option value="10" selected>10px</option>
+          <option value="12">12px</option>
+        </select>
+      </div>
+      <pre id="ascii-output" class="ascii-output"></pre>
+    </div>
+  </div>
+  <script src="ascii.js"></script>
+</body>
+</html>

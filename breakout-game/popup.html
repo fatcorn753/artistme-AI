@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Breakout</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app">
+    <div class="header">
+      <h1>🧱 Breakout</h1>
+      <div class="stats">
+        <span>スコア: <strong id="score">0</strong></span>
+        <span>BEST: <strong id="best">0</strong></span>
+        <span>Lv: <strong id="level">1</strong></span>
+        <span>残: <strong id="lives">3</strong></span>
+      </div>
+    </div>
+    <div class="canvas-wrap">
+      <canvas id="game" width="420" height="380" tabindex="0"></canvas>
+    </div>
+    <div class="controls-hint">← → またはマウスでパドルを操作 | Space でスタート/ポーズ</div>
+  </div>
+  <script src="breakout.js"></script>
+</body>
+</html>

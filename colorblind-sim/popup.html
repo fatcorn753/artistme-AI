@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Color Blindness Simulator</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>👁 色覚シミュレーター</h1>
+    <p class="desc">現在のページに色覚異常フィルターを適用してアクセシビリティを確認します。</p>
+
+    <div class="filter-grid" id="filter-grid"></div>
+
+    <div class="active-info" id="active-info">フィルター: なし</div>
+
+    <div class="actions">
+      <button id="btn-reset" class="reset-btn">フィルターをリセット</button>
+      <button id="btn-screenshot" class="ss-btn">スクリーンショット解析</button>
+    </div>
+
+    <div class="preview-section">
+      <div class="preview-title">カラーパレットプレビュー</div>
+      <div class="color-swatches" id="color-swatches"></div>
+      <canvas id="preview-canvas" width="320" height="60" class="preview-canvas"></canvas>
+    </div>
+
+    <div class="info-section">
+      <div class="info-title">色覚異常について</div>
+      <div id="info-text" class="info-text">フィルターを選択すると詳細が表示されます。</div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

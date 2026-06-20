@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Color Blindness Simulator",
+  "version": "1.0.0",
+  "description": "8種類の色覚異常シミュレーション。ページ全体またはスクリーンショットに適用。アクセシビリティチェックに最適。",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Virtual Piano</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app">
+    <div class="header">
+      <h1>🎹 Virtual Piano</h1>
+      <div class="controls">
+        <div class="ctrl-group">
+          <label>音量</label>
+          <input type="range" id="volume" min="0" max="1" step="0.05" value="0.7">
+        </div>
+        <div class="ctrl-group">
+          <label>オクターブ</label>
+          <button id="oct-down" class="oct-btn">−</button>
+          <span id="oct-display" class="oct-val">4</span>
+          <button id="oct-up" class="oct-btn">+</button>
+        </div>
+        <div class="ctrl-group">
+          <label>音色</label>
+          <select id="waveform">
+            <option value="sine">サイン波</option>
+            <option value="triangle" selected>トライアングル</option>
+            <option value="sawtooth">ノコギリ波</option>
+            <option value="square">矩形波</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="record-row">
+      <button id="btn-record" class="rec-btn">⏺ 録音</button>
+      <button id="btn-play"   class="play-btn" disabled>▶ 再生</button>
+      <button id="btn-stop"   class="stop-btn" disabled>⏹ 停止</button>
+      <button id="btn-export" class="exp-btn"  disabled>💾 WAV</button>
+      <span id="rec-status" class="rec-status"></span>
+    </div>
+
+    <div class="piano-wrap" tabindex="0" id="piano-wrap">
+      <div class="piano" id="piano"></div>
+    </div>
+
+    <div class="key-labels">
+      <span>A</span><span>W</span><span>S</span><span>E</span><span>D</span>
+      <span>F</span><span>T</span><span>G</span><span>Y</span><span>H</span>
+      <span>U</span><span>J</span><span>K</span><span>O</span><span>L</span>
+    </div>
+
+    <div class="played-notes" id="played-notes"></div>
+  </div>
+  <script src="piano.js"></script>
+</body>
+</html>

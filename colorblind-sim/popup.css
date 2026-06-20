@@ -1,0 +1,44 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 360px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #0f172a; color: #e2e8f0;
+}
+.container { padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+h1 { font-size: 15px; color: #38bdf8; }
+.desc { font-size: 11px; color: #64748b; line-height: 1.5; }
+
+.filter-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.filter-btn {
+  padding: 9px 10px; background: #1e293b; border: 1px solid #334155; border-radius: 8px;
+  cursor: pointer; transition: all 0.15s; text-align: left;
+}
+.filter-btn:hover { border-color: #38bdf8; }
+.filter-btn.active { background: #0c2040; border-color: #38bdf8; }
+.fb-name { font-size: 12px; font-weight: 700; color: #e2e8f0; }
+.fb-type { font-size: 9px; color: #64748b; margin-top: 2px; }
+.fb-preview { display: flex; gap: 2px; margin-top: 5px; }
+.fb-dot { width: 14px; height: 14px; border-radius: 50%; }
+
+.active-info { font-size: 11px; color: #38bdf8; background: #0c2040; border-radius: 6px; padding: 6px 10px; }
+
+.actions { display: flex; gap: 6px; }
+.reset-btn {
+  flex: 1; padding: 8px; background: #450a0a; border: 1px solid #f87171; border-radius: 7px;
+  color: #f87171; font-size: 12px; font-weight: 700; cursor: pointer;
+}
+.reset-btn:hover { background: #7f1d1d; }
+.ss-btn {
+  flex: 1; padding: 8px; background: #0c2040; border: 1px solid #38bdf8; border-radius: 7px;
+  color: #38bdf8; font-size: 12px; font-weight: 700; cursor: pointer;
+}
+.ss-btn:hover { background: #0e3a5f; }
+
+.preview-section { display: flex; flex-direction: column; gap: 5px; }
+.preview-title { font-size: 10px; color: #475569; text-transform: uppercase; letter-spacing: 0.05em; }
+.color-swatches { display: flex; gap: 3px; }
+.swatch { flex: 1; height: 24px; border-radius: 4px; }
+.preview-canvas { border-radius: 6px; border: 1px solid #1e293b; display: block; }
+
+.info-title { font-size: 10px; color: #475569; text-transform: uppercase; letter-spacing: 0.05em; }
+.info-text { font-size: 11px; color: #64748b; line-height: 1.6; background: #1e293b; border-radius: 7px; padding: 8px 10px; }

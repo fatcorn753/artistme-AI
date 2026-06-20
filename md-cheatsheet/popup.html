@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Markdown Cheatsheet</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1># Markdown Cheatsheet</h1>
+      <div class="header-right">
+        <input type="text" id="search-input" placeholder="🔍 検索...">
+        <label class="toggle-label">
+          <input type="checkbox" id="preview-toggle">
+          <span>プレビュー</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="cat-tabs" id="cat-tabs"></div>
+
+    <div id="cheat-grid" class="cheat-grid"></div>
+
+    <div id="preview-panel" class="preview-panel hidden">
+      <div class="preview-header">
+        <span class="preview-label">ライブプレビュー</span>
+        <button id="btn-clear-preview" class="mini-btn">クリア</button>
+      </div>
+      <textarea id="preview-input" placeholder="ここにMarkdownを入力..."></textarea>
+      <div id="preview-output" class="preview-output"></div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

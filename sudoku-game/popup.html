@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Sudoku</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app">
+    <div class="header">
+      <h1>数 Sudoku</h1>
+      <div class="header-right">
+        <span class="timer" id="timer">00:00</span>
+        <span class="mistakes" id="mistakes">❌ 0/3</span>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button class="diff-btn active" data-diff="easy">🟢 初級</button>
+      <button class="diff-btn" data-diff="medium">🟡 中級</button>
+      <button class="diff-btn" data-diff="hard">🔴 上級</button>
+      <button id="btn-new" class="new-btn">新規</button>
+    </div>
+
+    <div class="board-wrap">
+      <div id="sudoku-board" class="sudoku-board"></div>
+    </div>
+
+    <div class="action-row">
+      <button class="action-btn" id="btn-undo">↩ 戻す</button>
+      <button class="action-btn" id="btn-hint">💡 ヒント</button>
+      <button class="action-btn" id="btn-check">✅ 確認</button>
+      <button class="action-btn" id="btn-notes" title="メモモード">📝</button>
+    </div>
+
+    <div class="numpad" id="numpad"></div>
+
+    <div id="message" class="message hidden"></div>
+
+    <div class="best-row">
+      最短記録:
+      <span id="best-easy" class="best-time">—</span> /
+      <span id="best-medium" class="best-time">—</span> /
+      <span id="best-hard" class="best-time">—</span>
+    </div>
+  </div>
+  <script src="sudoku.js"></script>
+</body>
+</html>

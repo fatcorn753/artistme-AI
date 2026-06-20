@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>2048</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app">
+    <div class="header">
+      <div class="title-col">
+        <h1>2048</h1>
+        <div class="subtitle">矢印キーでタイルを動かし<br>2048を作ろう！</div>
+      </div>
+      <div class="score-col">
+        <div class="score-box">
+          <div class="score-label">SCORE</div>
+          <div class="score-val" id="score">0</div>
+        </div>
+        <div class="score-box">
+          <div class="score-label">BEST</div>
+          <div class="score-val" id="best">0</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls-row">
+      <button id="btn-new" class="new-btn">新規ゲーム</button>
+      <button id="btn-undo" class="undo-btn">↩ Undo</button>
+    </div>
+
+    <div class="board-container" id="board-container" tabindex="0">
+      <div class="board-grid" id="board-grid"></div>
+      <div id="tile-layer" class="tile-layer"></div>
+      <div id="overlay" class="overlay hidden">
+        <div class="overlay-msg" id="overlay-msg"></div>
+        <button id="btn-try-again" class="try-btn">もう一度</button>
+      </div>
+    </div>
+
+    <div class="hint-row">← → ↑ ↓ または W A S D で操作</div>
+  </div>
+  <script src="game2048.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Screen Time Tracker</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app">
+    <div class="header">
+      <h1>⏱ Screen Time</h1>
+      <div class="date-nav">
+        <button id="btn-prev-day">◀</button>
+        <span id="date-label">今日</span>
+        <button id="btn-next-day">▶</button>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab active" data-tab="today">今日</button>
+      <button class="tab" data-tab="week">週間</button>
+      <button class="tab" data-tab="limits">上限設定</button>
+      <button class="tab" data-tab="productivity">スコア</button>
+    </div>
+
+    <!-- Today -->
+    <div id="tab-today" class="tab-pane">
+      <div class="total-row">
+        <span class="total-label">合計時間</span>
+        <span class="total-time" id="total-time">0分</span>
+      </div>
+      <div class="bar-chart" id="time-bar-chart"></div>
+      <div id="site-list" class="site-list"></div>
+    </div>
+
+    <!-- Week -->
+    <div id="tab-week" class="tab-pane hidden">
+      <canvas id="week-chart" width="360" height="160"></canvas>
+      <div class="week-stats" id="week-stats"></div>
+    </div>
+
+    <!-- Limits -->
+    <div id="tab-limits" class="tab-pane hidden">
+      <p class="hint-text">サイトごとに1日の上限時間(分)を設定します。</p>
+      <div class="limit-form">
+        <input type="text" id="limit-host" placeholder="example.com">
+        <input type="number" id="limit-mins" placeholder="60" min="1" max="480">
+        <button id="btn-add-limit">設定</button>
+      </div>
+      <div id="limit-list" class="limit-list"></div>
+    </div>
+
+    <!-- Productivity Score -->
+    <div id="tab-productivity" class="tab-pane hidden">
+      <div class="score-circle" id="score-circle">
+        <canvas id="score-canvas" width="140" height="140"></canvas>
+        <div class="score-val" id="score-val">—</div>
+      </div>
+      <div class="score-label">プロダクティビティスコア</div>
+      <div class="cat-form">
+        <p class="hint-text">サイトをカテゴリ分けしてスコアを計算します。</p>
+        <div id="cat-site-list" class="cat-site-list"></div>
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

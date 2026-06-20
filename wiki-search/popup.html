@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Wikipedia Quick Search</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>📖 Wikipedia Quick Search</h1>
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="ja">日本語</button>
+        <button class="lang-btn" data-lang="en">English</button>
+      </div>
+    </div>
+
+    <div class="search-row">
+      <input type="text" id="search-input" placeholder="キーワードを入力... (Enterで検索)">
+      <button id="btn-search" class="search-btn">検索</button>
+    </div>
+
+    <div id="result-area" class="result-area">
+      <div class="hint">
+        <p>💡 <strong>使い方</strong></p>
+        <ul>
+          <li>ページ上のテキストを選択すると自動検索</li>
+          <li>右クリック → Wikipedia で検索</li>
+          <li><kbd>Alt+W</kbd> で選択テキストを検索</li>
+          <li>ポップアップからも直接検索可能</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="history-section">
+      <div class="hist-label">最近の検索</div>
+      <div id="search-history" class="search-history"></div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

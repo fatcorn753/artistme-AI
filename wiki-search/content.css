@@ -1,0 +1,113 @@
+#__wiki-card__ {
+  position: absolute;
+  z-index: 2147483647;
+  width: 340px;
+  max-height: 380px;
+  background: #1e1e2e;
+  border: 1px solid #45475a;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 13px;
+  color: #cdd6f4;
+  display: none;
+  overflow: hidden;
+}
+
+#__wiki-card__ .wk-header {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px 8px;
+  background: #181825;
+  border-bottom: 1px solid #313244;
+  gap: 8px;
+}
+
+#__wiki-card__ .wk-title {
+  flex: 1;
+  font-weight: 700;
+  font-size: 14px;
+  color: #cba6f7;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#__wiki-card__ .wk-controls {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+#__wiki-card__ .wk-lang-btn {
+  background: #313244;
+  border: 1px solid #45475a;
+  border-radius: 5px;
+  color: #a6adc8;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  cursor: pointer;
+}
+#__wiki-card__ .wk-lang-btn:hover { background: #45475a; }
+
+#__wiki-card__ .wk-open {
+  color: #89b4fa;
+  font-size: 14px;
+  text-decoration: none;
+  padding: 2px 4px;
+}
+#__wiki-card__ .wk-open:hover { color: #b4befe; }
+
+#__wiki-card__ .wk-close {
+  background: none;
+  border: none;
+  color: #6c7086;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0 3px;
+  line-height: 1;
+}
+#__wiki-card__ .wk-close:hover { color: #f38ba8; }
+
+#__wiki-card__ .wk-body {
+  padding: 10px 12px;
+  max-height: 320px;
+  overflow-y: auto;
+}
+#__wiki-card__ .wk-body::-webkit-scrollbar { width: 4px; }
+#__wiki-card__ .wk-body::-webkit-scrollbar-thumb { background: #45475a; border-radius: 2px; }
+
+#__wiki-card__ .wk-loading,
+#__wiki-card__ .wk-not-found {
+  color: #6c7086;
+  font-size: 12px;
+  text-align: center;
+  padding: 20px;
+}
+
+#__wiki-card__ .wk-thumb {
+  float: right;
+  width: 90px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin: 0 0 8px 10px;
+  border: 1px solid #313244;
+}
+
+#__wiki-card__ .wk-extract {
+  font-size: 12px;
+  line-height: 1.7;
+  color: #cdd6f4;
+  clear: left;
+}
+
+#__wiki-card__ .wk-categories {
+  font-size: 10px;
+  color: #6c7086;
+  margin-top: 8px;
+  font-style: italic;
+  border-top: 1px solid #313244;
+  padding-top: 6px;
+}

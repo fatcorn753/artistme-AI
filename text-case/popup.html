@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Text Case Converter</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Aa Text Case Converter</h1>
+      <button id="btn-from-sel" class="sel-btn" title="選択テキストを取得">📋 ページから取得</button>
+    </div>
+
+    <textarea id="input-text" placeholder="変換したいテキストを入力...&#10;例: Hello World こんにちは"></textarea>
+
+    <div class="search-bar">
+      <input type="text" id="search-transforms" placeholder="🔍 変換名を検索...">
+      <select id="category-filter">
+        <option value="all">全カテゴリ</option>
+        <option value="case">大文字/小文字</option>
+        <option value="code">コーディング</option>
+        <option value="encode">エンコード</option>
+        <option value="jp">日本語</option>
+        <option value="fun">おもしろ</option>
+      </select>
+    </div>
+
+    <div id="transforms-grid" class="transforms-grid"></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

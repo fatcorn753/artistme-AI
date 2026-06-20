@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Vocabulary Builder",
+  "version": "1.0.0",
+  "description": "英単語学習ツール。単語帳管理、定義・例文・発音記号表示、SM-2間隔反復クイズ、単語帳インポート。",
+  "permissions": ["storage", "alarms", "notifications", "tts"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": { "service_worker": "background.js" },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

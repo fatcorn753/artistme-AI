@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Vocabulary Builder</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app">
+    <div class="header">
+      <h1>📚 Vocab Builder</h1>
+      <div class="header-stats" id="header-stats"></div>
+    </div>
+
+    <div class="tabs">
+      <button class="tab active" data-tab="study">学習</button>
+      <button class="tab" data-tab="words">単語帳</button>
+      <button class="tab" data-tab="add">追加</button>
+      <button class="tab" data-tab="stats">統計</button>
+    </div>
+
+    <!-- Study (Quiz) -->
+    <div id="tab-study" class="tab-pane">
+      <div id="study-ready" class="study-ready">
+        <div class="due-count" id="due-count">0件の単語が復習待ち</div>
+        <button id="btn-start-study" class="start-study-btn">学習を開始</button>
+        <button id="btn-study-all" class="start-study-btn secondary">全単語で練習</button>
+      </div>
+      <div id="study-session" class="study-session hidden">
+        <div class="progress-row">
+          <div class="prog-bar"><div class="prog-fill" id="prog-fill"></div></div>
+          <span class="prog-label" id="prog-label">0/0</span>
+        </div>
+        <div class="flash-card" id="flash-card">
+          <div class="card-front">
+            <div class="card-word" id="card-word"></div>
+            <div class="card-pos"  id="card-pos"></div>
+            <button id="btn-speak" class="speak-btn" title="発音">🔊</button>
+          </div>
+          <div class="card-back hidden" id="card-back">
+            <div class="card-phonetic" id="card-phonetic"></div>
+            <div class="card-def"      id="card-def"></div>
+            <div class="card-example"  id="card-example"></div>
+            <div class="card-meaning"  id="card-meaning"></div>
+          </div>
+        </div>
+        <button id="btn-reveal" class="reveal-btn">答えを見る</button>
+        <div id="rating-btns" class="rating-btns hidden">
+          <button class="rate-btn hard" data-q="1">😓<br>難しい</button>
+          <button class="rate-btn ok"   data-q="3">😊<br>正解</button>
+          <button class="rate-btn easy" data-q="5">😎<br>簡単</button>
+        </div>
+        <button id="btn-quit-study" class="quit-btn">終了</button>
+      </div>
+    </div>
+
+    <!-- Word List -->
+    <div id="tab-words" class="tab-pane hidden">
+      <div class="filter-row">
+        <input type="text" id="word-search" placeholder="🔍 単語を検索...">
+        <select id="word-filter">
+          <option value="all">全て</option>
+          <option value="due">復習待ち</option>
+          <option value="mastered">習得済み</option>
+          <option value="new">新規</option>
+        </select>
+      </div>
+      <div id="word-list" class="word-list"></div>
+    </div>
+
+    <!-- Add Word -->
+    <div id="tab-add" class="tab-pane hidden">
+      <div class="add-form">
+        <div class="form-row">
+          <label>単語 (英語)</label>
+          <div class="input-with-btn">
+            <input type="text" id="new-word" placeholder="例: serendipity" autocomplete="off">
+            <button id="btn-lookup" class="lookup-btn" title="定義を自動取得">🔍</button>
+          </div>
+        </div>
+        <div class="form-row">
+          <label>意味 (日本語)</label>
+          <input type="text" id="new-meaning" placeholder="例: 偶然の幸運な発見">
+        </div>
+        <div class="form-row">
+          <label>定義 (英語)</label>
+          <textarea id="new-def" placeholder="English definition..." rows="2"></textarea>
+        </div>
+        <div class="form-row">
+          <label>例文</label>
+          <textarea id="new-example" placeholder="Example sentence..." rows="2"></textarea>
+        </div>
+        <div class="form-row">
+          <label>タグ</label>
+          <input type="text" id="new-tags" placeholder="#TOEIC #ビジネス">
+        </div>
+        <button id="btn-add-word" class="add-word-btn">単語を追加</button>
+      </div>
+
+      <div class="import-section">
+        <div class="import-label">一括インポート (1行1単語、カンマ区切り: 単語,意味)</div>
+        <textarea id="import-text" placeholder="apple,りんご&#10;banana,バナナ&#10;cherry,さくらんぼ" rows="4"></textarea>
+        <button id="btn-import" class="import-btn">インポート</button>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div id="tab-stats" class="tab-pane hidden">
+      <div class="stats-grid" id="stats-grid"></div>
+      <canvas id="heatmap-canvas" width="350" height="80"></canvas>
+      <div class="streak-info" id="streak-info"></div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

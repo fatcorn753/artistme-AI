@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Screen Time Tracker",
+  "version": "1.0.0",
+  "description": "サイト別の滞在時間をリアルタイム計測。日別・週別グラフ、上限設定アラート、プロダクティビティスコア付き。",
+  "permissions": ["storage", "tabs", "alarms", "notifications"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": { "service_worker": "background.js" },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

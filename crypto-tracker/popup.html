@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Crypto Tracker</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app">
+    <div class="header">
+      <h1>₿ Crypto Tracker</h1>
+      <div class="header-right">
+        <select id="currency-sel">
+          <option value="jpy">JPY ¥</option>
+          <option value="usd">USD $</option>
+        </select>
+        <button id="btn-refresh" class="icon-btn" title="更新">↻</button>
+        <button id="btn-alert" class="icon-btn" title="アラート設定">🔔</button>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab active" data-tab="prices">価格</button>
+      <button class="tab" data-tab="portfolio">ポートフォリオ</button>
+      <button class="tab" data-tab="alerts">アラート</button>
+    </div>
+
+    <!-- Prices tab -->
+    <div id="tab-prices" class="tab-content">
+      <div class="search-row">
+        <input type="text" id="coin-search" placeholder="コインを検索して追加 (例: bitcoin)">
+        <button id="btn-add-coin">追加</button>
+      </div>
+      <div id="coin-list" class="coin-list"></div>
+      <div class="last-update" id="last-update"></div>
+    </div>
+
+    <!-- Portfolio tab -->
+    <div id="tab-portfolio" class="tab-content hidden">
+      <div class="portfolio-header">
+        <div class="portfolio-total">
+          <div class="total-label">ポートフォリオ合計</div>
+          <div class="total-value" id="portfolio-total">¥0</div>
+          <div class="total-change" id="portfolio-change"></div>
+        </div>
+      </div>
+      <div id="portfolio-list" class="portfolio-list"></div>
+      <button id="btn-add-holding" class="add-holding-btn">+ 保有量を追加</button>
+    </div>
+
+    <!-- Alerts tab -->
+    <div id="tab-alerts" class="tab-content hidden">
+      <div class="alert-form">
+        <select id="alert-coin"></select>
+        <div class="alert-row">
+          <select id="alert-dir">
+            <option value="above">↑ 以上になったら</option>
+            <option value="below">↓ 以下になったら</option>
+          </select>
+          <input type="number" id="alert-price" placeholder="価格">
+        </div>
+        <button id="btn-add-alert" class="add-alert-btn">アラート追加</button>
+      </div>
+      <div id="alert-list" class="alert-list"></div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

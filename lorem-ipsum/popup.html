@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Lorem Ipsum</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>📄 Lorem Ipsum Generator</h1>
+
+    <div class="options">
+      <div class="opt-row">
+        <span class="opt-label">タイプ</span>
+        <div class="type-btns">
+          <button class="type-btn active" data-type="lorem">Lorem</button>
+          <button class="type-btn" data-type="jp">日本語</button>
+          <button class="type-btn" data-type="html">HTML</button>
+          <button class="type-btn" data-type="words">単語列</button>
+        </div>
+      </div>
+
+      <div class="opt-row">
+        <span class="opt-label">単位</span>
+        <div class="unit-btns">
+          <button class="unit-btn active" data-unit="paragraphs">段落</button>
+          <button class="unit-btn" data-unit="sentences">文</button>
+          <button class="unit-btn" data-unit="words">語</button>
+          <button class="unit-btn" data-unit="chars">文字</button>
+        </div>
+      </div>
+
+      <div class="opt-row">
+        <span class="opt-label">数量</span>
+        <div class="count-row">
+          <input type="range" id="count-slider" min="1" max="20" value="3">
+          <span id="count-display" class="count-val">3</span>
+        </div>
+      </div>
+
+      <div class="opt-row">
+        <label class="check-label">
+          <input type="checkbox" id="start-lorem" checked> "Lorem ipsum" で始める
+        </label>
+        <label class="check-label">
+          <input type="checkbox" id="add-h1"> タイトルを追加
+        </label>
+      </div>
+    </div>
+
+    <div class="output-section">
+      <div class="output-header">
+        <span id="char-count" class="char-count"></span>
+        <button id="btn-refresh" class="refresh-btn" title="再生成">↻</button>
+        <button id="btn-copy" class="copy-btn">コピー</button>
+      </div>
+      <div id="output" class="output"></div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

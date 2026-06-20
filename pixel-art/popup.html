@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Pixel Art Editor</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Toolbar -->
+    <div class="toolbar">
+      <div class="tool-group">
+        <button class="tool-btn active" data-tool="pen" title="ペン (P)">✏️</button>
+        <button class="tool-btn" data-tool="eraser" title="消しゴム (E)">🧹</button>
+        <button class="tool-btn" data-tool="fill" title="塗りつぶし (F)">🪣</button>
+        <button class="tool-btn" data-tool="eyedrop" title="スポイト (I)">💉</button>
+        <button class="tool-btn" data-tool="line" title="直線 (L)">📏</button>
+        <button class="tool-btn" data-tool="rect" title="四角 (R)">▭</button>
+      </div>
+      <div class="tool-sep"></div>
+      <div class="tool-group">
+        <input type="color" id="color-picker" value="#3b82f6" title="色選択">
+        <div class="palette" id="palette"></div>
+      </div>
+      <div class="tool-sep"></div>
+      <div class="tool-group">
+        <button id="btn-undo" class="action-btn" title="元に戻す (Ctrl+Z)">↩</button>
+        <button id="btn-redo" class="action-btn" title="やり直し (Ctrl+Y)">↪</button>
+        <button id="btn-clear" class="action-btn" title="全消去">🗑</button>
+      </div>
+      <div class="tool-sep"></div>
+      <div class="tool-group">
+        <select id="grid-size">
+          <option value="16">16×16</option>
+          <option value="32" selected>32×32</option>
+          <option value="48">48×48</option>
+          <option value="64">64×64</option>
+        </select>
+        <button id="btn-export" class="export-btn">PNG保存</button>
+        <button id="btn-export-big" class="export-btn">×8保存</button>
+      </div>
+    </div>
+
+    <!-- Canvas area -->
+    <div class="canvas-wrap" id="canvas-wrap">
+      <canvas id="pixel-canvas"></canvas>
+      <canvas id="overlay-canvas"></canvas>
+    </div>
+
+    <!-- Status bar -->
+    <div class="statusbar">
+      <span id="status-pos">x:0 y:0</span>
+      <span id="status-color"></span>
+      <label class="grid-toggle"><input type="checkbox" id="show-grid" checked> グリッド</label>
+    </div>
+  </div>
+  <script src="editor.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 380px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #0f172a; color: #e2e8f0;
+}
+.container { padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+
+.header { display: flex; align-items: center; justify-content: space-between; }
+h1 { font-size: 15px; color: #38bdf8; }
+.now-btn {
+  background: #0c4a6e; border: 1px solid #38bdf8; border-radius: 6px;
+  color: #38bdf8; font-size: 11px; padding: 4px 10px; cursor: pointer; font-weight: 700;
+}
+.now-btn:hover { background: #0e7490; }
+
+.source-row { display: flex; flex-direction: column; gap: 5px; }
+.datetime-group { display: flex; gap: 5px; }
+input[type="date"], input[type="time"] {
+  flex: 1; background: #1e293b; border: 1px solid #334155; border-radius: 7px;
+  color: #e2e8f0; font-size: 13px; padding: 7px 9px; outline: none;
+}
+input[type="date"]:focus, input[type="time"]:focus { border-color: #38bdf8; }
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator { filter: invert(0.6); cursor: pointer; }
+
+.tz-select {
+  width: 100%; background: #1e293b; border: 1px solid #334155; border-radius: 7px;
+  color: #e2e8f0; font-size: 12px; padding: 7px 9px; outline: none; cursor: pointer;
+}
+.tz-select:focus { border-color: #38bdf8; }
+
+.results { display: flex; flex-direction: column; gap: 4px; }
+
+.tz-row {
+  display: flex; align-items: center; gap: 8px;
+  background: #1e293b; border: 1px solid #334155; border-radius: 9px;
+  padding: 9px 11px; transition: border-color 0.15s;
+}
+.tz-row:hover { border-color: #38bdf8; }
+.tz-info { flex: 1; min-width: 0; }
+.tz-name { font-size: 12px; font-weight: 700; color: #e2e8f0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tz-id   { font-size: 10px; color: #475569; }
+.tz-offset { font-size: 10px; color: #38bdf8; }
+.tz-time { font-size: 20px; font-weight: 800; color: #38bdf8; font-variant-numeric: tabular-nums; font-family: 'SF Mono', monospace; flex-shrink: 0; }
+.tz-date { font-size: 10px; color: #475569; text-align: right; }
+.del-btn  { background: none; border: none; color: #334155; font-size: 15px; cursor: pointer; flex-shrink: 0; }
+.del-btn:hover { color: #f87171; }
+
+.next-day  { color: #fbbf24 !important; }
+.prev-day  { color: #94a3b8 !important; }
+.weekend   { color: #f87171 !important; }
+
+.add-row { display: flex; gap: 6px; }
+.add-row .tz-select { flex: 1; }
+#btn-add-tz {
+  background: #0c4a6e; border: 1px solid #38bdf8; border-radius: 7px;
+  color: #38bdf8; font-size: 12px; padding: 7px 12px; cursor: pointer; white-space: nowrap; font-weight: 700;
+}
+#btn-add-tz:hover { background: #0e7490; }
+
+.section-label { font-size: 10px; color: #475569; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; }
+
+.overlap-display {
+  background: #1e293b; border: 1px solid #334155; border-radius: 8px;
+  padding: 8px 10px; font-size: 12px;
+}
+.overlap-slots { display: flex; flex-wrap: wrap; gap: 4px; }
+.overlap-slot {
+  background: #0c4a6e; border: 1px solid #0369a1; border-radius: 5px;
+  padding: 3px 8px; font-size: 11px; color: #7dd3fc; cursor: pointer;
+  font-variant-numeric: tabular-nums; font-family: monospace;
+}
+.overlap-slot:hover { background: #0369a1; }
+.no-overlap { font-size: 11px; color: #475569; }

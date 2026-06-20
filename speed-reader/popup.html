@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Speed Reader</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>⚡ Speed Reader</h1>
+
+    <!-- Display -->
+    <div class="reader-box" id="reader-box">
+      <div class="guide-line"></div>
+      <div class="word-display" id="word-display">ここに表示されます</div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-row">
+      <span id="word-pos">0 / 0</span>
+      <span id="wpm-display">— WPM</span>
+      <span id="time-left">—</span>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+      <button id="btn-prev" class="ctrl-btn" title="前の単語">◀</button>
+      <button id="btn-play" class="ctrl-btn primary">▶ スタート</button>
+      <button id="btn-next" class="ctrl-btn" title="次の単語">▶</button>
+      <button id="btn-restart" class="ctrl-btn" title="最初から">↩</button>
+    </div>
+
+    <!-- Settings -->
+    <div class="settings">
+      <div class="setting-row">
+        <label>速度 <strong id="wpm-val">300</strong> WPM</label>
+        <input type="range" id="wpm-slider" min="100" max="1000" step="25" value="300">
+      </div>
+      <div class="setting-row">
+        <label>フォントサイズ</label>
+        <input type="range" id="font-slider" min="16" max="60" value="32">
+      </div>
+      <div class="setting-row check-row">
+        <label><input type="checkbox" id="pause-punct" checked> 句読点で一時停止</label>
+        <label><input type="checkbox" id="highlight-mid" checked> 中心文字ハイライト</label>
+      </div>
+    </div>
+
+    <!-- Text input -->
+    <div class="text-section">
+      <div class="text-header">
+        <span class="text-label">テキスト入力</span>
+        <button id="btn-from-page" class="small-btn">📄 ページから取得</button>
+        <button id="btn-clear-text" class="small-btn">クリア</button>
+      </div>
+      <textarea id="text-input" placeholder="読みたいテキストをここに貼り付け...&#10;またはページから取得ボタンを使用" rows="4" spellcheck="false"></textarea>
+      <button id="btn-load" class="load-btn">読み込む →</button>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

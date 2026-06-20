@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Time Zone Converter</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🕐 Time Zone Converter</h1>
+      <button id="btn-now" class="now-btn">今すぐ</button>
+    </div>
+
+    <!-- Source input -->
+    <div class="source-row">
+      <div class="datetime-group">
+        <input type="date" id="src-date">
+        <input type="time" id="src-time" value="09:00">
+      </div>
+      <select id="src-tz" class="tz-select"></select>
+    </div>
+
+    <!-- Target zones -->
+    <div id="results" class="results"></div>
+
+    <!-- Add zone -->
+    <div class="add-row">
+      <select id="add-tz" class="tz-select"></select>
+      <button id="btn-add-tz">+ 追加</button>
+    </div>
+
+    <!-- Quick meeting planner -->
+    <div class="meeting-section">
+      <div class="section-label">📅 会議時間ファインダー（9-18時で重複する時間帯）</div>
+      <div id="overlap-display" class="overlap-display"></div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

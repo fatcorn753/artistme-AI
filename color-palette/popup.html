@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Color Palette</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🎨 Color Palette Extractor</h1>
+
+    <div id="drop-zone" class="drop-zone">
+      <div class="drop-icon">🖼</div>
+      <div class="drop-text">画像をドロップ、またはURLを入力</div>
+      <input type="file" id="file-input" accept="image/*" style="display:none">
+      <button id="btn-file" class="browse-btn">ファイルを選択</button>
+    </div>
+
+    <div class="url-row">
+      <input type="text" id="url-input" placeholder="https://example.com/image.jpg">
+      <button id="btn-url">読み込む</button>
+    </div>
+
+    <div class="options-row">
+      <label>色数:
+        <select id="color-count">
+          <option value="5">5色</option>
+          <option value="8" selected>8色</option>
+          <option value="12">12色</option>
+          <option value="16">16色</option>
+        </select>
+      </label>
+      <label><input type="checkbox" id="sort-luminance"> 明度順</label>
+      <label><input type="checkbox" id="show-names"> 色名表示</label>
+    </div>
+
+    <canvas id="preview-canvas" class="preview-canvas hidden"></canvas>
+    <div id="loading" class="loading hidden">解析中...</div>
+    <div id="error-msg" class="error hidden"></div>
+
+    <div id="palette-section" class="palette-section hidden">
+      <div class="palette-header">
+        <span id="palette-title">カラーパレット</span>
+        <button id="btn-copy-all" class="copy-all-btn">全コピー</button>
+        <button id="btn-export-css" class="copy-all-btn">CSS変数</button>
+      </div>
+      <div id="palette" class="palette"></div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

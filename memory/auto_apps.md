@@ -67,14 +67,23 @@ Apps created automatically during overnight session (started 2026-06-20).
 39. **typing-test** (Chrome extension) — WPM/正確率、英語/日本語/Code 3モード、最高記録
 40. **snake-game** (Chrome extension) — 壁抜け型スネーク、ボーナス★、難易度3段階、最高スコア
 
+41. **memory-match** (Chrome extension) — 絵文字神経衰弱、3難易度、手数+タイム
+42. **ip-lookup** (Chrome extension) — IP位置情報、国/ISP/座標
+43. **minesweeper** (Chrome extension) — 3難易度、安全な初手保証
+44. **md-to-html** (Chrome extension) — リアルタイムMD変換、3テーマ
+45. **screenshot-annotator** (Chrome extension) — スクリーンショット+注釈
+46. **color-palette** (Chrome extension) — k-meansカラー抽出、CSS変数エクスポート
+47. **timezone-converter** (Chrome extension) — 25都市時差変換、会議時間ファインダー
+48. **budget-planner** (Mac app, Python) — 収支管理、円グラフ、年間棒グラフ
+49. **pomodoro-tasks** (Mac app, Python) — ポモドーロ+タスク統合、リング型タイマー
+50. **speed-reader** (Chrome extension) — RSVP速読、ORP中心ハイライト、1000 WPM
+
 ## Ideas Queue (not yet built)
-- Screenshot annotator Chrome extension
-- Markdown to HTML Chrome extension
-- Image color palette extractor Chrome extension
-- Time zone converter Chrome extension
-- IP address lookup Chrome extension
-- Memory match game Chrome extension
-- Minesweeper game Chrome extension
-- Budget planner Mac app (Python)
-- Pomodoro + task integration Mac app (Python)
 - Network speed test Chrome extension
+- Markdown slides generator
+- JSON to CSV converter Chrome extension
+- Image resize tool Mac app
+- Text summarizer Chrome extension (AI)
+- Emoji picker Chrome extension
+- Bookmark manager Chrome extension
+- Code snippet manager Chrome extension

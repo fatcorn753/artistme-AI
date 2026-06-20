@@ -1,0 +1,91 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 680px; height: 500px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #0f0f1a; color: #e0e0f0; overflow: hidden;
+}
+.container { display: flex; flex-direction: column; height: 100%; padding: 10px; gap: 8px; }
+
+.header { display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
+h1 { font-size: 15px; color: #e879f9; }
+.header-actions { display: flex; align-items: center; gap: 8px; }
+.toggle-label { display: flex; align-items: center; gap: 5px; font-size: 11px; color: #6b7280; cursor: pointer; }
+.toggle-label input { accent-color: #e879f9; }
+select {
+  background: #1e1e2e; border: 1px solid #2d2d4e; border-radius: 6px;
+  color: #ccc; font-size: 11px; padding: 4px 7px; outline: none; cursor: pointer;
+}
+
+.panes { display: flex; gap: 8px; flex: 1; overflow: hidden; }
+.pane { flex: 1; display: flex; flex-direction: column; overflow: hidden; min-width: 0; }
+.pane-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 5px 8px; background: #1e1e2e; border-radius: 6px 6px 0 0;
+  font-size: 11px; color: #6b7280; flex-shrink: 0;
+}
+.tiny-btn {
+  background: none; border: 1px solid #2d2d4e; border-radius: 4px;
+  color: #6b7280; font-size: 10px; padding: 2px 6px; cursor: pointer;
+}
+.tiny-btn:hover { border-color: #e879f9; color: #e879f9; }
+.output-tabs { display: flex; gap: 3px; }
+.out-tab {
+  padding: 2px 8px; background: #1e1e2e; border: 1px solid #2d2d4e;
+  border-radius: 4px; color: #6b7280; font-size: 10px; cursor: pointer;
+}
+.out-tab.active { border-color: #e879f9; color: #e879f9; }
+
+#md-input {
+  flex: 1; background: #1a1a2e; border: 1px solid #2d2d4e; border-top: none;
+  border-radius: 0 0 6px 6px; color: #e0e0f0; font-family: 'SF Mono', monospace;
+  font-size: 12px; padding: 10px 12px; resize: none; outline: none; line-height: 1.6;
+}
+#md-input:focus { border-color: #e879f9; }
+
+.preview-pane {
+  flex: 1; background: #1a1a2e; border: 1px solid #2d2d4e; border-top: none;
+  border-radius: 0 0 6px 6px; padding: 12px 14px; overflow-y: auto;
+  font-size: 13px; line-height: 1.7; color: #e0e0f0;
+}
+.html-output {
+  flex: 1; background: #0a0a14; border: 1px solid #2d2d4e; border-top: none;
+  border-radius: 0 0 6px 6px; color: #a0c0e0; font-family: 'SF Mono', monospace;
+  font-size: 11px; padding: 10px; resize: none; outline: none; line-height: 1.5;
+}
+.hidden { display: none; }
+
+/* Preview styles */
+.preview-pane h1,.preview-pane h2,.preview-pane h3,.preview-pane h4 {
+  color: #e879f9; margin: 10px 0 5px; border-bottom: 1px solid #2d2d4e; padding-bottom: 3px;
+}
+.preview-pane h1 { font-size: 20px; } .preview-pane h2 { font-size: 17px; } .preview-pane h3 { font-size: 14px; }
+.preview-pane p { margin: 6px 0; }
+.preview-pane code { background: #2d2d4e; padding: 1px 5px; border-radius: 3px; font-family: monospace; font-size: 11px; color: #c4b5fd; }
+.preview-pane pre { background: #0a0a14; border: 1px solid #2d2d4e; border-radius: 6px; padding: 10px; margin: 6px 0; overflow-x: auto; }
+.preview-pane pre code { background: none; padding: 0; }
+.preview-pane blockquote { border-left: 3px solid #e879f9; padding-left: 10px; color: #6b7280; margin: 6px 0; }
+.preview-pane ul,.preview-pane ol { padding-left: 20px; margin: 4px 0; }
+.preview-pane li { margin: 2px 0; }
+.preview-pane table { border-collapse: collapse; margin: 8px 0; width: 100%; font-size: 12px; }
+.preview-pane th,.preview-pane td { border: 1px solid #2d2d4e; padding: 5px 8px; }
+.preview-pane th { background: #2d2d4e; color: #e879f9; }
+.preview-pane hr { border: none; border-top: 1px solid #2d2d4e; margin: 10px 0; }
+.preview-pane a { color: #818cf8; }
+.preview-pane strong { color: #f0e0ff; }
+.preview-pane em { color: #c4b5fd; }
+.preview-pane del { color: #6b7280; }
+.preview-pane img { max-width: 100%; border-radius: 4px; }
+
+.footer {
+  display: flex; align-items: center; justify-content: space-between; flex-shrink: 0;
+}
+.stats { font-size: 10px; color: #374151; }
+.footer-actions { display: flex; gap: 5px; }
+.action-btn {
+  background: #1e1e2e; border: 1px solid #2d2d4e; border-radius: 6px;
+  color: #888; font-size: 11px; padding: 5px 10px; cursor: pointer; transition: all 0.15s;
+}
+.action-btn:hover { border-color: #e879f9; color: #e879f9; }
+.action-btn.accent { background: #3b0764; border-color: #e879f9; color: #e879f9; }
+.action-btn.accent:hover { background: #4c1d95; }
+.action-btn.copied { border-color: #4ade80; color: #4ade80; background: #14532d; }

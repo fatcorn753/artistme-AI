@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Font Preview</title>
+  <link rel="stylesheet" href="popup.css">
+  <link id="gfonts-link" rel="stylesheet" href="">
+</head>
+<body>
+  <div class="container">
+    <h1>🔤 Font Preview</h1>
+
+    <div class="controls-row">
+      <input type="text" id="preview-text" value="The quick brown fox">
+      <input type="number" id="font-size" value="22" min="8" max="120">
+      <span>px</span>
+    </div>
+
+    <div class="controls-row">
+      <select id="weight-select">
+        <option value="300">Light 300</option>
+        <option value="400" selected>Regular 400</option>
+        <option value="500">Medium 500</option>
+        <option value="600">SemiBold 600</option>
+        <option value="700">Bold 700</option>
+        <option value="900">Black 900</option>
+      </select>
+      <select id="style-select">
+        <option value="normal" selected>Normal</option>
+        <option value="italic">Italic</option>
+      </select>
+      <label class="check-label"><input type="checkbox" id="dark-bg"> 暗背景</label>
+    </div>
+
+    <input type="text" id="font-search" placeholder="フォント名で検索...">
+
+    <div id="font-list" class="font-list"></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

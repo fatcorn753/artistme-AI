@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Gradient Generator</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🎨 Gradient Generator</h1>
+
+    <!-- Preview -->
+    <div id="preview" class="preview"></div>
+
+    <!-- Type + Angle -->
+    <div class="row">
+      <div class="group">
+        <label>タイプ</label>
+        <div class="type-btns">
+          <button class="type-btn active" data-type="linear">Linear</button>
+          <button class="type-btn" data-type="radial">Radial</button>
+          <button class="type-btn" data-type="conic">Conic</button>
+        </div>
+      </div>
+      <div class="group" id="angle-group">
+        <label>角度 <span id="angle-val">135°</span></label>
+        <input type="range" id="angle" min="0" max="360" value="135">
+      </div>
+    </div>
+
+    <!-- Color stops -->
+    <div class="stops-section">
+      <div class="stops-header">
+        <label>カラーストップ</label>
+        <button id="btn-add-stop">+ 追加</button>
+      </div>
+      <div id="stops-list" class="stops-list"></div>
+    </div>
+
+    <!-- Presets -->
+    <div class="presets-section">
+      <label>プリセット</label>
+      <div id="presets-grid" class="presets-grid"></div>
+    </div>
+
+    <!-- Output -->
+    <div class="output-section">
+      <div class="output-tabs">
+        <button class="out-tab active" data-fmt="css">CSS</button>
+        <button class="out-tab" data-fmt="tailwind">Tailwind</button>
+        <button class="out-tab" data-fmt="bg">background</button>
+      </div>
+      <div class="output-box">
+        <code id="css-output"></code>
+        <button id="btn-copy" class="copy-btn">コピー</button>
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

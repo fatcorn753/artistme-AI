@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "CSV Viewer",
+  "version": "1.0.0",
+  "description": "CSVファイルをきれいな表形式で表示。列のソート、検索、フィルタ、統計情報付き。ファイルを開くかテキストを貼り付けて使用。",
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

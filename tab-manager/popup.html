@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Tab Manager</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🗂 Tab Manager</h1>
+      <span id="tab-count" class="count-badge">0</span>
+    </div>
+
+    <input type="text" id="search" placeholder="タブを検索...">
+
+    <div class="toolbar">
+      <button id="btn-dedup" class="tool-btn" title="重複タブを閉じる">重複削除</button>
+      <button id="btn-close-others" class="tool-btn" title="他のタブを全て閉じる">他を閉じる</button>
+      <button id="btn-save-session" class="tool-btn accent">セッション保存</button>
+    </div>
+
+    <div id="tabs-list" class="tabs-list"></div>
+
+    <div class="sessions-section">
+      <div class="section-header">保存済みセッション</div>
+      <div id="sessions-list" class="sessions-list"></div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

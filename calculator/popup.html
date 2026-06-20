@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="calc">
+    <!-- Display -->
+    <div class="display">
+      <div class="expr" id="expr"></div>
+      <div class="result" id="result">0</div>
+    </div>
+
+    <!-- Mode toggle -->
+    <div class="mode-row">
+      <button class="mode-btn active" id="mode-basic">基本</button>
+      <button class="mode-btn" id="mode-sci">関数</button>
+      <button class="mode-btn" id="mode-hist">履歴</button>
+      <div class="deg-rad">
+        <button class="deg-btn active" id="deg-btn">DEG</button>
+      </div>
+    </div>
+
+    <!-- History panel -->
+    <div id="hist-panel" class="hist-panel hidden">
+      <div id="hist-list" class="hist-list"></div>
+      <button id="hist-clear" class="hist-clear-btn">履歴クリア</button>
+    </div>
+
+    <!-- Buttons -->
+    <div id="btn-grid" class="btn-grid">
+      <!-- Row 1 -->
+      <button class="btn fn" data-action="mc">MC</button>
+      <button class="btn fn" data-action="mr">MR</button>
+      <button class="btn fn" data-action="m+">M+</button>
+      <button class="btn fn" data-action="m-">M−</button>
+
+      <!-- Row 2 -->
+      <button class="btn op" data-action="clear">AC</button>
+      <button class="btn op" data-action="sign">±</button>
+      <button class="btn op" data-action="percent">%</button>
+      <button class="btn op accent" data-action="÷">÷</button>
+
+      <!-- Row 3 -->
+      <button class="btn num" data-action="7">7</button>
+      <button class="btn num" data-action="8">8</button>
+      <button class="btn num" data-action="9">9</button>
+      <button class="btn op accent" data-action="×">×</button>
+
+      <!-- Row 4 -->
+      <button class="btn num" data-action="4">4</button>
+      <button class="btn num" data-action="5">5</button>
+      <button class="btn num" data-action="6">6</button>
+      <button class="btn op accent" data-action="−">−</button>
+
+      <!-- Row 5 -->
+      <button class="btn num" data-action="1">1</button>
+      <button class="btn num" data-action="2">2</button>
+      <button class="btn num" data-action="3">3</button>
+      <button class="btn op accent" data-action="+">+</button>
+
+      <!-- Row 6 -->
+      <button class="btn num wide" data-action="0">0</button>
+      <button class="btn num" data-action=".">.</button>
+      <button class="btn op accent" data-action="=">=</button>
+    </div>
+
+    <!-- Scientific panel (hidden by default) -->
+    <div id="sci-grid" class="sci-grid hidden">
+      <button class="btn sci" data-action="sin">sin</button>
+      <button class="btn sci" data-action="cos">cos</button>
+      <button class="btn sci" data-action="tan">tan</button>
+      <button class="btn sci" data-action="log">log</button>
+      <button class="btn sci" data-action="ln">ln</button>
+      <button class="btn sci" data-action="√">√</button>
+      <button class="btn sci" data-action="x²">x²</button>
+      <button class="btn sci" data-action="xʸ">xʸ</button>
+      <button class="btn sci" data-action="1/x">1/x</button>
+      <button class="btn sci" data-action="π">π</button>
+      <button class="btn sci" data-action="e">e</button>
+      <button class="btn sci" data-action="(">(</button>
+      <button class="btn sci" data-action=")">)</button>
+      <button class="btn sci" data-action="⌫">⌫</button>
+      <button class="btn sci" data-action="abs">|x|</button>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

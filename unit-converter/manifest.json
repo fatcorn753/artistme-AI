@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Unit Converter",
+  "version": "1.0.0",
+  "description": "長さ・重さ・温度・面積・速度など多数の単位をリアルタイム変換。よく使う変換をピン留めできます。",
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Stopwatch & Timer</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="mode-tabs">
+      <button class="mode-tab active" data-mode="stopwatch">⏱ ストップウォッチ</button>
+      <button class="mode-tab" data-mode="timer">⏳ タイマー</button>
+    </div>
+
+    <!-- Stopwatch -->
+    <div id="mode-stopwatch" class="mode-panel">
+      <div class="display" id="sw-display">00:00.00</div>
+      <div class="controls">
+        <button id="sw-reset" class="ctrl-btn secondary">リセット</button>
+        <button id="sw-start" class="ctrl-btn primary">スタート</button>
+        <button id="sw-lap" class="ctrl-btn secondary" disabled>ラップ</button>
+      </div>
+      <div id="laps-list" class="laps-list"></div>
+    </div>
+
+    <!-- Countdown Timer -->
+    <div id="mode-timer" class="mode-panel hidden">
+      <div class="display" id="tm-display">00:00</div>
+      <div id="tm-set" class="timer-set">
+        <div class="time-inputs">
+          <div class="time-input-group">
+            <input type="number" id="tm-hours" min="0" max="23" value="0" placeholder="0">
+            <label>時</label>
+          </div>
+          <span class="colon">:</span>
+          <div class="time-input-group">
+            <input type="number" id="tm-minutes" min="0" max="59" value="5" placeholder="0">
+            <label>分</label>
+          </div>
+          <span class="colon">:</span>
+          <div class="time-input-group">
+            <input type="number" id="tm-seconds" min="0" max="59" value="0" placeholder="0">
+            <label>秒</label>
+          </div>
+        </div>
+        <div class="preset-row">
+          <button class="preset" data-sec="60">1分</button>
+          <button class="preset" data-sec="300">5分</button>
+          <button class="preset" data-sec="600">10分</button>
+          <button class="preset" data-sec="1500">25分</button>
+          <button class="preset" data-sec="3600">1時間</button>
+        </div>
+      </div>
+      <div class="controls">
+        <button id="tm-reset" class="ctrl-btn secondary">リセット</button>
+        <button id="tm-start" class="ctrl-btn primary">スタート</button>
+      </div>
+      <div class="progress-ring-wrap">
+        <svg class="progress-ring" viewBox="0 0 120 120">
+          <circle class="ring-bg" cx="60" cy="60" r="50"/>
+          <circle class="ring-fill" id="ring-fill" cx="60" cy="60" r="50"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

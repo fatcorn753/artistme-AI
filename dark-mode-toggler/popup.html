@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Dark Mode Toggler</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div>
+        <h1>🌙 Dark Mode</h1>
+        <div id="current-site" class="current-site">—</div>
+      </div>
+      <label class="toggle-switch">
+        <input type="checkbox" id="toggle-enabled">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div id="controls" class="controls disabled">
+      <div class="slider-row">
+        <label>明度 <span id="brightness-val">85%</span></label>
+        <input type="range" id="brightness" min="30" max="120" value="85">
+      </div>
+      <div class="slider-row">
+        <label>コントラスト <span id="contrast-val">90%</span></label>
+        <input type="range" id="contrast" min="50" max="150" value="90">
+      </div>
+      <div class="slider-row">
+        <label>セピア <span id="sepia-val">0%</span></label>
+        <input type="range" id="sepia" min="0" max="80" value="0">
+      </div>
+    </div>
+
+    <div class="presets">
+      <div class="presets-label">プリセット</div>
+      <div class="preset-btns">
+        <button class="preset-btn" data-preset="night">🌃 ナイト</button>
+        <button class="preset-btn" data-preset="warm">🕯 ウォーム</button>
+        <button class="preset-btn" data-preset="reading">📖 リーディング</button>
+        <button class="preset-btn" data-preset="custom">⚙ カスタム</button>
+      </div>
+    </div>
+
+    <div class="footer-actions">
+      <button id="btn-reset-site" class="small-btn">このサイトをリセット</button>
+      <button id="btn-global" class="small-btn accent">全サイトに適用</button>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

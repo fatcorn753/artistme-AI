@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Snake Game",
+  "version": "1.0.0",
+  "description": "クラシックなスネークゲーム。キーボード操作、スコア記録、難易度3段階、特殊アイテム付き。",
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

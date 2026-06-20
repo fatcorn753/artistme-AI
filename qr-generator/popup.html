@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>QR Code Generator</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>⬛ QR Code Generator</h1>
+
+    <div class="mode-tabs">
+      <button class="mode-tab active" data-mode="text">テキスト/URL</button>
+      <button class="mode-tab" data-mode="wifi">WiFi</button>
+      <button class="mode-tab" data-mode="vcard">連絡先</button>
+    </div>
+
+    <!-- Text/URL mode -->
+    <div id="mode-text" class="mode-panel">
+      <textarea id="text-input" placeholder="URLやテキストを入力...&#10;例: https://example.com" rows="4"></textarea>
+      <button id="btn-current-url" class="small-btn">📎 現在のページURL</button>
+    </div>
+
+    <!-- WiFi mode -->
+    <div id="mode-wifi" class="mode-panel hidden">
+      <div class="field-row">
+        <label>SSID</label>
+        <input type="text" id="wifi-ssid" placeholder="ネットワーク名">
+      </div>
+      <div class="field-row">
+        <label>パスワード</label>
+        <input type="password" id="wifi-pass" placeholder="パスワード">
+      </div>
+      <div class="field-row">
+        <label>暗号化</label>
+        <select id="wifi-enc">
+          <option value="WPA">WPA/WPA2</option>
+          <option value="WEP">WEP</option>
+          <option value="">なし</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- vCard mode -->
+    <div id="mode-vcard" class="mode-panel hidden">
+      <div class="field-row"><label>名前</label><input type="text" id="vc-name" placeholder="山田 太郎"></div>
+      <div class="field-row"><label>電話</label><input type="tel" id="vc-phone" placeholder="090-1234-5678"></div>
+      <div class="field-row"><label>メール</label><input type="email" id="vc-email" placeholder="taro@example.com"></div>
+      <div class="field-row"><label>会社</label><input type="text" id="vc-org" placeholder="株式会社 例"></div>
+      <div class="field-row"><label>URL</label><input type="text" id="vc-url" placeholder="https://example.com"></div>
+    </div>
+
+    <div class="options-row">
+      <div class="color-opt">
+        <label>前景色</label>
+        <input type="color" id="qr-fg" value="#000000">
+      </div>
+      <div class="color-opt">
+        <label>背景色</label>
+        <input type="color" id="qr-bg" value="#ffffff">
+      </div>
+      <div class="size-opt">
+        <label>サイズ</label>
+        <select id="qr-size">
+          <option value="150">S (150)</option>
+          <option value="200" selected>M (200)</option>
+          <option value="300">L (300)</option>
+        </select>
+      </div>
+    </div>
+
+    <button id="btn-generate" class="gen-btn">QR生成</button>
+
+    <div id="qr-output" class="qr-output hidden">
+      <canvas id="qr-canvas"></canvas>
+      <div class="download-row">
+        <button id="btn-dl-png" class="dl-btn">PNG保存</button>
+        <button id="btn-copy-img" class="dl-btn">画像コピー</button>
+      </div>
+    </div>
+
+    <div id="qr-error" class="error"></div>
+  </div>
+  <script src="qrcode.min.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

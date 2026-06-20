@@ -1,0 +1,58 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 360px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #111827; color: #f3f4f6;
+}
+.container { padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+
+.header { display: flex; align-items: center; justify-content: space-between; }
+h1 { font-size: 15px; color: #34d399; }
+.header button {
+  background: #1f2937; border: 1px solid #374151; border-radius: 6px;
+  color: #6b7280; font-size: 11px; padding: 4px 9px; cursor: pointer;
+}
+.header button:hover { border-color: #34d399; color: #34d399; }
+
+textarea {
+  width: 100%; height: 120px; background: #1f2937; border: 1px solid #374151;
+  border-radius: 8px; color: #f3f4f6; font-size: 13px; padding: 10px 12px;
+  resize: vertical; outline: none; line-height: 1.6; font-family: inherit;
+}
+textarea:focus { border-color: #34d399; }
+
+.stats-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 5px;
+}
+.stat-card {
+  background: #1f2937; border: 1px solid #374151; border-radius: 8px;
+  padding: 10px 12px; text-align: center;
+}
+.stat-card.wide { grid-column: span 2; display: flex; justify-content: space-between; align-items: center; padding: 8px 14px; }
+.stat-card.wide .stat-label { margin: 0; }
+.stat-value { font-size: 22px; font-weight: 800; color: #34d399; font-variant-numeric: tabular-nums; }
+.stat-card.wide .stat-value { font-size: 17px; }
+.stat-label { font-size: 10px; color: #6b7280; margin-top: 2px; }
+
+.limits-label {
+  font-size: 10px; color: #4b5563; text-transform: uppercase;
+  letter-spacing: 0.05em; margin-bottom: 5px;
+}
+
+.limits-grid { display: flex; flex-direction: column; gap: 5px; }
+.limit-row {
+  display: flex; align-items: center; gap: 8px;
+}
+.limit-name { font-size: 11px; color: #6b7280; min-width: 90px; }
+.limit-bar { flex: 1; height: 6px; background: #374151; border-radius: 3px; overflow: hidden; }
+.limit-fill { height: 100%; border-radius: 3px; transition: width 0.3s ease, background 0.3s; }
+.limit-count { font-size: 11px; color: #9ca3af; min-width: 60px; text-align: right; font-variant-numeric: tabular-nums; }
+.limit-count.over { color: #f87171; font-weight: 700; }
+
+.top-words { display: flex; flex-wrap: wrap; gap: 4px; }
+.word-chip {
+  background: #1f2937; border: 1px solid #374151; border-radius: 12px;
+  padding: 3px 9px; font-size: 11px; color: #9ca3af;
+  display: flex; gap: 5px;
+}
+.word-chip .wc { color: #34d399; font-weight: 700; }

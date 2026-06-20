@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Quick Notes</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <span class="app-title">📝</span>
+        <button id="btn-new" title="新規ノート">+</button>
+      </div>
+      <input type="text" id="search-notes" placeholder="検索...">
+      <div id="notes-list" class="notes-list"></div>
+      <div class="sidebar-footer">
+        <button id="btn-export" title="エクスポート">⬇ 出力</button>
+      </div>
+    </div>
+
+    <!-- Editor -->
+    <div class="editor-pane">
+      <div class="editor-header">
+        <input type="text" id="note-title" placeholder="タイトル..." class="title-input">
+        <button id="btn-delete" class="delete-btn" title="削除">🗑</button>
+      </div>
+      <div class="toolbar">
+        <button data-action="bold" title="太字">B</button>
+        <button data-action="italic" title="斜体">I</button>
+        <button data-action="heading" title="見出し">H</button>
+        <button data-action="list" title="リスト">≡</button>
+        <button data-action="code" title="コード">&lt;/&gt;</button>
+        <div class="spacer"></div>
+        <button id="btn-preview" title="プレビュー">👁</button>
+      </div>
+      <textarea id="note-body" placeholder="メモを入力... (Markdownに対応)"></textarea>
+      <div id="preview-pane" class="preview-pane hidden"></div>
+      <div class="editor-footer">
+        <span id="char-count" class="char-count">0文字</span>
+        <span id="save-status" class="save-status">保存済み</span>
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

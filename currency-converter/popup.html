@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Currency Converter</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>💱 Currency Converter</h1>
+      <button id="btn-refresh" class="refresh-btn" title="レート更新">↺</button>
+    </div>
+    <div id="rate-info" class="rate-info"></div>
+
+    <div class="converter">
+      <div class="input-row">
+        <input type="number" id="amount-from" value="1" step="any" min="0">
+        <select id="from-currency"></select>
+      </div>
+      <button id="btn-swap" class="swap-btn">⇅</button>
+      <div class="input-row">
+        <input type="number" id="amount-to" readonly step="any">
+        <select id="to-currency"></select>
+      </div>
+    </div>
+
+    <div id="all-rates" class="all-rates">
+      <div class="all-rates-title">主要通貨への換算</div>
+      <div id="rates-grid" class="rates-grid"></div>
+    </div>
+
+    <div id="loading" class="loading hidden">レートを取得中...</div>
+    <div id="error-msg" class="error hidden"></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

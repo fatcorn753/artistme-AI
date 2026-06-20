@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Weather</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Search bar -->
+    <div class="search-row">
+      <input type="text" id="city-input" placeholder="都市名を入力 (例: Tokyo)">
+      <button id="btn-search">🔍</button>
+      <button id="btn-locate" title="現在地">📍</button>
+    </div>
+
+    <!-- Loading -->
+    <div id="loading" class="loading hidden">取得中...</div>
+    <div id="error-msg" class="error hidden"></div>
+
+    <!-- Current weather -->
+    <div id="current" class="current hidden">
+      <div class="city-name" id="city-name"></div>
+      <div class="weather-main">
+        <div class="weather-icon" id="weather-icon"></div>
+        <div class="temp-block">
+          <div class="temp" id="temp"></div>
+          <div class="feels-like" id="feels-like"></div>
+        </div>
+      </div>
+      <div class="desc" id="desc"></div>
+      <div class="details">
+        <div class="detail-item"><span class="dl">💧</span><span id="humidity"></span></div>
+        <div class="detail-item"><span class="dl">💨</span><span id="wind"></span></div>
+        <div class="detail-item"><span class="dl">👁</span><span id="visibility"></span></div>
+        <div class="detail-item"><span class="dl">📊</span><span id="pressure"></span></div>
+      </div>
+    </div>
+
+    <!-- 5-day forecast -->
+    <div id="forecast" class="forecast hidden">
+      <div class="forecast-title">5日間予報</div>
+      <div id="forecast-list" class="forecast-list"></div>
+    </div>
+
+    <div class="updated" id="updated"></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

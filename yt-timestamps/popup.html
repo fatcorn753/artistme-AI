@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>YouTube Timestamps</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>⏱ Timestamps</h1>
+      <button id="btn-export-all" title="全エクスポート">⬇ 全て</button>
+    </div>
+
+    <div id="no-yt" class="notice hidden">
+      YouTube の動画ページを開いて<br>「⏱ 保存」ボタンか S キーで保存
+    </div>
+
+    <div id="current-video" class="current-video hidden">
+      <div class="video-title" id="video-title"></div>
+      <div id="timestamps-list" class="timestamps-list"></div>
+      <div class="video-actions">
+        <button id="btn-export" class="small-btn">📋 コピー</button>
+        <button id="btn-clear" class="small-btn danger">削除</button>
+      </div>
+    </div>
+
+    <div id="history-section" class="history">
+      <div class="section-label">保存済み動画</div>
+      <div id="history-list" class="history-list"></div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

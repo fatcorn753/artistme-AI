@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>DNS Lookup</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🌐 DNS Lookup</h1>
+
+    <div class="search-row">
+      <input type="text" id="domain-input" placeholder="example.com" spellcheck="false">
+      <button id="btn-lookup">調べる</button>
+      <button id="btn-current" title="現在のページ">📎</button>
+    </div>
+
+    <div class="record-type-row">
+      <label class="rt-label">レコード:</label>
+      <div class="rt-btns" id="rt-btns">
+        <button class="rt-btn active" data-type="A">A</button>
+        <button class="rt-btn active" data-type="AAAA">AAAA</button>
+        <button class="rt-btn active" data-type="MX">MX</button>
+        <button class="rt-btn active" data-type="TXT">TXT</button>
+        <button class="rt-btn active" data-type="NS">NS</button>
+        <button class="rt-btn active" data-type="CNAME">CNAME</button>
+        <button class="rt-btn" data-type="SOA">SOA</button>
+        <button class="rt-btn" data-type="CAA">CAA</button>
+      </div>
+    </div>
+
+    <div id="loading" class="loading hidden">DNSを照会中...</div>
+    <div id="error-msg" class="error hidden"></div>
+
+    <div id="results" class="results hidden">
+      <div class="domain-badge" id="domain-badge"></div>
+      <div id="records-list"></div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

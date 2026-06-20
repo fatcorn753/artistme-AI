@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Base64 & Hash Tool",
+  "version": "1.0.0",
+  "description": "Base64エンコード/デコード、URL安全Base64、MD5/SHA-1/SHA-256ハッシュ計算、URLエンコードを一つに。",
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

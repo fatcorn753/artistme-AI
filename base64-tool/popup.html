@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Base64 & Hash Tool</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🔢 Base64 &amp; Hash Tool</h1>
+
+    <div class="mode-tabs">
+      <button class="mode-tab active" data-mode="base64">Base64</button>
+      <button class="mode-tab" data-mode="url">URLエンコード</button>
+      <button class="mode-tab" data-mode="hash">ハッシュ</button>
+    </div>
+
+    <!-- Base64 -->
+    <div id="mode-base64" class="mode-panel">
+      <textarea id="b64-input" placeholder="テキストを入力..." rows="4"></textarea>
+      <div class="btn-row">
+        <button class="act-btn" id="b64-encode">エンコード →</button>
+        <button class="act-btn" id="b64-decode">← デコード</button>
+        <label class="check-label"><input type="checkbox" id="b64-url-safe"> URL安全</label>
+      </div>
+      <div class="result-box" id="b64-result" data-placeholder="結果がここに表示されます"></div>
+      <button class="copy-btn" id="b64-copy">コピー</button>
+      <div class="error" id="b64-error"></div>
+    </div>
+
+    <!-- URL encode -->
+    <div id="mode-url" class="mode-panel hidden">
+      <textarea id="url-input" placeholder="テキストまたはURLを入力..." rows="4"></textarea>
+      <div class="btn-row">
+        <button class="act-btn" id="url-encode">エンコード →</button>
+        <button class="act-btn" id="url-decode">← デコード</button>
+        <label class="check-label"><input type="checkbox" id="url-component"> encodeURIComponent</label>
+      </div>
+      <div class="result-box" id="url-result" data-placeholder="結果がここに表示されます"></div>
+      <button class="copy-btn" id="url-copy">コピー</button>
+      <div class="error" id="url-error"></div>
+    </div>
+
+    <!-- Hash -->
+    <div id="mode-hash" class="mode-panel hidden">
+      <textarea id="hash-input" placeholder="ハッシュ化するテキストを入力..." rows="3"></textarea>
+      <button class="act-btn full" id="hash-calc">ハッシュ計算</button>
+      <div class="hash-results" id="hash-results"></div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

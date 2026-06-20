@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Snake Game</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🐍 Snake</h1>
+      <div class="header-right">
+        <span class="score-label">スコア: <strong id="score">0</strong></span>
+        <span class="score-label">最高: <strong id="high-score">0</strong></span>
+      </div>
+    </div>
+
+    <canvas id="game-canvas" width="360" height="360"></canvas>
+
+    <div class="controls">
+      <div class="difficulty-row">
+        <button class="diff-btn" data-speed="200">🐢 遅い</button>
+        <button class="diff-btn active" data-speed="120">🐍 普通</button>
+        <button class="diff-btn" data-speed="70">⚡ 速い</button>
+      </div>
+      <div class="action-row">
+        <button id="btn-start" class="start-btn">スタート (Space)</button>
+      </div>
+    </div>
+
+    <div class="help-text">← → ↑ ↓ で操作 · Space で一時停止</div>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>

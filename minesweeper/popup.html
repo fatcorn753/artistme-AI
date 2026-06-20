@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Minesweeper</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="mine-count">💣 <span id="mine-count">0</span></div>
+      <button id="btn-reset" class="face-btn" title="リセット">😊</button>
+      <div class="timer-box">⏱ <span id="timer">0</span></div>
+    </div>
+
+    <div class="diff-row">
+      <button class="diff-btn active" data-level="easy">🟢 初級</button>
+      <button class="diff-btn" data-level="med">🟡 中級</button>
+      <button class="diff-btn" data-level="hard">🔴 上級</button>
+    </div>
+
+    <div id="board-wrap" class="board-wrap">
+      <div id="board" class="board"></div>
+    </div>
+
+    <div class="best-row">
+      最高タイム: <strong id="best-time">—</strong>
+    </div>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>

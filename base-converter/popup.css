@@ -1,0 +1,113 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 380px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #0d0d1a; color: #e0e0f0;
+}
+.container { padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+h1 { font-size: 15px; color: #a5b4fc; }
+
+.mode-tabs { display: flex; gap: 3px; }
+.tab {
+  flex: 1; padding: 6px 4px; background: #1a1a2e; border: 1px solid #2d2d4e;
+  border-radius: 6px; color: #6b7280; font-size: 11px; cursor: pointer; transition: all 0.15s;
+}
+.tab.active { background: #1e1a3a; border-color: #818cf8; color: #a5b4fc; font-weight: 600; }
+
+.tab-panel { display: flex; flex-direction: column; gap: 6px; }
+.tab-panel.hidden { display: none; }
+
+/* Base rows */
+.base-rows { display: flex; flex-direction: column; gap: 5px; }
+.base-row {
+  display: flex; align-items: center; gap: 6px;
+}
+.base-label {
+  font-size: 10px; font-weight: 700; color: #6b7280; min-width: 32px;
+  text-transform: uppercase; letter-spacing: 0.04em; flex-shrink: 0;
+}
+.base-row input {
+  flex: 1; background: #1a1a2e; border: 1px solid #2d2d4e; border-radius: 7px;
+  color: #e0e0f0; font-family: 'SF Mono', monospace; font-size: 13px;
+  padding: 7px 10px; outline: none;
+}
+.base-row input:focus { border-color: #818cf8; }
+.base-row input.error { border-color: #f87171; color: #f87171; }
+.copy-val-btn {
+  background: #1a1a2e; border: 1px solid #2d2d4e; border-radius: 5px;
+  color: #4b5563; font-size: 13px; width: 28px; height: 28px; cursor: pointer; flex-shrink: 0;
+}
+.copy-val-btn:hover { border-color: #818cf8; color: #a5b4fc; }
+.copy-val-btn.copied { border-color: #4ade80; color: #4ade80; }
+
+/* Bit display */
+.bit-display {
+  display: flex; flex-wrap: wrap; gap: 2px; padding: 8px 10px;
+  background: #0a0a14; border: 1px solid #1e1e2e; border-radius: 7px;
+  font-family: monospace; font-size: 12px; min-height: 30px;
+}
+.bit { width: 14px; text-align: center; }
+.bit.one { color: #818cf8; font-weight: 700; }
+.bit.zero { color: #2d2d4e; }
+.bit-sep { color: #2d2d4e; margin: 0 2px; }
+
+/* Bit ops */
+.bitop-row { display: flex; align-items: center; gap: 8px; }
+.bitop-row label { font-size: 11px; color: #6b7280; min-width: 52px; }
+.bitop-row input {
+  flex: 1; background: #1a1a2e; border: 1px solid #2d2d4e; border-radius: 7px;
+  color: #e0e0f0; font-size: 14px; padding: 7px 10px; outline: none; font-family: monospace;
+}
+.bitop-row input:focus { border-color: #818cf8; }
+.bitop-results { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+.bitop-item {
+  background: #1a1a2e; border: 1px solid #2d2d4e; border-radius: 7px;
+  padding: 7px 10px; cursor: pointer; transition: border-color 0.15s;
+}
+.bitop-item:hover { border-color: #818cf8; }
+.bitop-op { font-size: 10px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.04em; }
+.bitop-val { font-size: 15px; font-weight: 700; color: #a5b4fc; font-family: monospace; }
+.bitop-hex { font-size: 10px; color: #4b5563; }
+
+/* Color */
+.color-preview-row { display: flex; gap: 10px; align-items: flex-start; }
+.color-swatch {
+  width: 80px; height: 80px; border-radius: 10px; flex-shrink: 0;
+  border: 1px solid #2d2d4e; cursor: pointer;
+}
+.color-inputs { flex: 1; display: flex; flex-direction: column; gap: 4px; }
+.full-btn {
+  width: 100%; background: #1e1a3a; border: 1px solid #818cf8; border-radius: 7px;
+  color: #a5b4fc; font-size: 12px; padding: 8px; cursor: pointer; margin-top: 2px;
+}
+.full-btn:hover { background: #2a2050; }
+
+/* ASCII */
+#ascii-input {
+  background: #1a1a2e; border: 1px solid #2d2d4e; border-radius: 7px;
+  color: #e0e0f0; font-size: 13px; padding: 8px 10px; outline: none; width: 100%;
+}
+#ascii-input:focus { border-color: #818cf8; }
+.ascii-result {
+  display: flex; flex-wrap: wrap; gap: 5px; min-height: 30px;
+}
+.ascii-char-card {
+  background: #1a1a2e; border: 1px solid #2d2d4e; border-radius: 7px;
+  padding: 5px 9px; text-align: center;
+}
+.ascii-char { font-size: 18px; color: #a5b4fc; }
+.ascii-code { font-size: 10px; color: #6b7280; }
+.ascii-hex  { font-size: 10px; color: #4ade80; }
+
+.ascii-table-title { font-size: 10px; color: #4b5563; text-transform: uppercase; letter-spacing: 0.05em; }
+.ascii-table {
+  display: grid; grid-template-columns: repeat(8, 1fr); gap: 2px;
+  max-height: 200px; overflow-y: auto;
+}
+.at-cell {
+  background: #1a1a2e; border-radius: 4px; padding: 3px 2px;
+  text-align: center; cursor: pointer; transition: background 0.1s;
+}
+.at-cell:hover { background: #2d2d4e; }
+.at-char { font-size: 11px; color: #c4b5fd; }
+.at-code { font-size: 8px; color: #4b5563; }

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>JSON Formatter</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>{ } JSON Formatter</h1>
+      <div class="indent-control">
+        <label>インデント</label>
+        <select id="indent-size">
+          <option value="2" selected>2</option>
+          <option value="4">4</option>
+          <option value="tab">Tab</option>
+        </select>
+      </div>
+    </div>
+
+    <textarea id="input" placeholder="JSONをここに貼り付け..."></textarea>
+
+    <div class="actions">
+      <button id="btn-format" class="btn primary">整形</button>
+      <button id="btn-minify" class="btn secondary">Minify</button>
+      <button id="btn-copy" class="btn secondary">コピー</button>
+      <button id="btn-clear" class="btn secondary">クリア</button>
+    </div>
+
+    <div id="error-msg" class="error-msg"></div>
+
+    <div id="output-wrapper" class="output-wrapper hidden">
+      <div class="output-header">
+        <span id="stats"></span>
+        <button id="btn-collapse-all" class="tiny-btn">全折りたたみ</button>
+        <button id="btn-expand-all" class="tiny-btn">全展開</button>
+      </div>
+      <div id="output" class="output"></div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

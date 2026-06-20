@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pomodoro Timer</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🍅 Pomodoro</h1>
+
+    <div class="mode-tabs">
+      <span id="tab-work" class="tab active">集中</span>
+      <span id="tab-shortBreak" class="tab">短休憩</span>
+      <span id="tab-longBreak" class="tab">長休憩</span>
+    </div>
+
+    <div class="timer-ring">
+      <svg viewBox="0 0 120 120" class="ring-svg">
+        <circle class="ring-bg" cx="60" cy="60" r="54"/>
+        <circle class="ring-progress" id="ring-progress" cx="60" cy="60" r="54"/>
+      </svg>
+      <div class="timer-display" id="timer-display">25:00</div>
+    </div>
+
+    <div class="controls">
+      <button id="btn-reset" class="btn btn-secondary" title="リセット">↺</button>
+      <button id="btn-start" class="btn btn-primary">スタート</button>
+      <button id="btn-skip" class="btn btn-secondary" title="スキップ">⏭</button>
+    </div>
+
+    <div class="stats">
+      <span>今日のポモドーロ: <strong id="pomodoro-count">0</strong></span>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Clipboard History</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>📋 Clipboard History</h1>
+      <button id="btn-clear-all" title="全削除">🗑</button>
+    </div>
+    <input type="text" id="search" placeholder="履歴を検索...">
+    <div id="list" class="list"></div>
+    <div id="empty" class="empty hidden">履歴がありません</div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Word Counter</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>📝 Word Counter</h1>
+      <button id="btn-clear">クリア</button>
+    </div>
+
+    <textarea id="text-input" placeholder="テキストをここに入力または貼り付け..."></textarea>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-value" id="chars">0</div>
+        <div class="stat-label">文字数</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="chars-nospace">0</div>
+        <div class="stat-label">文字数（スペース除く）</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="words">0</div>
+        <div class="stat-label">語数</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="sentences">0</div>
+        <div class="stat-label">文数</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="lines">0</div>
+        <div class="stat-label">行数</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="paragraphs">0</div>
+        <div class="stat-label">段落数</div>
+      </div>
+      <div class="stat-card wide">
+        <div class="stat-value" id="reading-time">0秒</div>
+        <div class="stat-label">読了時間 (250語/分)</div>
+      </div>
+      <div class="stat-card wide">
+        <div class="stat-value" id="speaking-time">0秒</div>
+        <div class="stat-label">スピーチ時間 (130語/分)</div>
+      </div>
+    </div>
+
+    <div class="limits-section">
+      <div class="limits-label">文字数制限チェック</div>
+      <div class="limits-grid" id="limits-grid"></div>
+    </div>
+
+    <div class="top-words-section">
+      <div class="limits-label">よく使う単語</div>
+      <div id="top-words" class="top-words"></div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

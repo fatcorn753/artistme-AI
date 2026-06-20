@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Number Base Converter</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🔢 Base Converter</h1>
+
+    <div class="mode-tabs">
+      <button class="tab active" data-tab="bases">進数変換</button>
+      <button class="tab" data-tab="bitops">ビット演算</button>
+      <button class="tab" data-tab="color">カラー</button>
+      <button class="tab" data-tab="ascii">ASCII</button>
+    </div>
+
+    <!-- Number bases -->
+    <div id="tab-bases" class="tab-panel">
+      <div class="base-rows" id="base-rows"></div>
+      <div class="bit-display" id="bit-display"></div>
+    </div>
+
+    <!-- Bit operations -->
+    <div id="tab-bitops" class="tab-panel hidden">
+      <div class="bitop-row">
+        <label>A (10進)</label>
+        <input type="text" id="bit-a" placeholder="42" value="42">
+      </div>
+      <div class="bitop-row">
+        <label>B (10進)</label>
+        <input type="text" id="bit-b" placeholder="15" value="15">
+      </div>
+      <div id="bitop-results" class="bitop-results"></div>
+    </div>
+
+    <!-- Color converter -->
+    <div id="tab-color" class="tab-panel hidden">
+      <div class="color-preview-row">
+        <div class="color-swatch" id="color-swatch"></div>
+        <div class="color-inputs">
+          <div class="base-row">
+            <span class="base-label">HEX</span>
+            <input type="text" id="color-hex" placeholder="#FF6B6B" value="#FF6B6B" spellcheck="false">
+            <button class="copy-val-btn" data-src="color-hex">⎘</button>
+          </div>
+          <div class="base-row">
+            <span class="base-label">RGB</span>
+            <input type="text" id="color-rgb" placeholder="255, 107, 107" readonly>
+            <button class="copy-val-btn" data-src="color-rgb">⎘</button>
+          </div>
+          <div class="base-row">
+            <span class="base-label">HSL</span>
+            <input type="text" id="color-hsl" placeholder="0°, 100%, 71%" readonly>
+            <button class="copy-val-btn" data-src="color-hsl">⎘</button>
+          </div>
+          <div class="base-row">
+            <span class="base-label">INT</span>
+            <input type="text" id="color-int" placeholder="16739691" readonly>
+            <button class="copy-val-btn" data-src="color-int">⎘</button>
+          </div>
+        </div>
+      </div>
+      <input type="color" id="color-picker" style="display:none">
+      <button id="btn-open-picker" class="full-btn">カラーピッカーを開く</button>
+    </div>
+
+    <!-- ASCII table -->
+    <div id="tab-ascii" class="tab-panel hidden">
+      <input type="text" id="ascii-input" placeholder="文字またはASCIIコードを入力..." maxlength="10">
+      <div id="ascii-result" class="ascii-result"></div>
+      <div class="ascii-table-title">ASCII表 (32-126)</div>
+      <div id="ascii-table" class="ascii-table"></div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

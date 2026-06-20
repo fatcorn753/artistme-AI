@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>IP Address Info</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🌐 IP Address Info</h1>
+
+    <div class="search-row">
+      <input type="text" id="ip-input" placeholder="8.8.8.8 (空白で自分のIPを検索)">
+      <button id="btn-lookup">検索</button>
+      <button id="btn-myip" title="自分のIPを確認">📍</button>
+    </div>
+
+    <div id="loading" class="loading hidden">取得中...</div>
+    <div id="error-msg" class="error hidden"></div>
+
+    <div id="result" class="result hidden">
+      <div class="ip-header">
+        <div class="ip-badge" id="ip-display"></div>
+        <div class="ip-type" id="ip-type"></div>
+      </div>
+
+      <div class="info-grid" id="info-grid"></div>
+
+      <div class="map-section hidden" id="map-section">
+        <div class="map-title">座標</div>
+        <div class="coords" id="coords"></div>
+        <a id="map-link" href="#" class="map-btn" target="_blank">🗺 Google Mapsで開く</a>
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Typing Speed Test</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>⌨️ Typing Speed Test</h1>
+      <div class="mode-btns">
+        <button class="mode-btn active" data-mode="en">英語</button>
+        <button class="mode-btn" data-mode="jp">日本語</button>
+        <button class="mode-btn" data-mode="code">Code</button>
+      </div>
+    </div>
+
+    <!-- Stats row -->
+    <div class="stats-row">
+      <div class="stat-box">
+        <div class="stat-val" id="wpm">0</div>
+        <div class="stat-lbl">WPM</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val" id="accuracy">100%</div>
+        <div class="stat-lbl">正確率</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val" id="timer">30</div>
+        <div class="stat-lbl">残り秒</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val accent" id="best">0</div>
+        <div class="stat-lbl">最高WPM</div>
+      </div>
+    </div>
+
+    <!-- Text display -->
+    <div id="text-display" class="text-display"></div>
+
+    <!-- Input -->
+    <input type="text" id="type-input" placeholder="ここに入力してテスト開始..." autocomplete="off" autocorrect="off" spellcheck="false">
+
+    <!-- Result overlay -->
+    <div id="result-panel" class="result-panel hidden">
+      <div class="result-title">🎉 テスト完了！</div>
+      <div class="result-stats">
+        <div class="r-stat"><span class="r-val" id="r-wpm">—</span><span class="r-lbl">WPM</span></div>
+        <div class="r-stat"><span class="r-val" id="r-acc">—</span><span class="r-lbl">正確率</span></div>
+        <div class="r-stat"><span class="r-val" id="r-chars">—</span><span class="r-lbl">文字</span></div>
+      </div>
+      <div class="r-best" id="r-best-msg"></div>
+      <button id="btn-retry" class="retry-btn">もう一度</button>
+    </div>
+
+    <!-- Duration selector -->
+    <div class="duration-row">
+      <span class="dur-label">時間:</span>
+      <button class="dur-btn" data-sec="15">15秒</button>
+      <button class="dur-btn active" data-sec="30">30秒</button>
+      <button class="dur-btn" data-sec="60">60秒</button>
+      <button class="dur-btn" data-sec="120">2分</button>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

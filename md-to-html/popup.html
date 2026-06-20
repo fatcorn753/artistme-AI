@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Markdown to HTML</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Ⓜ Markdown → HTML</h1>
+      <div class="header-actions">
+        <label class="toggle-label">
+          <input type="checkbox" id="include-style">スタイル含む
+        </label>
+        <select id="theme-select">
+          <option value="github">GitHub</option>
+          <option value="dark">ダーク</option>
+          <option value="minimal">シンプル</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="panes">
+      <div class="pane">
+        <div class="pane-header">
+          <span>Markdown</span>
+          <button id="btn-clear-md" class="tiny-btn">クリア</button>
+        </div>
+        <textarea id="md-input" placeholder="# Hello World&#10;&#10;**Markdown** を入力...&#10;&#10;- リスト1&#10;- リスト2"></textarea>
+      </div>
+
+      <div class="pane">
+        <div class="pane-header">
+          <span>出力</span>
+          <div class="output-tabs">
+            <button class="out-tab active" data-view="preview">プレビュー</button>
+            <button class="out-tab" data-view="html">HTML</button>
+          </div>
+        </div>
+
+        <div id="preview-pane" class="preview-pane"></div>
+        <textarea id="html-output" class="html-output hidden" readonly></textarea>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span id="stats" class="stats"></span>
+      <div class="footer-actions">
+        <button id="btn-copy-html" class="action-btn">HTML コピー</button>
+        <button id="btn-copy-full" class="action-btn accent">完全なHTMLをコピー</button>
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

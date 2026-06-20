@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Text Diff</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>↔ Text Diff</h1>
+      <div class="header-controls">
+        <label class="toggle-label">
+          <input type="checkbox" id="word-diff">
+          <span>単語単位</span>
+        </label>
+        <label class="toggle-label">
+          <input type="checkbox" id="ignore-case">
+          <span>大小無視</span>
+        </label>
+        <label class="toggle-label">
+          <input type="checkbox" id="ignore-space">
+          <span>空白無視</span>
+        </label>
+        <button id="btn-swap" title="入れ替え">⇄</button>
+        <button id="btn-clear">クリア</button>
+      </div>
+    </div>
+
+    <div class="editors">
+      <div class="editor-col">
+        <div class="editor-label">オリジナル</div>
+        <textarea id="text-a" placeholder="元のテキストを入力..."></textarea>
+      </div>
+      <div class="editor-col">
+        <div class="editor-label">変更後</div>
+        <textarea id="text-b" placeholder="変更後のテキストを入力..."></textarea>
+      </div>
+    </div>
+
+    <div id="stats-bar" class="stats-bar hidden">
+      <span id="stat-add" class="stat added">+0</span>
+      <span id="stat-del" class="stat deleted">-0</span>
+      <span id="stat-same" class="stat same">±0</span>
+      <span id="stat-pct" class="stat pct"></span>
+    </div>
+
+    <div id="diff-output" class="diff-output hidden">
+      <div id="diff-content"></div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

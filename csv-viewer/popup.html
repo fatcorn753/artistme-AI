@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>CSV Viewer</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>📊 CSV Viewer</h1>
+      <div class="header-actions">
+        <button id="btn-open">📂 開く</button>
+        <button id="btn-clear">クリア</button>
+      </div>
+    </div>
+
+    <div id="input-section" class="input-section">
+      <textarea id="csv-input" placeholder="CSVテキストをここに貼り付け、またはファイルを開く...&#10;&#10;例:&#10;名前,年齢,都市&#10;田中,28,東京&#10;佐藤,34,大阪" rows="6" spellcheck="false"></textarea>
+      <div class="input-actions">
+        <label class="sep-label">区切り文字:
+          <select id="delimiter">
+            <option value=",">カンマ (,)</option>
+            <option value="	">タブ (\t)</option>
+            <option value=";">セミコロン (;)</option>
+            <option value="|">パイプ (|)</option>
+          </select>
+        </label>
+        <button id="btn-parse" class="parse-btn">表示 →</button>
+      </div>
+      <div id="parse-error" class="error"></div>
+    </div>
+
+    <div id="table-section" class="table-section hidden">
+      <div class="table-toolbar">
+        <input type="text" id="search-input" placeholder="検索...">
+        <span id="row-count" class="count-label"></span>
+        <button id="btn-back" class="small-btn">← 戻る</button>
+        <button id="btn-copy-csv" class="small-btn">コピー</button>
+      </div>
+      <div id="stats-bar" class="stats-bar"></div>
+      <div class="table-wrapper">
+        <table id="csv-table">
+          <thead id="csv-thead"></thead>
+          <tbody id="csv-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <input type="file" id="file-input" accept=".csv,.tsv,.txt" style="display:none">
+  <script src="popup.js"></script>
+</body>
+</html>

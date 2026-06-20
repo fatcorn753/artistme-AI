@@ -1,0 +1,83 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #111827; color: #f3f4f6;
+  min-width: 320px;
+}
+
+/* Home screen */
+.home-screen { padding: 16px; display: flex; flex-direction: column; gap: 10px; width: 320px; }
+.home-screen h1 { font-size: 16px; color: #f472b6; }
+.description { font-size: 12px; color: #6b7280; line-height: 1.5; }
+
+.capture-btn {
+  width: 100%; padding: 12px; background: #be185d; border: none; border-radius: 9px;
+  color: white; font-size: 14px; font-weight: 700; cursor: pointer; transition: all 0.2s;
+}
+.capture-btn:hover { background: #db2777; }
+
+.error { font-size: 11px; color: #f87171; }
+.hidden { display: none; }
+
+.saved-label { font-size: 10px; color: #4b5563; text-transform: uppercase; letter-spacing: 0.05em; }
+.saved-list { display: flex; flex-direction: column; gap: 5px; max-height: 200px; overflow-y: auto; }
+.saved-item {
+  display: flex; align-items: center; gap: 8px;
+  background: #1f2937; border: 1px solid #374151; border-radius: 7px; padding: 6px 8px;
+  cursor: pointer; transition: border-color 0.15s;
+}
+.saved-item:hover { border-color: #f472b6; }
+.saved-thumb { width: 48px; height: 32px; object-fit: cover; border-radius: 4px; flex-shrink: 0; }
+.saved-info { flex: 1; overflow: hidden; }
+.saved-name { font-size: 11px; color: #e5e7eb; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.saved-date { font-size: 10px; color: #6b7280; }
+.saved-del { background: none; border: none; color: #374151; cursor: pointer; font-size: 14px; padding: 2px; }
+.saved-del:hover { color: #f87171; }
+
+/* Editor screen */
+.editor-screen { display: flex; flex-direction: column; width: 100%; min-width: 600px; }
+.editor-screen.hidden { display: none; }
+
+.editor-toolbar {
+  display: flex; align-items: center; gap: 8px; padding: 6px 10px;
+  background: #1f2937; border-bottom: 1px solid #374151; flex-wrap: wrap;
+}
+.tool-group { display: flex; align-items: center; gap: 3px; }
+
+.tool-btn {
+  width: 30px; height: 30px; background: #374151; border: 1px solid #4b5563;
+  border-radius: 6px; color: #9ca3af; font-size: 14px; cursor: pointer; transition: all 0.15s;
+  display: flex; align-items: center; justify-content: center;
+}
+.tool-btn.active { background: #be185d; border-color: #f472b6; color: white; }
+.tool-btn:hover:not(.active) { background: #4b5563; color: white; }
+
+input[type="color"] {
+  width: 30px; height: 30px; border: 1px solid #4b5563; border-radius: 6px;
+  cursor: pointer; padding: 2px; background: #374151;
+}
+input[type="range"] { width: 70px; accent-color: #f472b6; cursor: pointer; }
+
+.icon-btn {
+  width: 30px; height: 30px; background: #374151; border: 1px solid #4b5563;
+  border-radius: 6px; color: #9ca3af; font-size: 14px; cursor: pointer;
+}
+.icon-btn:hover { background: #4b5563; color: white; }
+
+.save-btn {
+  padding: 5px 10px; background: #1e3a2e; border: 1px solid #4ade80;
+  border-radius: 6px; color: #4ade80; font-size: 11px; font-weight: 700; cursor: pointer;
+}
+.save-btn:hover { background: #14532d; }
+.back-btn {
+  padding: 5px 10px; background: #1f2937; border: 1px solid #374151;
+  border-radius: 6px; color: #6b7280; font-size: 11px; cursor: pointer;
+}
+.back-btn:hover { color: #e5e7eb; border-color: #6b7280; }
+
+.canvas-wrap {
+  position: relative; overflow: auto; background: #111827;
+  max-height: calc(100vh - 60px); cursor: crosshair;
+}
+#base-canvas { display: block; }
+#ann-canvas  { position: absolute; top: 0; left: 0; cursor: crosshair; }

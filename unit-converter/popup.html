@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Unit Converter</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>⚖️ Unit Converter</h1>
+
+    <div class="category-tabs" id="category-tabs"></div>
+
+    <div class="converter">
+      <div class="input-row">
+        <input type="number" id="from-value" placeholder="0" step="any">
+        <select id="from-unit"></select>
+      </div>
+      <button id="btn-swap" class="swap-btn" title="入れ替え">⇅</button>
+      <div class="input-row">
+        <input type="number" id="to-value" placeholder="0" step="any" readonly>
+        <select id="to-unit"></select>
+      </div>
+      <button id="btn-copy-result" class="copy-result-btn">結果をコピー</button>
+    </div>
+
+    <div class="all-results" id="all-results"></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

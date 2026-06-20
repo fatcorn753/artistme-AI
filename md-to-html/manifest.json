@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Markdown to HTML",
+  "version": "1.0.0",
+  "description": "MarkdownをリアルタイムでHTMLに変換。プレビュー表示、クリーンなHTML出力、テーマ切替付き。",
+  "permissions": ["storage", "clipboardWrite"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

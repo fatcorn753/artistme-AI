@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>新しいタブ</title>
+  <link rel="stylesheet" href="newtab.css">
+</head>
+<body>
+  <div id="ntp-contents">
+    <!-- ドゥードゥル（静止ロゴのみ） -->
+    <div id="logo">
+      <img
+        id="doodle-static"
+        src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
+        alt="Google"
+        width="272"
+        height="92"
+      >
+    </div>
+
+    <!-- 検索バー -->
+    <form id="search-form" action="https://www.google.com/search" method="GET" target="_self">
+      <div id="search-box">
+        <svg id="search-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <path fill="#9aa0a6" d="M20.49 19l-5.73-5.73C15.53 12.2 16 10.91 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.41 0 2.7-.47 3.77-1.24L19 20.49 20.49 19zM5 9.5C5 7.01 7.01 5 9.5 5S14 7.01 14 9.5 11.99 14 9.5 14 5 11.99 5 9.5z"/>
+        </svg>
+        <input
+          id="search-input"
+          type="text"
+          name="q"
+          placeholder=""
+          autocomplete="off"
+          autofocus
+        >
+        <button id="search-submit" type="submit" aria-label="Google 検索">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+            <path fill="#9aa0a6" d="M20.49 19l-5.73-5.73C15.53 12.2 16 10.91 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.41 0 2.7-.47 3.77-1.24L19 20.49 20.49 19z"/>
+          </svg>
+        </button>
+      </div>
+    </form>
+
+    <!-- ショートカットリンク -->
+    <div id="shortcuts">
+      <a class="shortcut" href="https://www.youtube.com" title="YouTube">
+        <div class="shortcut-icon" style="background:#ff0000">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path fill="#fff" d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/>
+          </svg>
+        </div>
+        <span>YouTube</span>
+      </a>
+      <a class="shortcut" href="https://mail.google.com" title="Gmail">
+        <div class="shortcut-icon" style="background:#fff; border:1px solid #ddd">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path fill="#EA4335" d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+          </svg>
+        </div>
+        <span>Gmail</span>
+      </a>
+    </div>
+  </div>
+
+  <script src="newtab.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>HTTP Tester</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🌐 HTTP Tester</h1>
+
+    <!-- URL bar -->
+    <div class="url-bar">
+      <select id="method">
+        <option>GET</option><option>POST</option><option>PUT</option>
+        <option>PATCH</option><option>DELETE</option><option>HEAD</option>
+      </select>
+      <input type="text" id="url" placeholder="https://api.example.com/endpoint">
+      <button id="btn-send" class="send-btn">送信</button>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab active" data-tab="headers">ヘッダー</button>
+      <button class="tab" data-tab="body">ボディ</button>
+      <button class="tab" data-tab="history">履歴</button>
+    </div>
+
+    <div id="tab-headers" class="tab-panel">
+      <div id="headers-list" class="kv-list"></div>
+      <button id="btn-add-header" class="add-btn">+ ヘッダー追加</button>
+    </div>
+
+    <div id="tab-body" class="tab-panel hidden">
+      <div class="body-type-row">
+        <label><input type="radio" name="body-type" value="none" checked> なし</label>
+        <label><input type="radio" name="body-type" value="json"> JSON</label>
+        <label><input type="radio" name="body-type" value="form"> Form</label>
+        <label><input type="radio" name="body-type" value="text"> Text</label>
+      </div>
+      <textarea id="body-input" placeholder='{"key": "value"}' rows="5" spellcheck="false"></textarea>
+    </div>
+
+    <div id="tab-history" class="tab-panel hidden">
+      <div id="history-list" class="history-list"></div>
+    </div>
+
+    <!-- Response -->
+    <div id="response-section" class="response-section hidden">
+      <div class="response-header">
+        <span id="status-badge" class="status-badge">—</span>
+        <span id="response-time" class="response-meta"></span>
+        <span id="response-size" class="response-meta"></span>
+        <button id="btn-copy-response" class="small-btn">コピー</button>
+      </div>
+      <div class="resp-tabs">
+        <button class="resp-tab active" data-rtab="body">Body</button>
+        <button class="resp-tab" data-rtab="resp-headers">Headers</button>
+      </div>
+      <div id="rtab-body" class="response-body"></div>
+      <div id="rtab-resp-headers" class="response-body hidden"></div>
+    </div>
+
+    <div id="loading" class="loading hidden">送信中...</div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

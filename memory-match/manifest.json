@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Memory Match",
+  "version": "1.0.0",
+  "description": "絵文字の神経衰弱ゲーム。4x4/5x4/6x4の3難易度、タイム計測、最高記録保存。",
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

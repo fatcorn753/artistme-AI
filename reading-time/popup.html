@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Reading Time</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>📖 Reading Time</h1>
+
+    <div id="loading" class="loading">ページを解析中...</div>
+
+    <div id="result" class="result hidden">
+      <div class="time-display">
+        <span id="time-value" class="time-value">--</span>
+        <span class="time-unit">分</span>
+      </div>
+      <div class="time-label">推定読了時間</div>
+
+      <div class="stats-grid">
+        <div class="stat-box">
+          <div class="stat-value" id="word-count">—</div>
+          <div class="stat-label">語数</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value" id="char-count">—</div>
+          <div class="stat-label">文字数</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value" id="sentence-count">—</div>
+          <div class="stat-label">文数</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value" id="paragraph-count">—</div>
+          <div class="stat-label">段落数</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="settings">
+      <label class="settings-label">読書速度（語/分）</label>
+      <div class="speed-row">
+        <input type="range" id="wpm" min="100" max="800" value="250" step="50">
+        <span id="wpm-display">250 wpm</span>
+      </div>
+      <div class="speed-presets">
+        <button class="speed-preset" data-wpm="150">遅い</button>
+        <button class="speed-preset active" data-wpm="250">普通</button>
+        <button class="speed-preset" data-wpm="400">速い</button>
+        <button class="speed-preset" data-wpm="600">速読</button>
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Password Generator</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🔐 Password Generator</h1>
+
+    <div class="output-section">
+      <div id="password-display" class="password-display">クリックして生成</div>
+      <button id="btn-copy" class="icon-btn" title="コピー">⎘</button>
+      <button id="btn-regen" class="icon-btn spin-on-click" title="再生成">↻</button>
+    </div>
+
+    <div class="strength-bar-wrap">
+      <div class="strength-bar">
+        <div id="strength-fill" class="strength-fill"></div>
+      </div>
+      <span id="strength-label" class="strength-label">—</span>
+    </div>
+
+    <div class="settings">
+      <div class="setting-row">
+        <label>長さ: <strong id="len-display">16</strong></label>
+        <input type="range" id="length" min="6" max="64" value="16">
+      </div>
+
+      <div class="checkboxes">
+        <label><input type="checkbox" id="upper" checked> 大文字 (A-Z)</label>
+        <label><input type="checkbox" id="lower" checked> 小文字 (a-z)</label>
+        <label><input type="checkbox" id="numbers" checked> 数字 (0-9)</label>
+        <label><input type="checkbox" id="symbols" checked> 記号 (!@#…)</label>
+        <label><input type="checkbox" id="exclude-ambiguous"> 紛らわしい文字を除外 (0,O,l,1)</label>
+      </div>
+    </div>
+
+    <div class="history-section">
+      <div class="history-header">
+        <span>履歴</span>
+        <button id="btn-clear-history" class="tiny">クリア</button>
+      </div>
+      <div id="history-list" class="history-list"></div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

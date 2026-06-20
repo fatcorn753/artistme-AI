@@ -1,0 +1,114 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #fff;
+  font-family: arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+#ntp-contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  margin-top: -80px;
+}
+
+/* ロゴ */
+#logo {
+  display: flex;
+  justify-content: center;
+}
+
+#doodle-static {
+  display: block;
+}
+
+/* 検索バー */
+#search-box {
+  display: flex;
+  align-items: center;
+  width: 580px;
+  height: 46px;
+  border: 1px solid #dfe1e5;
+  border-radius: 24px;
+  padding: 0 14px;
+  background: #fff;
+  box-shadow: none;
+  transition: box-shadow 0.2s;
+}
+
+#search-box:focus-within {
+  box-shadow: 0 1px 6px rgba(32,33,36,.28);
+  border-color: rgba(223,225,229,0);
+}
+
+#search-icon {
+  flex-shrink: 0;
+  margin-right: 12px;
+}
+
+#search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #202124;
+  background: transparent;
+}
+
+#search-submit {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+}
+
+/* ショートカット */
+#shortcuts {
+  display: flex;
+  gap: 16px;
+}
+
+.shortcut {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  width: 72px;
+  cursor: pointer;
+}
+
+.shortcut-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+
+.shortcut:hover .shortcut-icon {
+  filter: brightness(0.92);
+}
+
+.shortcut span {
+  font-size: 12px;
+  color: #202124;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}

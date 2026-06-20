@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Weather Widget",
+  "version": "1.0.0",
+  "description": "現在地または指定都市の天気を表示。Open-Meteo API使用（無料・APIキー不要）。5日間予報付き。",
+  "permissions": ["storage", "geolocation"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

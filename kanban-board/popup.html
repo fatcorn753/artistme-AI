@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Kanban Board</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app">
+    <div class="header">
+      <div class="board-selector">
+        <select id="board-select"></select>
+        <button id="btn-new-board" title="新しいボード">＋</button>
+        <button id="btn-del-board" title="ボードを削除">🗑</button>
+      </div>
+      <span id="card-count" class="count"></span>
+    </div>
+
+    <div class="columns" id="columns">
+      <!-- Columns rendered by JS -->
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

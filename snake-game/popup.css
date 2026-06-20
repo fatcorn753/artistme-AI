@@ -1,0 +1,41 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 380px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #0a0f1a; color: #e2e8f0;
+}
+.container { padding: 12px; display: flex; flex-direction: column; gap: 8px; align-items: center; }
+
+.header { width: 100%; display: flex; align-items: center; justify-content: space-between; }
+h1 { font-size: 16px; color: #4ade80; }
+.header-right { display: flex; gap: 12px; font-size: 12px; color: #64748b; }
+.header-right strong { color: #4ade80; font-size: 14px; }
+
+#game-canvas {
+  border: 2px solid #1e3a1e;
+  border-radius: 8px;
+  display: block;
+  background: #0d1f0d;
+  cursor: none;
+}
+
+.controls { width: 100%; display: flex; flex-direction: column; gap: 6px; }
+
+.difficulty-row { display: flex; gap: 5px; justify-content: center; }
+.diff-btn {
+  flex: 1; padding: 6px; background: #1e293b; border: 1px solid #334155;
+  border-radius: 7px; color: #64748b; font-size: 11px; cursor: pointer; transition: all 0.15s;
+}
+.diff-btn.active { background: #14532d; border-color: #4ade80; color: #4ade80; font-weight: 700; }
+.diff-btn:hover:not(.active) { border-color: #4ade80; color: #4ade80; }
+
+.action-row { display: flex; justify-content: center; }
+.start-btn {
+  width: 100%; padding: 10px; background: #14532d; border: 2px solid #4ade80;
+  border-radius: 8px; color: #4ade80; font-size: 13px; font-weight: 700;
+  cursor: pointer; transition: all 0.2s;
+}
+.start-btn:hover { background: #166534; }
+.start-btn.pause-mode { background: #422006; border-color: #fbbf24; color: #fbbf24; }
+
+.help-text { font-size: 11px; color: #334155; text-align: center; }

@@ -1,0 +1,66 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 340px; max-height: 520px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #0f0f0f; color: #f1f1f1;
+}
+.container { padding: 12px; display: flex; flex-direction: column; gap: 10px; }
+
+.header { display: flex; align-items: center; justify-content: space-between; }
+h1 { font-size: 15px; color: #ff4444; }
+#btn-export-all {
+  background: #272727; border: 1px solid #3d3d3d; border-radius: 6px;
+  color: #aaa; font-size: 11px; padding: 4px 8px; cursor: pointer;
+}
+#btn-export-all:hover { color: #ff4444; border-color: #ff4444; }
+
+.notice {
+  text-align: center; padding: 20px 10px;
+  color: #666; font-size: 12px; line-height: 1.7;
+  border: 1px dashed #333; border-radius: 8px;
+}
+.hidden { display: none; }
+
+.current-video { display: flex; flex-direction: column; gap: 6px; }
+.video-title {
+  font-size: 12px; color: #aaa; line-height: 1.4;
+  max-height: 36px; overflow: hidden;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+}
+
+.timestamps-list { display: flex; flex-direction: column; gap: 3px; max-height: 200px; overflow-y: auto; }
+
+.ts-item {
+  display: flex; align-items: center; gap: 6px;
+  background: #1a1a1a; border: 1px solid #2d2d2d; border-radius: 7px;
+  padding: 6px 8px; cursor: pointer; transition: border-color 0.15s;
+}
+.ts-item:hover { border-color: #ff4444; }
+.ts-time { font-size: 13px; font-weight: 700; color: #ff4444; min-width: 46px; font-variant-numeric: tabular-nums; }
+.ts-note { flex: 1; font-size: 11px; color: #ccc; }
+.ts-note-input {
+  flex: 1; background: #252525; border: 1px solid #3d3d3d; border-radius: 4px;
+  color: #f1f1f1; font-size: 11px; padding: 2px 5px; outline: none;
+}
+.ts-note-input:focus { border-color: #ff4444; }
+.ts-del { background: none; border: none; color: #444; cursor: pointer; font-size: 13px; padding: 0 2px; }
+.ts-del:hover { color: #f87171; }
+
+.video-actions { display: flex; gap: 5px; }
+.small-btn {
+  flex: 1; padding: 5px; background: #1a1a1a; border: 1px solid #2d2d2d;
+  border-radius: 6px; color: #888; font-size: 11px; cursor: pointer; transition: all 0.15s;
+}
+.small-btn:hover { color: #f1f1f1; border-color: #555; }
+.small-btn.danger:hover { color: #f87171; border-color: #f87171; }
+
+.section-label { font-size: 10px; color: #444; text-transform: uppercase; letter-spacing: 0.05em; }
+.history-list { display: flex; flex-direction: column; gap: 3px; max-height: 120px; overflow-y: auto; }
+.history-item {
+  display: flex; align-items: center; gap: 6px;
+  padding: 5px 7px; background: #1a1a1a; border: 1px solid #2d2d2d;
+  border-radius: 6px; cursor: pointer; transition: border-color 0.15s;
+}
+.history-item:hover { border-color: #ff4444; }
+.history-title { flex: 1; font-size: 11px; color: #aaa; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.history-count { font-size: 10px; color: #555; flex-shrink: 0; }

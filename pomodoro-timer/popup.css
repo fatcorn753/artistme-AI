@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 280px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #1a1a2e;
+  color: #eee;
+}
+
+.container {
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 20px;
+  margin-bottom: 16px;
+  color: #ff6b6b;
+}
+
+.mode-tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 20px;
+  background: #16213e;
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.tab {
+  flex: 1;
+  padding: 6px 4px;
+  font-size: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #888;
+}
+
+.tab.active {
+  background: #ff6b6b;
+  color: white;
+  font-weight: 600;
+}
+
+.timer-ring {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 20px;
+}
+
+.ring-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.ring-bg {
+  fill: none;
+  stroke: #16213e;
+  stroke-width: 8;
+}
+
+.ring-progress {
+  fill: none;
+  stroke: #ff6b6b;
+  stroke-width: 8;
+  stroke-linecap: round;
+  stroke-dasharray: 339.3;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 0.5s ease, stroke 0.3s;
+}
+
+.ring-progress.break {
+  stroke: #4ecdc4;
+}
+
+.timer-display {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 36px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 2px;
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.btn {
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 18px;
+}
+
+.btn-primary {
+  width: 72px;
+  height: 72px;
+  background: #ff6b6b;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.btn-primary:hover {
+  background: #ff5252;
+  transform: scale(1.05);
+}
+
+.btn-primary.running {
+  background: #ffa726;
+}
+
+.btn-secondary {
+  width: 44px;
+  height: 44px;
+  background: #16213e;
+  color: #ccc;
+}
+
+.btn-secondary:hover {
+  background: #0f3460;
+  color: white;
+}
+
+.stats {
+  font-size: 13px;
+  color: #888;
+}
+
+.stats strong {
+  color: #ff6b6b;
+}

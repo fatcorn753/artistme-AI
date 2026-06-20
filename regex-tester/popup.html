@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Regex Tester</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>⚡ Regex Tester</h1>
+
+    <div class="regex-input-row">
+      <span class="slash">/</span>
+      <input type="text" id="pattern" placeholder="正規表現パターン" spellcheck="false">
+      <span class="slash">/</span>
+      <input type="text" id="flags" value="gi" maxlength="6" class="flags-input" spellcheck="false">
+    </div>
+    <div id="regex-error" class="regex-error"></div>
+
+    <textarea id="test-string" placeholder="テスト文字列をここに入力..." rows="5" spellcheck="false"></textarea>
+
+    <div class="stats-row">
+      <span id="match-count" class="match-count">マッチなし</span>
+      <div class="flag-toggles">
+        <button class="flag-btn active" data-flag="g">g</button>
+        <button class="flag-btn active" data-flag="i">i</button>
+        <button class="flag-btn" data-flag="m">m</button>
+        <button class="flag-btn" data-flag="s">s</button>
+      </div>
+    </div>
+
+    <div id="highlight-output" class="highlight-output"></div>
+
+    <div class="groups-section hidden" id="groups-section">
+      <div class="section-label">キャプチャグループ</div>
+      <div id="groups-list" class="groups-list"></div>
+    </div>
+
+    <div class="patterns-section">
+      <div class="section-label">よく使うパターン</div>
+      <div class="patterns-grid" id="patterns-grid"></div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

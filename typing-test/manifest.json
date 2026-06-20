@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Typing Speed Test",
+  "version": "1.0.0",
+  "description": "タイピング速度テスト。WPM・正確率・最高記録を測定。英語・日本語・プログラミングの3モード。",
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

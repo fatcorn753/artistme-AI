@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Todo List</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <h1>✅ Todo List</h1>
+      <div class="header-right">
+        <span id="count-badge" class="count-badge">0件</span>
+        <button id="btn-clear-done" class="icon-btn" title="完了済みを削除">🗑</button>
+      </div>
+    </div>
+
+    <!-- Add form -->
+    <div class="add-form">
+      <input type="text" id="new-todo" placeholder="新しいタスクを追加... (Enter で追加)">
+      <div class="add-options">
+        <select id="priority">
+          <option value="none">優先度</option>
+          <option value="high">🔴 高</option>
+          <option value="mid">🟡 中</option>
+          <option value="low">🔵 低</option>
+        </select>
+        <input type="date" id="due-date" title="期限">
+        <input type="text" id="tag-input" placeholder="#タグ" style="width:70px">
+      </div>
+    </div>
+
+    <!-- Filter bar -->
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">全て</button>
+      <button class="filter-btn" data-filter="active">未完了</button>
+      <button class="filter-btn" data-filter="done">完了</button>
+      <button class="filter-btn" data-filter="today">今日期限</button>
+      <input type="text" id="search-todo" placeholder="🔍 検索">
+    </div>
+
+    <!-- Todo list -->
+    <div id="todo-list" class="todo-list"></div>
+
+    <!-- Stats -->
+    <div class="footer">
+      <div class="progress-bar"><div id="progress-fill" class="progress-fill"></div></div>
+      <span id="progress-label" class="progress-label">0 / 0</span>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

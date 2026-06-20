@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Color Picker</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🎨 Color Picker</h1>
+
+    <div class="color-input-section">
+      <div class="preview-box" id="preview-box"></div>
+      <input type="color" id="color-input" value="#ff6b6b">
+    </div>
+
+    <div class="formats">
+      <div class="format-row" id="hex-row">
+        <span class="label">HEX</span>
+        <span class="value" id="hex-value">#FF6B6B</span>
+        <button class="copy-btn" data-target="hex-value">コピー</button>
+      </div>
+      <div class="format-row" id="rgb-row">
+        <span class="label">RGB</span>
+        <span class="value" id="rgb-value">rgb(255, 107, 107)</span>
+        <button class="copy-btn" data-target="rgb-value">コピー</button>
+      </div>
+      <div class="format-row" id="hsl-row">
+        <span class="label">HSL</span>
+        <span class="value" id="hsl-value">hsl(0, 100%, 71%)</span>
+        <button class="copy-btn" data-target="hsl-value">コピー</button>
+      </div>
+    </div>
+
+    <div class="palette-section">
+      <div class="palette-header">
+        <span>保存済みカラー</span>
+        <button id="save-btn">保存</button>
+      </div>
+      <div class="palette" id="palette"></div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

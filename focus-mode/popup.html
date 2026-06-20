@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Focus Mode</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🎯 Focus Mode</h1>
+
+    <div id="idle-view">
+      <div class="duration-section">
+        <label>集中時間</label>
+        <div class="duration-presets">
+          <button class="preset" data-min="25">25分</button>
+          <button class="preset" data-min="45">45分</button>
+          <button class="preset" data-min="60">60分</button>
+          <button class="preset" data-min="90">90分</button>
+        </div>
+        <div class="custom-duration">
+          <input type="number" id="custom-min" min="1" max="480" placeholder="カスタム" value="">
+          <span>分</span>
+        </div>
+      </div>
+
+      <div class="blocklist-section">
+        <label>ブロックするサイト</label>
+        <div class="default-sites">
+          <label><input type="checkbox" value="twitter.com" checked> Twitter / X</label>
+          <label><input type="checkbox" value="youtube.com" checked> YouTube</label>
+          <label><input type="checkbox" value="reddit.com" checked> Reddit</label>
+          <label><input type="checkbox" value="facebook.com"> Facebook</label>
+          <label><input type="checkbox" value="instagram.com"> Instagram</label>
+          <label><input type="checkbox" value="tiktok.com"> TikTok</label>
+        </div>
+        <div class="custom-site">
+          <input type="text" id="custom-site" placeholder="example.com を追加">
+          <button id="btn-add-site">+</button>
+        </div>
+        <div id="custom-list"></div>
+      </div>
+
+      <button id="btn-start" class="btn-start">集中スタート 🚀</button>
+    </div>
+
+    <div id="active-view" class="hidden">
+      <div class="active-timer">
+        <div class="timer-label">残り時間</div>
+        <div id="remaining-time" class="remaining">--:--</div>
+      </div>
+      <div class="blocked-count">
+        <span id="blocked-count">0</span> サイトをブロック中
+      </div>
+      <button id="btn-stop" class="btn-stop">集中モード終了</button>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

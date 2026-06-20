@@ -1,0 +1,57 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 320px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #0d1117; color: #e6edf3;
+}
+.container { padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+h1 { font-size: 15px; color: #58a6ff; }
+
+.search-row { display: flex; gap: 5px; }
+#ip-input {
+  flex: 1; background: #161b22; border: 1px solid #30363d; border-radius: 8px;
+  color: #e6edf3; font-size: 13px; padding: 7px 10px; outline: none; font-family: monospace;
+}
+#ip-input:focus { border-color: #58a6ff; }
+.search-row button {
+  background: #21262d; border: 1px solid #30363d; border-radius: 7px;
+  color: #8b949e; font-size: 12px; padding: 0 10px; cursor: pointer; height: 34px;
+}
+#btn-lookup { background: #0d419d; border-color: #58a6ff; color: #58a6ff; font-weight: 700; }
+#btn-lookup:hover { background: #1158c7; }
+.search-row button:hover { border-color: #58a6ff; color: #58a6ff; }
+
+.loading { text-align: center; color: #484f58; font-size: 12px; padding: 14px; }
+.error { color: #f85149; font-size: 12px; }
+.hidden { display: none; }
+
+.ip-header { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+.ip-badge {
+  font-size: 18px; font-weight: 800; color: #58a6ff; font-family: monospace;
+  background: #0d2242; border: 1px solid #1f6feb; border-radius: 8px; padding: 6px 12px;
+}
+.ip-type { font-size: 11px; color: #484f58; }
+
+.info-grid { display: flex; flex-direction: column; gap: 4px; }
+.info-row {
+  display: flex; align-items: center; gap: 8px;
+  padding: 6px 10px; background: #161b22; border: 1px solid #21262d; border-radius: 7px;
+  cursor: pointer; transition: border-color 0.15s;
+}
+.info-row:hover { border-color: #58a6ff; }
+.info-row.copied { border-color: #3fb950; }
+.info-icon { font-size: 14px; flex-shrink: 0; }
+.info-key { font-size: 11px; color: #484f58; min-width: 60px; flex-shrink: 0; }
+.info-val { font-size: 13px; color: #e6edf3; flex: 1; font-family: monospace; word-break: break-all; }
+.info-copy { font-size: 11px; color: #21262d; }
+.info-row:hover .info-copy { color: #58a6ff; }
+
+.map-section { display: flex; flex-direction: column; gap: 5px; }
+.map-title { font-size: 10px; color: #484f58; text-transform: uppercase; letter-spacing: 0.05em; }
+.coords { font-family: monospace; font-size: 12px; color: #8b949e; }
+.map-btn {
+  align-self: flex-start; background: #21262d; border: 1px solid #30363d; border-radius: 7px;
+  color: #58a6ff; font-size: 12px; padding: 5px 12px; text-decoration: none; cursor: pointer;
+  transition: all 0.15s;
+}
+.map-btn:hover { border-color: #58a6ff; background: #0d2242; }

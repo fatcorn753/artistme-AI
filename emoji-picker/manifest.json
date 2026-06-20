@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Emoji Picker",
+  "version": "1.0.0",
+  "description": "絵文字をすばやく検索・コピー。カテゴリ別表示、よく使う絵文字、スキントーン選択対応。",
+  "permissions": ["storage", "clipboardWrite"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

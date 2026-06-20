@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Code Snippet Manager</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="sidebar-top">
+        <h1>&lt;/&gt; Snippets</h1>
+        <button id="btn-new" title="新規">+</button>
+      </div>
+      <input type="text" id="search-input" placeholder="🔍 検索...">
+      <div class="tag-filters" id="tag-filters"></div>
+      <div class="snippet-list" id="snippet-list"></div>
+    </div>
+
+    <!-- Editor/Viewer -->
+    <div class="main-pane" id="main-pane">
+      <!-- Empty state -->
+      <div id="empty-state" class="empty-state">
+        <div class="empty-icon">&lt;/&gt;</div>
+        <div>スニペットを選択するか</div>
+        <div>+ ボタンで新規作成</div>
+      </div>
+
+      <!-- Edit form -->
+      <div id="edit-form" class="edit-form hidden">
+        <div class="form-header">
+          <input type="text" id="snip-title" placeholder="タイトル..." class="title-input">
+          <div class="form-actions">
+            <button id="btn-save-snip" class="save-btn">保存</button>
+            <button id="btn-delete-snip" class="del-btn">🗑</button>
+            <button id="btn-cancel" class="cancel-btn">✕</button>
+          </div>
+        </div>
+        <div class="meta-row">
+          <select id="snip-lang" class="lang-select">
+            <option value="js">JavaScript</option>
+            <option value="ts">TypeScript</option>
+            <option value="py">Python</option>
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+            <option value="sql">SQL</option>
+            <option value="sh">Shell</option>
+            <option value="json">JSON</option>
+            <option value="md">Markdown</option>
+            <option value="other">その他</option>
+          </select>
+          <input type="text" id="snip-tags" placeholder="#タグ #複数OK" class="tags-input">
+        </div>
+        <textarea id="snip-code" placeholder="コードをここに入力..." spellcheck="false"></textarea>
+        <input type="text" id="snip-desc" placeholder="説明（任意）" class="desc-input">
+      </div>
+
+      <!-- View mode -->
+      <div id="view-pane" class="view-pane hidden">
+        <div class="view-header">
+          <div class="view-title" id="view-title"></div>
+          <div class="view-actions">
+            <button id="btn-copy-snip" class="view-btn copy-btn">⎘ コピー</button>
+            <button id="btn-edit-snip" class="view-btn">✏ 編集</button>
+            <button id="btn-del-view" class="view-btn danger">🗑</button>
+          </div>
+        </div>
+        <div class="view-meta" id="view-meta"></div>
+        <pre id="view-code" class="view-code"></pre>
+        <div class="view-desc" id="view-desc"></div>
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

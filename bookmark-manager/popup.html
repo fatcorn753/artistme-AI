@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Bookmark Manager</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <h1>🔖 Bookmarks</h1>
+      <button id="btn-save-page" class="save-page-btn">+ 現在のページを保存</button>
+    </div>
+
+    <!-- Quick save bar (shown when saving) -->
+    <div id="quick-save" class="quick-save hidden">
+      <div class="qs-url" id="qs-url"></div>
+      <input type="text" id="qs-title" placeholder="タイトル">
+      <input type="text" id="qs-tags" placeholder="#タグ #複数OK">
+      <input type="text" id="qs-note" placeholder="メモ（任意）">
+      <div class="qs-actions">
+        <button id="qs-confirm" class="qs-btn-ok">保存</button>
+        <button id="qs-cancel" class="qs-btn-cancel">キャンセル</button>
+      </div>
+    </div>
+
+    <!-- Search + filter -->
+    <div class="search-row">
+      <input type="text" id="search-input" placeholder="🔍 URLやタイトルを検索...">
+      <select id="sort-select">
+        <option value="newest">新しい順</option>
+        <option value="oldest">古い順</option>
+        <option value="alpha">A→Z</option>
+      </select>
+    </div>
+
+    <!-- Tag filters -->
+    <div class="tag-row" id="tag-row"></div>
+
+    <!-- Bookmarks list -->
+    <div id="bookmark-list" class="bookmark-list"></div>
+
+    <!-- Stats -->
+    <div class="stats-bar" id="stats-bar"></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

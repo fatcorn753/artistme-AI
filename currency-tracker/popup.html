@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Currency Rate Tracker</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app">
+    <div class="header">
+      <h1>📈 Rate Tracker</h1>
+      <button id="btn-refresh" class="refresh-btn" title="更新">↻</button>
+    </div>
+
+    <div class="pair-selector">
+      <select id="base-sel" class="cur-sel"></select>
+      <span class="arrow">→</span>
+      <select id="quote-sel" class="cur-sel"></select>
+      <button id="btn-add-pair" class="add-pair-btn">追跡追加</button>
+    </div>
+
+    <div id="pairs-list" class="pairs-list"></div>
+
+    <div class="chart-section">
+      <div class="chart-header">
+        <span id="chart-title" class="chart-title">ペアを選択してグラフを表示</span>
+        <div class="period-btns">
+          <button class="period-btn active" data-days="7">7日</button>
+          <button class="period-btn" data-days="14">14日</button>
+          <button class="period-btn" data-days="30">30日</button>
+        </div>
+      </div>
+      <canvas id="rate-chart" width="360" height="120"></canvas>
+      <div class="chart-stats" id="chart-stats"></div>
+    </div>
+
+    <div class="alert-section">
+      <div class="section-label">レートアラート</div>
+      <div class="alert-form">
+        <select id="alert-pair-sel" class="cur-sel sm"></select>
+        <select id="alert-dir" class="cur-sel sm">
+          <option value="above">↑ 以上</option>
+          <option value="below">↓ 以下</option>
+        </select>
+        <input type="number" id="alert-rate-input" placeholder="レート" class="rate-input">
+        <button id="btn-add-alert" class="add-pair-btn">設定</button>
+      </div>
+      <div id="alerts-list" class="alerts-list"></div>
+    </div>
+
+    <div class="last-update" id="last-update"></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

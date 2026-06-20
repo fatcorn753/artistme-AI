@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Tab Suspender</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app">
+    <div class="header">
+      <h1>💤 Tab Suspender</h1>
+      <label class="toggle-switch">
+        <input type="checkbox" id="enabled-toggle" checked>
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="stats-row" id="stats-row">
+      <div class="stat"><div class="stat-val" id="total-tabs">0</div><div class="stat-lbl">全タブ</div></div>
+      <div class="stat"><div class="stat-val" id="suspended-tabs">0</div><div class="stat-lbl">スリープ中</div></div>
+      <div class="stat"><div class="stat-val" id="mem-saved">0MB</div><div class="stat-lbl">節約推定</div></div>
+    </div>
+
+    <div class="settings">
+      <div class="setting-row">
+        <label>スリープまでの時間</label>
+        <select id="suspend-after">
+          <option value="5">5分</option>
+          <option value="15">15分</option>
+          <option value="30" selected>30分</option>
+          <option value="60">1時間</option>
+          <option value="120">2時間</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="tabs-list-section">
+      <div class="section-header">
+        <span>タブ一覧</span>
+        <button id="btn-suspend-all" class="action-btn danger">全スリープ</button>
+        <button id="btn-wake-all"    class="action-btn">全復元</button>
+      </div>
+      <div id="tabs-list" class="tabs-list"></div>
+    </div>
+
+    <div class="whitelist-section">
+      <div class="section-header">
+        <span>ホワイトリスト</span>
+        <button id="btn-add-white" class="action-btn">+ 追加</button>
+      </div>
+      <div id="white-list" class="white-list"></div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

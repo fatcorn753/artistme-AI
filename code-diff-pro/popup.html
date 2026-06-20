@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Code Diff Pro</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app">
+    <div class="toolbar">
+      <h1>↔ Code Diff Pro</h1>
+      <div class="toolbar-right">
+        <select id="lang-sel" class="tb-sel">
+          <option value="js">JS/TS</option>
+          <option value="py">Python</option>
+          <option value="css">CSS</option>
+          <option value="html">HTML</option>
+          <option value="json">JSON</option>
+          <option value="text">テキスト</option>
+        </select>
+        <select id="view-mode" class="tb-sel">
+          <option value="split">並列表示</option>
+          <option value="unified">統合表示</option>
+        </select>
+        <label class="cb-label"><input type="checkbox" id="ignore-ws"> 空白無視</label>
+        <label class="cb-label"><input type="checkbox" id="ignore-case"> 大小無視</label>
+      </div>
+    </div>
+
+    <div class="editors" id="editors">
+      <div class="editor-pane">
+        <div class="editor-label">ファイル A（元）</div>
+        <textarea id="code-a" spellcheck="false" placeholder="元のコードを貼り付け..."></textarea>
+      </div>
+      <div class="editor-pane">
+        <div class="editor-label">ファイル B（変更後）</div>
+        <textarea id="code-b" spellcheck="false" placeholder="変更後のコードを貼り付け..."></textarea>
+      </div>
+    </div>
+
+    <div class="action-bar">
+      <button id="btn-diff" class="diff-btn">差分を表示 ▶</button>
+      <div class="diff-stats" id="diff-stats"></div>
+      <button id="btn-copy-patch" class="copy-btn">パッチをコピー</button>
+      <button id="btn-swap" class="copy-btn">⇄ 入れ替え</button>
+    </div>
+
+    <div id="diff-output" class="diff-output"></div>
+  </div>
+  <script src="diff.js"></script>
+</body>
+</html>

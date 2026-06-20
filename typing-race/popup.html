@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Typing Race</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app">
+    <div class="header">
+      <h1>🏎 Typing Race</h1>
+      <div class="header-stats">
+        <span>WPM: <strong id="live-wpm">0</strong></span>
+        <span>精度: <strong id="live-acc">100%</strong></span>
+        <span>⏱ <strong id="live-time">0.0s</strong></span>
+      </div>
+    </div>
+
+    <!-- Race track -->
+    <div class="race-track">
+      <div class="racer player-racer">
+        <span class="racer-icon">🏎</span>
+        <div class="progress-bar-wrap"><div id="player-bar" class="progress-bar player"></div></div>
+        <span class="racer-label">あなた</span>
+      </div>
+      <div class="racer cpu-racer" id="cpu-track">
+        <span class="racer-icon">🤖</span>
+        <div class="progress-bar-wrap"><div id="cpu-bar" class="progress-bar cpu"></div></div>
+        <span class="racer-label" id="cpu-label">CPU</span>
+      </div>
+    </div>
+
+    <!-- Text display -->
+    <div id="text-display" class="text-display"></div>
+
+    <!-- Input -->
+    <input type="text" id="type-input" class="type-input" placeholder="ここに入力してスタート..." autocomplete="off" autocorrect="off" spellcheck="false">
+
+    <!-- Controls -->
+    <div class="controls">
+      <div class="difficulty-row">
+        <button class="diff-btn" data-diff="easy">🐢 初級</button>
+        <button class="diff-btn active" data-diff="medium">🏃 中級</button>
+        <button class="diff-btn" data-diff="hard">⚡ 上級</button>
+        <button class="diff-btn" data-diff="jp">🇯🇵 日本語</button>
+      </div>
+      <div class="cpu-row">
+        <span class="ctrl-label">CPU速度:</span>
+        <input type="range" id="cpu-speed" min="30" max="200" value="80" class="cpu-slider">
+        <span id="cpu-wpm-display">80 WPM</span>
+      </div>
+    </div>
+
+    <!-- Result panel -->
+    <div id="result-panel" class="result-panel hidden">
+      <div class="result-title" id="result-title">🏁 完走！</div>
+      <div class="result-stats" id="result-stats"></div>
+      <div class="records" id="records"></div>
+      <button id="btn-retry" class="retry-btn">もう一度</button>
+    </div>
+
+    <div class="best-row">
+      自己ベスト:
+      <span id="best-easy">—</span> /
+      <span id="best-medium">—</span> /
+      <span id="best-hard">—</span> WPM
+    </div>
+  </div>
+  <script src="race.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 800px; height: 560px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #0d1117; color: #e6edf3; overflow: hidden;
+}
+.app { display: flex; flex-direction: column; height: 100%; }
+
+.toolbar {
+  display: flex; align-items: center; gap: 8px; padding: 7px 12px;
+  background: #161b22; border-bottom: 1px solid #21262d; flex-shrink: 0; flex-wrap: wrap;
+}
+h1 { font-size: 14px; color: #58a6ff; flex-shrink: 0; }
+.toolbar-right { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-left: auto; }
+.tb-sel {
+  background: #21262d; border: 1px solid #30363d; border-radius: 6px;
+  color: #e6edf3; font-size: 11px; padding: 4px 7px; outline: none; cursor: pointer;
+}
+.cb-label { display: flex; align-items: center; gap: 4px; font-size: 11px; color: #6b7280; cursor: pointer; }
+.cb-label input { accent-color: #58a6ff; }
+
+/* Editors */
+.editors { display: flex; gap: 0; height: 170px; flex-shrink: 0; }
+.editor-pane { flex: 1; display: flex; flex-direction: column; }
+.editor-pane + .editor-pane { border-left: 1px solid #21262d; }
+.editor-label {
+  padding: 4px 10px; background: #161b22; border-bottom: 1px solid #21262d;
+  font-size: 10px; color: #484f58; text-transform: uppercase; letter-spacing: 0.04em; flex-shrink: 0;
+}
+textarea {
+  flex: 1; background: #010409; border: none; color: #e6edf3;
+  font-family: 'SF Mono', 'Fira Code', monospace; font-size: 12px;
+  padding: 8px 10px; resize: none; outline: none; line-height: 1.5;
+}
+
+/* Action bar */
+.action-bar {
+  display: flex; align-items: center; gap: 8px; padding: 7px 12px;
+  background: #161b22; border-top: 1px solid #21262d; border-bottom: 1px solid #21262d; flex-shrink: 0;
+}
+.diff-btn {
+  background: #0d419d; border: 1px solid #58a6ff; border-radius: 7px;
+  color: #58a6ff; font-size: 12px; font-weight: 700; padding: 6px 14px; cursor: pointer;
+}
+.diff-btn:hover { background: #1158c7; }
+.copy-btn {
+  background: #21262d; border: 1px solid #30363d; border-radius: 6px;
+  color: #8b949e; font-size: 11px; padding: 5px 10px; cursor: pointer; margin-left: auto;
+}
+.copy-btn:hover { border-color: #58a6ff; color: #58a6ff; }
+.copy-btn.copied { border-color: #3fb950; color: #3fb950; }
+.diff-stats { font-size: 11px; color: #484f58; flex: 1; }
+.stat-add  { color: #3fb950; }
+.stat-del  { color: #f85149; }
+.stat-mod  { color: #f0883e; }
+
+/* Diff output */
+.diff-output {
+  flex: 1; overflow-y: auto; font-family: 'SF Mono', monospace; font-size: 12px;
+  line-height: 1.6; background: #010409;
+}
+.diff-output::-webkit-scrollbar { width: 5px; }
+.diff-output::-webkit-scrollbar-thumb { background: #30363d; border-radius: 3px; }
+
+/* Split view */
+.split-view { display: flex; height: 100%; }
+.split-pane { flex: 1; overflow-x: auto; border-right: 1px solid #21262d; }
+.split-pane:last-child { border-right: none; }
+.split-line { display: flex; align-items: stretch; }
+.split-lnum { min-width: 35px; padding: 0 6px; color: #30363d; text-align: right; flex-shrink: 0; font-size: 11px; line-height: 1.6; user-select: none; }
+.split-code { flex: 1; padding: 0 8px; white-space: pre; }
+
+/* Line types */
+.line-add  { background: #122e1a; }
+.line-del  { background: #2a0f0f; }
+.line-add .split-code { color: #79c0ff; }
+.line-del .split-code { color: #ffa198; }
+.line-add .split-lnum { background: #1a3a24; color: #3fb950; }
+.line-del .split-lnum { background: #3a1a1a; color: #f85149; }
+
+/* Inline highlights */
+.hl-add { background: #1f6b2e; color: #79c0ff; border-radius: 2px; }
+.hl-del { background: #6b1f1f; color: #ffa198; border-radius: 2px; text-decoration: line-through; }
+
+/* Unified view */
+.unified-line { display: flex; align-items: stretch; }
+.u-sign { min-width: 16px; padding: 0 4px; flex-shrink: 0; font-weight: 700; }
+.u-lnum { min-width: 50px; padding: 0 6px; color: #30363d; font-size: 11px; flex-shrink: 0; }
+.u-code { flex: 1; padding: 0 8px; white-space: pre; overflow-x: auto; }
+.u-add { background: #122e1a; } .u-add .u-sign { color: #3fb950; }
+.u-del { background: #2a0f0f; } .u-del .u-sign { color: #f85149; }
+.u-ctx { background: #010409; } .u-ctx .u-sign { color: #30363d; }
+.sep-line { background: #161b22; color: #484f58; font-size: 10px; padding: 3px 10px; }
+.empty-msg { padding: 20px; color: #30363d; text-align: center; font-size: 12px; }

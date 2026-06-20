@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Flashcard Web</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app">
+    <div class="header">
+      <h1>🃏 Flashcard Web</h1>
+      <div class="header-stats" id="header-stats"></div>
+    </div>
+
+    <div class="nav-tabs">
+      <button class="nav-tab active" data-view="study">学習</button>
+      <button class="nav-tab" data-view="cards">カード管理</button>
+      <button class="nav-tab" data-view="stats">統計</button>
+    </div>
+
+    <!-- Study view -->
+    <div id="view-study" class="view">
+      <div class="category-row">
+        <select id="study-category" class="cat-sel"></select>
+        <button id="btn-start-study" class="start-btn">学習開始</button>
+      </div>
+      <div id="study-area" class="study-area hidden">
+        <div class="progress-bar-wrap"><div id="study-bar" class="progress-bar-fill"></div></div>
+        <div class="progress-text" id="progress-text"></div>
+        <div class="card-scene" id="card-scene">
+          <div class="card-3d" id="card-3d">
+            <div class="card-face card-front" id="card-front">
+              <div class="card-content" id="front-content"></div>
+              <div class="card-hint">クリックして裏返す</div>
+            </div>
+            <div class="card-face card-back" id="card-back">
+              <div class="card-content" id="back-content"></div>
+            </div>
+          </div>
+        </div>
+        <div class="rating-section hidden" id="rating-section">
+          <div class="rating-label">どれくらい覚えていましたか？</div>
+          <div class="rating-btns">
+            <button class="rate-btn again" data-q="1">😵<br>また</button>
+            <button class="rate-btn hard"  data-q="2">😓<br>難しい</button>
+            <button class="rate-btn good"  data-q="3">😊<br>正解</button>
+            <button class="rate-btn easy"  data-q="4">⚡<br>簡単</button>
+          </div>
+        </div>
+        <button id="btn-quit-study" class="quit-study-btn">終了</button>
+      </div>
+      <div id="study-idle" class="study-idle">
+        <div class="idle-msg" id="idle-msg">カテゴリを選んで学習を開始</div>
+      </div>
+    </div>
+
+    <!-- Cards view -->
+    <div id="view-cards" class="view hidden">
+      <div class="card-manager">
+        <div class="manager-top">
+          <select id="manage-category" class="cat-sel"></select>
+          <button id="btn-new-cat" class="mini-btn">+カテゴリ</button>
+          <button id="btn-del-cat" class="mini-btn danger">削除</button>
+        </div>
+        <div class="add-card-form">
+          <textarea id="new-front" placeholder="表面（問題）" rows="2"></textarea>
+          <textarea id="new-back"  placeholder="裏面（答え）" rows="2"></textarea>
+          <button id="btn-add-card" class="add-card-btn">カードを追加</button>
+        </div>
+        <div id="card-list" class="card-list"></div>
+      </div>
+    </div>
+
+    <!-- Stats view -->
+    <div id="view-stats" class="view hidden">
+      <div class="stats-summary" id="stats-summary"></div>
+      <canvas id="stats-chart" width="360" height="120" class="stats-chart"></canvas>
+      <div class="cat-stats" id="cat-stats"></div>
+    </div>
+  </div>
+  <script src="flashcard.js"></script>
+</body>
+</html>

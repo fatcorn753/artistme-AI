@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>JSON ⇄ CSV</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>JSON ⇄ CSV Converter</h1>
+      <div class="mode-toggle">
+        <button class="mode-btn active" id="btn-json2csv">JSON → CSV</button>
+        <button class="mode-btn" id="btn-csv2json">CSV → JSON</button>
+      </div>
+    </div>
+
+    <div class="panes">
+      <div class="pane">
+        <div class="pane-label" id="input-label">JSON 入力</div>
+        <textarea id="input-area" placeholder='[
+  {"name": "田中", "age": 28},
+  {"name": "佐藤", "age": 34}
+]' spellcheck="false"></textarea>
+      </div>
+
+      <div class="convert-col">
+        <button id="btn-convert" class="convert-btn">▶</button>
+        <button id="btn-swap" class="swap-btn" title="入れ替え">⇄</button>
+      </div>
+
+      <div class="pane">
+        <div class="pane-header">
+          <span class="pane-label" id="output-label">CSV 出力</span>
+          <button id="btn-copy-out" class="copy-out-btn">コピー</button>
+          <button id="btn-download" class="copy-out-btn dl">DL</button>
+        </div>
+        <textarea id="output-area" readonly placeholder="変換結果がここに表示されます" spellcheck="false"></textarea>
+      </div>
+    </div>
+
+    <div id="error-msg" class="error hidden"></div>
+
+    <!-- Table preview -->
+    <div id="preview-section" class="preview-section hidden">
+      <div class="preview-label">プレビュー（最大5行）</div>
+      <div class="table-wrap">
+        <table id="preview-table" class="preview-table"></table>
+      </div>
+    </div>
+
+    <div class="options-row">
+      <label>区切り文字:
+        <select id="delimiter">
+          <option value=",">,</option>
+          <option value="	">Tab</option>
+          <option value=";">;</option>
+        </select>
+      </label>
+      <label><input type="checkbox" id="include-header" checked> ヘッダー行</label>
+      <label><input type="checkbox" id="pretty-json" checked> JSONを整形</label>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

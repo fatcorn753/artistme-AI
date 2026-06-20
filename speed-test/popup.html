@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Speed Test</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>⚡ Network Speed Test</h1>
+
+    <!-- Speedometer -->
+    <div class="speedometer">
+      <canvas id="gauge-canvas" width="260" height="150"></canvas>
+      <div class="speed-display">
+        <div class="speed-value" id="speed-value">—</div>
+        <div class="speed-unit" id="speed-unit">Mbps</div>
+        <div class="speed-label" id="speed-label">待機中</div>
+      </div>
+    </div>
+
+    <!-- Three metrics -->
+    <div class="metrics">
+      <div class="metric" id="m-ping">
+        <div class="metric-icon">📶</div>
+        <div class="metric-val" id="ping-val">—</div>
+        <div class="metric-lbl">レイテンシ (ms)</div>
+      </div>
+      <div class="metric" id="m-down">
+        <div class="metric-icon">↓</div>
+        <div class="metric-val" id="down-val">—</div>
+        <div class="metric-lbl">ダウンロード (Mbps)</div>
+      </div>
+      <div class="metric" id="m-up">
+        <div class="metric-icon">↑</div>
+        <div class="metric-val" id="up-val">—</div>
+        <div class="metric-lbl">アップロード (Mbps)</div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <button id="btn-start" class="start-btn">テスト開始</button>
+    <div id="status-msg" class="status-msg"></div>
+
+    <!-- History -->
+    <div class="history-section">
+      <div class="hist-label">過去の計測</div>
+      <div id="history-list" class="history-list"></div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Tetris</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app">
+    <div class="side-left">
+      <div class="panel">
+        <div class="panel-label">HOLD</div>
+        <canvas id="hold-canvas" width="80" height="80"></canvas>
+      </div>
+      <div class="panel">
+        <div class="panel-label">SCORE</div>
+        <div class="panel-value" id="score">0</div>
+      </div>
+      <div class="panel">
+        <div class="panel-label">LEVEL</div>
+        <div class="panel-value" id="level">1</div>
+      </div>
+      <div class="panel">
+        <div class="panel-label">LINES</div>
+        <div class="panel-value" id="lines">0</div>
+      </div>
+      <div class="panel">
+        <div class="panel-label">BEST</div>
+        <div class="panel-value" id="best">0</div>
+      </div>
+    </div>
+
+    <div class="game-wrap">
+      <canvas id="game-canvas" width="200" height="400" tabindex="0"></canvas>
+      <div id="overlay" class="overlay">
+        <div class="overlay-title" id="overlay-title">TETRIS</div>
+        <div class="overlay-sub" id="overlay-sub">Press SPACE to start</div>
+        <div class="overlay-keys">
+          ← → : 移動 | ↑ : 回転<br>
+          ↓ : ソフトドロップ | Space : ハードドロップ<br>
+          C : ホールド | P : ポーズ
+        </div>
+      </div>
+    </div>
+
+    <div class="side-right">
+      <div class="panel">
+        <div class="panel-label">NEXT</div>
+        <canvas id="next-canvas" width="80" height="240"></canvas>
+      </div>
+    </div>
+  </div>
+  <script src="tetris.js"></script>
+</body>
+</html>

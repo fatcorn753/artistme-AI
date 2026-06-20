@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Paint App</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Left toolbar -->
+    <div class="toolbar-v">
+      <div class="tool-section">
+        <button class="tool-btn active" data-tool="brush"   title="ブラシ (B)">✏️</button>
+        <button class="tool-btn" data-tool="eraser"  title="消しゴム (E)">🧹</button>
+        <button class="tool-btn" data-tool="spray"   title="スプレー (S)">💨</button>
+        <button class="tool-btn" data-tool="fill"    title="塗りつぶし (F)">🪣</button>
+        <button class="tool-btn" data-tool="eyedrop" title="スポイト (I)">💉</button>
+        <button class="tool-btn" data-tool="text"    title="テキスト (T)">T</button>
+      </div>
+      <div class="sep-h"></div>
+      <div class="tool-section">
+        <button class="tool-btn" data-tool="rect"    title="四角 (R)">▭</button>
+        <button class="tool-btn" data-tool="ellipse" title="楕円 (O)">○</button>
+        <button class="tool-btn" data-tool="line"    title="直線 (L)">╱</button>
+        <button class="tool-btn" data-tool="arrow"   title="矢印">→</button>
+      </div>
+      <div class="sep-h"></div>
+      <div class="tool-section">
+        <button class="action-btn" id="btn-undo" title="Undo (Ctrl+Z)">↩</button>
+        <button class="action-btn" id="btn-redo" title="Redo (Ctrl+Y)">↪</button>
+        <button class="action-btn" id="btn-clear" title="クリア">🗑</button>
+        <button class="action-btn" id="btn-save"  title="PNG保存">💾</button>
+      </div>
+    </div>
+
+    <!-- Canvas area -->
+    <div class="canvas-area">
+      <!-- Top options bar -->
+      <div class="options-bar">
+        <div class="size-control">
+          <span class="opt-label">サイズ</span>
+          <input type="range" id="brush-size" min="1" max="60" value="8">
+          <span id="size-display">8</span>
+        </div>
+        <div class="opacity-control">
+          <span class="opt-label">不透明度</span>
+          <input type="range" id="opacity" min="5" max="100" value="100">
+          <span id="opacity-display">100%</span>
+        </div>
+        <div class="fill-control">
+          <label class="opt-label"><input type="checkbox" id="fill-shape"> 塗りつぶし</label>
+        </div>
+        <div class="blend-control">
+          <span class="opt-label">合成</span>
+          <select id="blend-mode">
+            <option value="source-over">通常</option>
+            <option value="multiply">乗算</option>
+            <option value="screen">スクリーン</option>
+            <option value="overlay">オーバーレイ</option>
+            <option value="darken">暗く</option>
+            <option value="lighten">明るく</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="canvas-container">
+        <canvas id="bg-canvas"      width="560" height="460"></canvas>
+        <canvas id="main-canvas"    width="560" height="460"></canvas>
+        <canvas id="overlay-canvas" width="560" height="460"></canvas>
+        <div id="text-input-div" class="text-input-div hidden">
+          <input type="text" id="text-field" placeholder="テキストを入力...">
+        </div>
+      </div>
+
+      <!-- Color palette -->
+      <div class="color-bar">
+        <input type="color" id="color-picker" value="#000000" title="色選択">
+        <div class="palette" id="palette"></div>
+        <div class="current-colors">
+          <div id="secondary-color" class="color-swatch secondary" title="背景色 (右クリック)"></div>
+          <div id="primary-color"   class="color-swatch primary"   title="前景色"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="paint.js"></script>
+</body>
+</html>

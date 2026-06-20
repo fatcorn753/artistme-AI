@@ -1,0 +1,72 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 320px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #0a0a14; color: #e0e0f0;
+}
+.container { padding: 12px; display: flex; flex-direction: column; gap: 8px; }
+
+/* Analog clock */
+.clock-wrap { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+#clock-canvas { display: block; }
+.digital-time { font-size: 28px; font-weight: 800; color: #818cf8; font-family: 'SF Mono', monospace; font-variant-numeric: tabular-nums; letter-spacing: 2px; }
+.date-display { font-size: 11px; color: #4b5563; }
+
+/* Tabs */
+.tabs { display: flex; gap: 3px; }
+.tab { flex: 1; padding: 6px 4px; background: #1e1e2e; border: 1px solid #2d2d4e; border-radius: 6px; color: #6b7280; font-size: 11px; font-weight: 600; cursor: pointer; }
+.tab.active { background: #1e1a3a; border-color: #818cf8; color: #818cf8; }
+
+.tab-pane { display: flex; flex-direction: column; gap: 6px; }
+.tab-pane.hidden { display: none; }
+
+/* Add alarm form */
+.add-alarm-form { display: flex; flex-wrap: wrap; gap: 5px; align-items: center; background: #1e1e2e; border-radius: 9px; padding: 8px; }
+.time-input { background: #0a0a14; border: 1px solid #2d2d4e; border-radius: 6px; color: #818cf8; font-size: 18px; font-weight: 700; padding: 6px 8px; outline: none; width: 90px; font-family: monospace; }
+.time-input::-webkit-calendar-picker-indicator { filter: invert(0.5); cursor: pointer; }
+.label-input { flex: 1; background: #0a0a14; border: 1px solid #2d2d4e; border-radius: 6px; color: #e0e0f0; font-size: 12px; padding: 6px 9px; outline: none; min-width: 0; }
+.label-input:focus { border-color: #818cf8; }
+.repeat-sel { background: #0a0a14; border: 1px solid #2d2d4e; border-radius: 6px; color: #6b7280; font-size: 11px; padding: 5px 6px; outline: none; cursor: pointer; }
+.add-btn { background: #312e81; border: 1px solid #818cf8; border-radius: 7px; color: #818cf8; font-size: 12px; font-weight: 700; padding: 6px 12px; cursor: pointer; }
+.add-btn:hover { background: #3730a3; }
+
+/* Alarm list */
+.alarm-list { display: flex; flex-direction: column; gap: 4px; max-height: 200px; overflow-y: auto; }
+.alarm-item { display: flex; align-items: center; gap: 8px; background: #1e1e2e; border: 1px solid #2d2d4e; border-radius: 8px; padding: 9px 10px; transition: border-color 0.15s; }
+.alarm-item.disabled { opacity: 0.4; }
+.alarm-item:hover { border-color: #818cf8; }
+.alarm-time-big { font-size: 20px; font-weight: 800; color: #818cf8; font-family: monospace; min-width: 52px; }
+.alarm-info { flex: 1; }
+.alarm-label { font-size: 12px; color: #e0e0f0; }
+.alarm-repeat { font-size: 10px; color: #4b5563; }
+.alarm-toggle { width: 40px; height: 22px; background: #2d2d4e; border-radius: 11px; position: relative; cursor: pointer; transition: background 0.2s; border: none; }
+.alarm-toggle.on { background: #818cf8; }
+.alarm-toggle::after { content:''; position:absolute; top:2px; left:2px; width:18px; height:18px; background:#fff; border-radius:50%; transition:left 0.2s; }
+.alarm-toggle.on::after { left:20px; }
+.alarm-del { background: none; border: none; color: #2d2d4e; cursor: pointer; font-size: 14px; }
+.alarm-del:hover { color: #f87171; }
+.alarm-countdown { font-size: 9px; color: #4ade80; }
+
+/* Timer */
+.timer-display { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.timer-time { font-size: 40px; font-weight: 800; color: #818cf8; font-family: 'SF Mono', monospace; font-variant-numeric: tabular-nums; }
+.timer-presets { display: flex; gap: 4px; flex-wrap: wrap; justify-content: center; }
+.preset-btn { padding: 5px 9px; background: #1e1e2e; border: 1px solid #2d2d4e; border-radius: 12px; color: #6b7280; font-size: 11px; cursor: pointer; }
+.preset-btn:hover { border-color: #818cf8; color: #818cf8; }
+.timer-custom { display: flex; align-items: center; gap: 6px; font-size: 12px; color: #4b5563; }
+.t-num { width: 46px; background: #1e1e2e; border: 1px solid #2d2d4e; border-radius: 6px; color: #818cf8; font-size: 16px; font-weight: 700; padding: 5px 4px; outline: none; text-align: center; }
+.timer-controls { display: flex; gap: 8px; }
+.timer-start-btn { background: #312e81; border: 2px solid #818cf8; border-radius: 9px; color: #818cf8; font-size: 13px; font-weight: 700; padding: 9px 20px; cursor: pointer; }
+.timer-start-btn:hover { background: #3730a3; }
+.timer-start-btn.running { background: #450a0a; border-color: #f87171; color: #f87171; }
+.timer-reset-btn { background: #1e1e2e; border: 1px solid #2d2d4e; border-radius: 8px; color: #6b7280; font-size: 16px; width: 40px; cursor: pointer; }
+.timer-reset-btn:hover { border-color: #818cf8; color: #818cf8; }
+.timer-bar-wrap { width: 100%; height: 4px; background: #1e1e2e; border-radius: 2px; overflow: hidden; }
+.timer-bar { height: 100%; background: #818cf8; border-radius: 2px; transition: width 0.5s linear; }
+
+/* World clocks */
+.world-clocks { display: flex; flex-direction: column; gap: 4px; }
+.world-clock-item { display: flex; align-items: center; justify-content: space-between; background: #1e1e2e; border-radius: 8px; padding: 8px 12px; }
+.wc-city { font-size: 12px; color: #6b7280; }
+.wc-time { font-size: 18px; font-weight: 700; color: #818cf8; font-family: monospace; }
+.wc-offset { font-size: 10px; color: #374151; }

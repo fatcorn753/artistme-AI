@@ -1,0 +1,62 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 720px; height: 560px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #0d1117; color: #e6edf3; overflow: hidden;
+}
+.app { display: flex; flex-direction: column; height: 100%; }
+
+.header { display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background: #161b22; border-bottom: 1px solid #30363d; flex-shrink: 0; }
+h1 { font-size: 14px; color: #58a6ff; }
+.header-right { display: flex; align-items: center; gap: 6px; }
+.db-status { font-size: 10px; color: #484f58; background: #21262d; border-radius: 10px; padding: 2px 8px; }
+.hdr-btn { background: #21262d; border: 1px solid #30363d; border-radius: 6px; color: #8b949e; font-size: 11px; padding: 4px 9px; cursor: pointer; }
+.hdr-btn:hover { border-color: #58a6ff; color: #58a6ff; }
+.hdr-btn.danger:hover { border-color: #f85149; color: #f85149; }
+
+.main-area { display: flex; flex: 1; overflow: hidden; }
+
+.schema-panel { width: 180px; background: #0d1117; border-right: 1px solid #21262d; display: flex; flex-direction: column; flex-shrink: 0; overflow: hidden; }
+.panel-title { font-size: 10px; color: #484f58; text-transform: uppercase; letter-spacing: 0.05em; padding: 8px 10px 4px; border-bottom: 1px solid #21262d; }
+.schema-list { flex: 1; overflow-y: auto; padding: 6px; }
+.schema-table { margin-bottom: 6px; }
+.schema-table-name { font-size: 12px; font-weight: 700; color: #ffa657; cursor: pointer; padding: 3px 6px; border-radius: 4px; }
+.schema-table-name:hover { background: #161b22; }
+.schema-col { font-size: 10px; color: #8b949e; padding: 1px 12px; font-family: monospace; }
+.schema-col .col-type { color: #79c0ff; }
+
+.editor-area { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+
+.editor-toolbar { display: flex; align-items: center; gap: 5px; padding: 6px 8px; background: #161b22; border-bottom: 1px solid #21262d; flex-shrink: 0; }
+.run-btn { background: #1a4f2a; border: 1px solid #3fb950; border-radius: 7px; color: #3fb950; font-size: 12px; font-weight: 700; padding: 6px 14px; cursor: pointer; transition: all 0.15s; }
+.run-btn:hover { background: #238636; }
+.run-btn:active { transform: scale(0.97); }
+.tool-btn { background: #21262d; border: 1px solid #30363d; border-radius: 6px; color: #8b949e; font-size: 11px; padding: 5px 10px; cursor: pointer; }
+.tool-btn:hover { border-color: #58a6ff; color: #58a6ff; }
+.snippet-sel { background: #21262d; border: 1px solid #30363d; border-radius: 6px; color: #8b949e; font-size: 11px; padding: 5px 7px; outline: none; cursor: pointer; margin-left: auto; }
+
+#sql-input {
+  height: 130px; background: #010409; border: none; border-bottom: 1px solid #21262d;
+  color: #e6edf3; font-family: 'SF Mono', 'Fira Code', monospace; font-size: 13px;
+  padding: 10px 14px; resize: none; outline: none; line-height: 1.6; flex-shrink: 0;
+  tab-size: 2;
+}
+
+.result-area { flex: 1; overflow: auto; background: #010409; }
+.result-placeholder { padding: 20px; color: #30363d; font-size: 12px; text-align: center; }
+
+.result-success { display: flex; flex-direction: column; height: 100%; }
+.result-meta { padding: 6px 12px; background: #161b22; border-bottom: 1px solid #21262d; font-size: 11px; color: #3fb950; flex-shrink: 0; }
+.result-meta.error-meta { color: #f85149; }
+
+.result-table-wrap { flex: 1; overflow: auto; }
+.result-table { border-collapse: collapse; min-width: 100%; font-size: 12px; font-family: monospace; }
+.result-table th { background: #161b22; color: #58a6ff; padding: 7px 12px; text-align: left; border-bottom: 2px solid #30363d; white-space: nowrap; position: sticky; top: 0; }
+.result-table td { padding: 5px 12px; border-bottom: 1px solid #21262d; color: #c9d1d9; max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.result-table tr:hover td { background: #161b22; }
+.result-table tr:nth-child(even) td { background: #0d1117; }
+.null-val { color: #484f58; font-style: italic; }
+.num-val  { color: #79c0ff; }
+.str-val  { color: #a5d6ff; }
+
+.error-box { background: #160b0b; border-left: 3px solid #f85149; padding: 12px 14px; margin: 8px; border-radius: 4px; font-family: monospace; font-size: 12px; color: #f85149; }

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Alarm Clock</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Analog clock -->
+    <div class="clock-wrap">
+      <canvas id="clock-canvas" width="180" height="180"></canvas>
+      <div class="digital-time" id="digital-time">00:00:00</div>
+      <div class="date-display" id="date-display"></div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab active" data-tab="alarms">⏰ アラーム</button>
+      <button class="tab" data-tab="timer">⏱ タイマー</button>
+      <button class="tab" data-tab="world">🌍 世界時計</button>
+    </div>
+
+    <!-- Alarms tab -->
+    <div id="tab-alarms" class="tab-pane">
+      <div class="add-alarm-form">
+        <input type="time" id="alarm-time" value="07:00" class="time-input">
+        <input type="text" id="alarm-label" placeholder="ラベル（任意）" class="label-input">
+        <select id="alarm-repeat" class="repeat-sel">
+          <option value="once">1回のみ</option>
+          <option value="daily">毎日</option>
+          <option value="weekdays">平日</option>
+          <option value="weekends">週末</option>
+        </select>
+        <button id="btn-add-alarm" class="add-btn">追加</button>
+      </div>
+      <div id="alarm-list" class="alarm-list"></div>
+    </div>
+
+    <!-- Timer tab -->
+    <div id="tab-timer" class="tab-pane hidden">
+      <div class="timer-display">
+        <div class="timer-time" id="timer-time">00:00:00</div>
+        <div class="timer-presets">
+          <button class="preset-btn" data-sec="300">5分</button>
+          <button class="preset-btn" data-sec="600">10分</button>
+          <button class="preset-btn" data-sec="900">15分</button>
+          <button class="preset-btn" data-sec="1800">30分</button>
+          <button class="preset-btn" data-sec="3600">1時間</button>
+        </div>
+        <div class="timer-custom">
+          <input type="number" id="timer-h" min="0" max="23" value="0" class="t-num"> 時
+          <input type="number" id="timer-m" min="0" max="59" value="5" class="t-num"> 分
+          <input type="number" id="timer-s" min="0" max="59" value="0" class="t-num"> 秒
+        </div>
+        <div class="timer-controls">
+          <button id="btn-timer-start" class="timer-start-btn">▶ スタート</button>
+          <button id="btn-timer-reset" class="timer-reset-btn">↺</button>
+        </div>
+        <div class="timer-bar-wrap"><div id="timer-bar" class="timer-bar"></div></div>
+      </div>
+    </div>
+
+    <!-- World Clock tab -->
+    <div id="tab-world" class="tab-pane hidden">
+      <div id="world-clocks" class="world-clocks"></div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

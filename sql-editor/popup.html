@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>SQL Editor</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app">
+    <div class="header">
+      <h1>🗄 SQL Editor</h1>
+      <div class="header-right">
+        <span id="db-status" class="db-status">SQLite (In-Memory)</span>
+        <button id="btn-sample" class="hdr-btn">サンプルDB</button>
+        <button id="btn-export" class="hdr-btn">CSV出力</button>
+        <button id="btn-clear-db" class="hdr-btn danger">DBリセット</button>
+      </div>
+    </div>
+
+    <div class="main-area">
+      <!-- Schema panel -->
+      <div class="schema-panel">
+        <div class="panel-title">テーブル一覧</div>
+        <div id="schema-list" class="schema-list"></div>
+      </div>
+
+      <!-- Editor + results -->
+      <div class="editor-area">
+        <div class="editor-toolbar">
+          <button id="btn-run" class="run-btn">▶ 実行 (Ctrl+Enter)</button>
+          <button id="btn-format" class="tool-btn">整形</button>
+          <button id="btn-copy-sql" class="tool-btn">コピー</button>
+          <select id="snippet-select" class="snippet-sel">
+            <option value="">-- スニペット --</option>
+            <option value="select">SELECT * FROM テーブル</option>
+            <option value="create">CREATE TABLE</option>
+            <option value="insert">INSERT INTO</option>
+            <option value="update">UPDATE</option>
+            <option value="delete">DELETE FROM</option>
+            <option value="join">JOIN クエリ</option>
+            <option value="agg">集計クエリ</option>
+          </select>
+        </div>
+        <textarea id="sql-input" spellcheck="false" placeholder="SELECT * FROM users LIMIT 10;"></textarea>
+        <div id="result-area" class="result-area">
+          <div class="result-placeholder">クエリを入力して実行してください</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="sql_engine.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

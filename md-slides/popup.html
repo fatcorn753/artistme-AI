@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Markdown Slides</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>📊 Markdown Slides</h1>
+      <div class="header-right">
+        <select id="theme-select">
+          <option value="dark">ダーク</option>
+          <option value="light">ライト</option>
+          <option value="ocean">オーシャン</option>
+          <option value="forest">フォレスト</option>
+          <option value="sunset">サンセット</option>
+        </select>
+        <button id="btn-present" class="present-btn" disabled>▶ 発表</button>
+      </div>
+    </div>
+
+    <div class="editor-section">
+      <div class="editor-label">Markdown（--- でスライドを区切る）</div>
+      <textarea id="md-input" spellcheck="false">
+# はじめてのスライド
+Claude Code で自動生成
+
+---
+
+## 機能紹介
+
+- Markdownで簡単作成
+- テーマ選択
+- フルスクリーン発表
+
+---
+
+## コード例
+
+```javascript
+const hello = () => "Hello, World!";
+console.log(hello());
+```
+
+---
+
+## ありがとうございました
+
+質問はありますか？
+      </textarea>
+      <button id="btn-generate" class="gen-btn">スライドを生成 →</button>
+    </div>
+
+    <div id="slides-section" class="slides-section hidden">
+      <div class="slide-nav">
+        <button id="btn-prev-slide" class="nav-btn">◀</button>
+        <span id="slide-counter">1 / 1</span>
+        <button id="btn-next-slide" class="nav-btn">▶</button>
+        <button id="btn-export-html" class="export-btn">HTML出力</button>
+      </div>
+      <div id="slide-preview" class="slide-preview"></div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

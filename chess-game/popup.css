@@ -1,0 +1,36 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 620px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #1a1208; color: #e8d5a3;
+}
+.app { display: flex; flex-direction: column; height: 100%; }
+
+.header { display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background: #120e06; border-bottom: 1px solid #2d2010; }
+h1 { font-size: 16px; color: #d4a537; }
+.header-right { display: flex; align-items: center; gap: 6px; }
+.turn-indicator { font-size: 12px; color: #c8aa72; background: #2d2010; border-radius: 6px; padding: 4px 10px; }
+.ctrl-btn { background: #2d2010; border: 1px solid #4a3518; border-radius: 6px; color: #c8aa72; font-size: 11px; padding: 5px 10px; cursor: pointer; }
+.ctrl-btn:hover { background: #3d3018; border-color: #d4a537; }
+
+.game-area { display: flex; gap: 0; }
+
+.board-wrap { flex-shrink: 0; padding: 8px; background: #120e06; }
+#chess-canvas { display: block; cursor: pointer; }
+
+.side-panel { flex: 1; padding: 10px 12px; background: #120e06; border-left: 1px solid #2d2010; display: flex; flex-direction: column; gap: 10px; min-width: 140px; }
+
+.status-msg { background: #2d2010; border: 1px solid #4a3518; border-radius: 8px; padding: 8px 10px; font-size: 12px; color: #d4a537; min-height: 36px; }
+
+.cap-label, .moves-label { font-size: 10px; color: #6b5a30; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; }
+.captured-section { display: flex; flex-direction: column; gap: 4px; }
+.captured-row { font-size: 14px; background: #1a1208; border-radius: 6px; padding: 4px 6px; min-height: 28px; line-height: 1.4; color: #c8aa72; }
+
+.moves-section { flex: 1; display: flex; flex-direction: column; }
+.moves-list { flex: 1; max-height: 200px; overflow-y: auto; background: #0f0c05; border-radius: 6px; padding: 6px; display: flex; flex-direction: column; gap: 2px; }
+.moves-list::-webkit-scrollbar { width: 4px; }
+.moves-list::-webkit-scrollbar-thumb { background: #3d3018; border-radius: 2px; }
+.move-item { display: flex; gap: 4px; font-size: 11px; font-family: monospace; }
+.move-num { color: #4a3518; min-width: 20px; }
+.move-white { color: #e8d5a3; flex: 1; }
+.move-black { color: #c8aa72; flex: 1; }

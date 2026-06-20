@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Mind Map</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app">
+    <div class="toolbar">
+      <span class="app-title">🧠 Mind Map</span>
+      <button id="btn-add-child" class="tool-btn" title="子ノードを追加 (Tab)">+ 子</button>
+      <button id="btn-add-sibling" class="tool-btn" title="兄弟ノードを追加 (Enter)">+ 兄弟</button>
+      <button id="btn-delete" class="tool-btn danger" title="削除 (Del)">🗑</button>
+      <div class="sep"></div>
+      <button id="btn-undo" class="tool-btn" title="元に戻す">↩</button>
+      <button id="btn-redo" class="tool-btn" title="やり直し">↪</button>
+      <div class="sep"></div>
+      <button id="btn-export-png" class="tool-btn" title="PNG保存">📷</button>
+      <button id="btn-export-json" class="tool-btn" title="JSONエクスポート">💾</button>
+      <button id="btn-import" class="tool-btn" title="JSONインポート">📂</button>
+      <div class="sep"></div>
+      <button id="btn-layout" class="tool-btn" title="レイアウト整列">⊞</button>
+      <select id="theme-select" class="theme-sel">
+        <option value="dark">ダーク</option>
+        <option value="light">ライト</option>
+        <option value="colorful">カラフル</option>
+      </select>
+    </div>
+    <canvas id="map-canvas" tabindex="0"></canvas>
+    <div class="status-bar">
+      <span id="status-msg">クリックでノードを選択 | ダブルクリックで編集 | Tabで子ノード追加</span>
+      <span id="node-count"></span>
+    </div>
+    <div id="edit-overlay" class="edit-overlay hidden">
+      <input type="text" id="edit-input" class="edit-input">
+    </div>
+  </div>
+  <input type="file" id="import-file" accept=".json" style="display:none">
+  <script src="mindmap.js"></script>
+</body>
+</html>

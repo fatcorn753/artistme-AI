@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Chess",
+  "version": "1.0.0",
+  "description": "ブラウザで遊べる本格チェス。合法手ハイライト・チェック/チェックメイト検出・駒の取り直し・手順記録。",
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Chess</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app">
+    <div class="header">
+      <h1>♟ Chess</h1>
+      <div class="header-right">
+        <span id="turn-indicator" class="turn-indicator">⬜ 白の番</span>
+        <button id="btn-new-game" class="ctrl-btn">新規</button>
+        <button id="btn-undo-move" class="ctrl-btn">↩ 戻す</button>
+        <button id="btn-flip" class="ctrl-btn">↕ 反転</button>
+      </div>
+    </div>
+    <div class="game-area">
+      <div class="board-wrap">
+        <canvas id="chess-canvas" width="400" height="400"></canvas>
+      </div>
+      <div class="side-panel">
+        <div id="status-msg" class="status-msg"></div>
+        <div class="captured-section">
+          <div class="cap-label">取った駒</div>
+          <div id="cap-white" class="captured-row">⬜</div>
+          <div id="cap-black" class="captured-row">⬛</div>
+        </div>
+        <div class="moves-section">
+          <div class="moves-label">手順</div>
+          <div id="moves-list" class="moves-list"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="chess.js"></script>
+</body>
+</html>

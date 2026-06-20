@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Network Tools</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app">
+    <h1>🌐 Network Tools</h1>
+
+    <div class="tabs">
+      <button class="tab active" data-tab="http">HTTP診断</button>
+      <button class="tab" data-tab="subnet">サブネット</button>
+      <button class="tab" data-tab="headers">ヘッダー</button>
+      <button class="tab" data-tab="latency">レイテンシ</button>
+    </div>
+
+    <!-- HTTP Diagnostic -->
+    <div id="tab-http" class="tab-pane">
+      <div class="input-row">
+        <input type="text" id="http-url" placeholder="https://example.com" value="https://example.com">
+        <button id="btn-http-check" class="go-btn">診断</button>
+      </div>
+      <div id="http-result" class="result-area"></div>
+    </div>
+
+    <!-- Subnet Calculator -->
+    <div id="tab-subnet" class="tab-pane hidden">
+      <div class="input-row">
+        <input type="text" id="subnet-input" placeholder="192.168.1.0/24" value="192.168.1.0/24">
+        <button id="btn-subnet-calc" class="go-btn">計算</button>
+      </div>
+      <div id="subnet-result" class="result-area"></div>
+    </div>
+
+    <!-- HTTP Headers -->
+    <div id="tab-headers" class="tab-pane hidden">
+      <div class="input-row">
+        <input type="text" id="headers-url" placeholder="https://example.com">
+        <button id="btn-headers-fetch" class="go-btn">取得</button>
+      </div>
+      <div id="headers-result" class="result-area mono"></div>
+    </div>
+
+    <!-- Latency Test -->
+    <div id="tab-latency" class="tab-pane hidden">
+      <div class="latency-targets">
+        <div class="lat-label">複数エンドポイントのレイテンシ計測</div>
+        <div id="latency-list" class="latency-list"></div>
+        <button id="btn-lat-run" class="go-btn full">計測開始</button>
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

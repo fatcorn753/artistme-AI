@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Study Timer</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>📚 Study Timer</h1>
+
+    <!-- Subject selector -->
+    <div class="subject-row">
+      <select id="subject-select" class="subject-sel"></select>
+      <button id="btn-add-subject" class="icon-btn" title="科目を追加">＋</button>
+      <button id="btn-del-subject" class="icon-btn danger" title="科目を削除">🗑</button>
+    </div>
+
+    <!-- Timer display -->
+    <div class="timer-display">
+      <canvas id="ring-canvas" width="200" height="200"></canvas>
+      <div class="timer-inner">
+        <div class="timer-time" id="timer-time">00:00:00</div>
+        <div class="timer-mode" id="timer-mode">フリー</div>
+        <div class="timer-goal" id="timer-goal"></div>
+      </div>
+    </div>
+
+    <!-- Mode tabs -->
+    <div class="mode-tabs">
+      <button class="mode-tab active" data-mode="free">フリー</button>
+      <button class="mode-tab" data-mode="pomodoro">ポモドーロ</button>
+      <button class="mode-tab" data-mode="goal">目標時間</button>
+    </div>
+
+    <!-- Goal input (shown in goal mode) -->
+    <div id="goal-input-row" class="goal-input-row hidden">
+      <label>目標:</label>
+      <input type="number" id="goal-hours" min="0" max="12" value="1" class="time-num"> 時間
+      <input type="number" id="goal-mins"  min="0" max="59" value="0"  class="time-num"> 分
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+      <button id="btn-start" class="start-btn">▶ スタート</button>
+      <button id="btn-reset" class="ctrl-btn">↺</button>
+      <button id="btn-lap"   class="ctrl-btn" title="ラップ">⏱</button>
+    </div>
+
+    <!-- Today stats -->
+    <div class="today-stats" id="today-stats"></div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab active" data-tab="weekly">週間</button>
+      <button class="tab" data-tab="subjects">科目別</button>
+      <button class="tab" data-tab="laps">ラップ</button>
+    </div>
+
+    <div id="tab-weekly"   class="tab-content">
+      <canvas id="weekly-chart" width="340" height="90"></canvas>
+      <div id="weekly-stats" class="weekly-stats"></div>
+    </div>
+    <div id="tab-subjects" class="tab-content hidden">
+      <div id="subject-stats" class="subject-stats"></div>
+    </div>
+    <div id="tab-laps"     class="tab-content hidden">
+      <div id="laps-list" class="laps-list"></div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

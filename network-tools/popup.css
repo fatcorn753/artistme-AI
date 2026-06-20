@@ -1,0 +1,63 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 440px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #0a0f1e; color: #e2e8f0;
+}
+.app { padding: 12px; display: flex; flex-direction: column; gap: 8px; }
+h1 { font-size: 15px; color: #38bdf8; }
+
+.tabs { display: flex; gap: 3px; }
+.tab {
+  flex: 1; padding: 6px 4px; background: #1e293b; border: 1px solid #334155;
+  border-radius: 6px; color: #64748b; font-size: 11px; font-weight: 600; cursor: pointer;
+}
+.tab.active { background: #0c2040; border-color: #38bdf8; color: #38bdf8; }
+
+.tab-pane { display: flex; flex-direction: column; gap: 7px; }
+.tab-pane.hidden { display: none; }
+
+.input-row { display: flex; gap: 6px; }
+.input-row input {
+  flex: 1; background: #1e293b; border: 1px solid #334155; border-radius: 7px;
+  color: #e2e8f0; font-size: 12px; padding: 7px 10px; outline: none; font-family: monospace;
+}
+.input-row input:focus { border-color: #38bdf8; }
+.go-btn {
+  background: #0c4a6e; border: 1px solid #38bdf8; border-radius: 7px;
+  color: #38bdf8; font-size: 12px; font-weight: 700; padding: 7px 14px; cursor: pointer; white-space: nowrap;
+}
+.go-btn:hover { background: #0369a1; }
+.go-btn.full { width: 100%; padding: 10px; }
+
+.result-area {
+  background: #0f172a; border: 1px solid #1e293b; border-radius: 8px;
+  padding: 10px 12px; min-height: 120px; font-size: 12px; line-height: 1.7;
+}
+.result-area.mono { font-family: 'SF Mono', monospace; font-size: 11px; }
+
+.kv-row { display: flex; gap: 8px; margin: 2px 0; }
+.kv-key   { color: #64748b; min-width: 130px; flex-shrink: 0; }
+.kv-val   { color: #e2e8f0; word-break: break-all; }
+.kv-val.ok  { color: #4ade80; }
+.kv-val.warn{ color: #fbbf24; }
+.kv-val.err { color: #f87171; }
+.kv-val.info{ color: #38bdf8; }
+
+.section-title { font-size: 11px; color: #475569; text-transform: uppercase;
+  letter-spacing: 0.05em; margin: 8px 0 4px; border-top: 1px solid #1e293b; padding-top: 6px; }
+
+.loading { color: #475569; font-size: 12px; padding: 20px; text-align: center; }
+.error   { color: #f87171; font-size: 12px; padding: 8px; }
+
+.lat-label { font-size: 11px; color: #475569; margin-bottom: 6px; }
+.latency-list { display: flex; flex-direction: column; gap: 5px; }
+.lat-row {
+  display: flex; align-items: center; gap: 8px; background: #0f172a;
+  border: 1px solid #1e293b; border-radius: 7px; padding: 7px 10px;
+}
+.lat-host { flex: 1; font-size: 12px; font-family: monospace; color: #94a3b8; }
+.lat-bar-wrap { width: 100px; height: 6px; background: #1e293b; border-radius: 3px; overflow: hidden; }
+.lat-bar { height: 100%; border-radius: 3px; }
+.lat-ms { font-size: 12px; font-weight: 700; font-family: monospace; min-width: 60px; text-align: right; }
+.lat-status { font-size: 11px; min-width: 20px; text-align: center; }

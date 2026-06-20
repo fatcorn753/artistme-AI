@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Meeting Notes</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Header: meeting info + timer -->
+    <div class="meeting-header">
+      <div class="meeting-title-row">
+        <input type="text" id="meeting-title" placeholder="会議名を入力..." class="meeting-title-input">
+        <span class="meeting-date" id="meeting-date"></span>
+      </div>
+      <div class="timer-row">
+        <div class="timer-display">
+          <button id="btn-timer" class="timer-btn">▶</button>
+          <span class="timer-time" id="timer-time">00:00</span>
+          <span class="timer-label">経過時間</span>
+        </div>
+        <div class="duration-set">
+          <input type="number" id="duration-input" value="60" min="5" max="480" class="dur-input">
+          <span>分</span>
+          <button id="btn-set-alarm" class="alarm-btn" title="終了アラームを設定">🔔</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab active" data-tab="agenda">📋 議題</button>
+      <button class="tab" data-tab="notes">✏ メモ</button>
+      <button class="tab" data-tab="decisions">✅ 決定事項</button>
+      <button class="tab" data-tab="actions">🎯 アクション</button>
+      <button class="tab" data-tab="history">📁 履歴</button>
+    </div>
+
+    <!-- Agenda -->
+    <div id="tab-agenda" class="tab-pane">
+      <div class="add-item-row">
+        <input type="text" id="agenda-input" placeholder="議題を追加...">
+        <input type="number" id="agenda-time" value="10" min="1" max="120" class="time-input">分
+        <button id="btn-add-agenda">追加</button>
+      </div>
+      <div id="agenda-list" class="item-list"></div>
+    </div>
+
+    <!-- Notes -->
+    <div id="tab-notes" class="tab-pane hidden">
+      <div class="toolbar-mini">
+        <button class="fmt-btn" data-fmt="bold">**B**</button>
+        <button class="fmt-btn" data-fmt="italic">*I*</button>
+        <button class="fmt-btn" data-fmt="bullet">•</button>
+        <button class="fmt-btn" data-fmt="heading"># H</button>
+        <button class="fmt-btn" data-fmt="hr">—</button>
+      </div>
+      <textarea id="notes-area" placeholder="会議のメモをここに入力...&#10;Markdownに対応しています。" spellcheck="false"></textarea>
+      <div class="note-footer">
+        <span id="note-wordcount" class="wordcount"></span>
+      </div>
+    </div>
+
+    <!-- Decisions -->
+    <div id="tab-decisions" class="tab-pane hidden">
+      <div class="add-item-row">
+        <input type="text" id="decision-input" placeholder="決定事項を追加...">
+        <button id="btn-add-decision">追加</button>
+      </div>
+      <div id="decision-list" class="item-list"></div>
+    </div>
+
+    <!-- Action Items -->
+    <div id="tab-actions" class="tab-pane hidden">
+      <div class="add-action-row">
+        <input type="text" id="action-input" placeholder="タスク...">
+        <input type="text" id="action-owner" placeholder="担当者" class="owner-input">
+        <input type="date" id="action-due" class="due-input">
+        <button id="btn-add-action">追加</button>
+      </div>
+      <div id="action-list" class="item-list"></div>
+    </div>
+
+    <!-- History -->
+    <div id="tab-history" class="tab-pane hidden">
+      <div id="history-list" class="history-list"></div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <button id="btn-new-meeting" class="footer-btn">🆕 新規会議</button>
+      <button id="btn-export" class="footer-btn accent">📤 エクスポート</button>
+      <button id="btn-save-meeting" class="footer-btn">💾 保存</button>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

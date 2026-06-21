@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>GitHub Stats</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app">
+    <div class="header">
+      <h1>⬡ GitHub Stats</h1>
+      <div class="search-row">
+        <input type="text" id="username-input" placeholder="ユーザー名 or 現在のページ">
+        <button id="btn-analyze" class="analyze-btn">分析</button>
+        <button id="btn-scrape-page" class="page-btn" title="現在のGitHubページを分析">📄</button>
+      </div>
+    </div>
+
+    <div id="loading" class="state hidden"><div class="loader"></div><span>スクレイピング中...</span></div>
+    <div id="error-state" class="state hidden error-state"></div>
+    <div id="empty-state" class="state">⬡ GitHubユーザー名を入力するか、GitHubのプロフィールページを開いてください</div>
+
+    <div id="dashboard" class="dashboard hidden">
+      <!-- Profile card -->
+      <div class="profile-card">
+        <img id="avatar" class="avatar" src="" alt="">
+        <div class="profile-info">
+          <div class="profile-name" id="profile-name"></div>
+          <div class="profile-login" id="profile-login"></div>
+          <div class="profile-bio" id="profile-bio"></div>
+        </div>
+      </div>
+
+      <!-- KPI row -->
+      <div class="kpi-row" id="kpi-row"></div>
+
+      <!-- Contribution heatmap (scraped) -->
+      <div class="section-label">コントリビューション (直近)</div>
+      <canvas id="contrib-canvas" width="380" height="70" class="contrib-canvas"></canvas>
+      <div class="contrib-summary" id="contrib-summary"></div>
+
+      <!-- Language pie -->
+      <div class="two-col">
+        <div class="col-section">
+          <div class="section-label">使用言語 Top 5</div>
+          <canvas id="lang-canvas" width="170" height="120"></canvas>
+        </div>
+        <div class="col-section">
+          <div class="section-label">人気リポジトリ</div>
+          <div id="top-repos" class="top-repos"></div>
+        </div>
+      </div>
+
+      <!-- Activity timeline -->
+      <div class="section-label">最近のアクティビティ (APIスクレイプ)</div>
+      <div id="activity-list" class="activity-list"></div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

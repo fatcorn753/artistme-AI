@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Job Extractor</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app">
+    <div class="header">
+      <h1>💼 Job Extractor</h1>
+      <div class="header-actions">
+        <button id="btn-extract-page" class="extract-btn">📋 このページから取得</button>
+        <button id="btn-export-csv" class="export-btn" disabled>⬇ CSV</button>
+        <button id="btn-clear-all" class="clear-btn">🗑</button>
+      </div>
+    </div>
+
+    <div class="stats-bar" id="stats-bar"></div>
+
+    <div class="filter-bar">
+      <input type="text" id="search-jobs" placeholder="🔍 職種・企業・勤務地で検索...">
+      <select id="status-filter" class="filter-sel">
+        <option value="all">全て</option>
+        <option value="new">未読</option>
+        <option value="interested">興味あり</option>
+        <option value="applied">応募済み</option>
+        <option value="rejected">見送り</option>
+      </select>
+    </div>
+
+    <div id="job-list" class="job-list"></div>
+
+    <!-- Detail view -->
+    <div id="job-detail" class="job-detail hidden">
+      <div class="detail-header">
+        <button id="btn-back" class="back-btn">← 戻る</button>
+        <div class="detail-status-row">
+          <select id="detail-status" class="status-sel"></select>
+          <a id="detail-link" href="#" target="_blank" class="visit-btn">ページを開く ↗</a>
+          <button id="btn-delete-job" class="delete-btn">🗑</button>
+        </div>
+      </div>
+      <div class="detail-body">
+        <h2 id="d-title" class="d-title"></h2>
+        <div class="d-company" id="d-company"></div>
+        <div class="detail-chips" id="detail-chips"></div>
+        <div class="d-desc" id="d-desc"></div>
+        <div class="memo-section">
+          <label class="memo-label">📝 メモ</label>
+          <textarea id="job-memo" placeholder="応募状況・面接日程・担当者名など..."></textarea>
+          <button id="btn-save-memo" class="save-memo-btn">保存</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

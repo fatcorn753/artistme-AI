@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "GitHub Stats Dashboard",
+  "version": "1.0.0",
+  "description": "GitHubプロフィールページをスクレイピングして統計を表示。コントリビューション数・言語分析・人気リポジトリ・アクティビティグラフ・フォロワー推移。",
+  "permissions": ["activeTab", "scripting", "storage", "tabs"],
+  "host_permissions": ["https://github.com/*", "https://api.github.com/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

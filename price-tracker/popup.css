@@ -1,0 +1,92 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 380px; max-height: 580px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #0f172a; color: #e2e8f0;
+}
+.app { padding: 12px; display: flex; flex-direction: column; gap: 10px; }
+
+.header { display: flex; align-items: center; justify-content: space-between; }
+h1 { font-size: 15px; color: #fbbf24; }
+.track-btn {
+  background: #92400e; border: 1px solid #fbbf24; border-radius: 7px;
+  color: #fbbf24; font-size: 11px; font-weight: 700; padding: 6px 10px; cursor: pointer;
+}
+.track-btn:hover { background: #b45309; }
+
+.scrape-status {
+  background: #1e293b; border: 1px solid #334155; border-radius: 8px;
+  padding: 10px 12px; font-size: 12px;
+}
+.scrape-status.hidden { display: none; }
+.scrape-status.loading { color: #64748b; }
+.scrape-status.success { color: #4ade80; }
+.scrape-status.error   { color: #f87171; }
+
+/* Items list */
+.items-list { display: flex; flex-direction: column; gap: 5px; max-height: 260px; overflow-y: auto; }
+.item-card {
+  background: #1e293b; border: 1px solid #334155; border-radius: 9px;
+  padding: 9px 11px; cursor: pointer; transition: border-color 0.15s;
+  display: flex; align-items: center; gap: 10px;
+}
+.item-card:hover { border-color: #fbbf24; }
+.item-card.selected { border-color: #fbbf24; background: #1c1a0a; }
+.item-thumb {
+  width: 42px; height: 42px; border-radius: 6px; object-fit: cover;
+  background: #334155; flex-shrink: 0;
+}
+.item-info { flex: 1; min-width: 0; }
+.item-title { font-size: 12px; font-weight: 600; color: #e2e8f0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.item-price-row { display: flex; align-items: center; gap: 8px; margin-top: 3px; }
+.item-price   { font-size: 16px; font-weight: 800; color: #fbbf24; font-variant-numeric: tabular-nums; }
+.item-change  { font-size: 10px; font-weight: 700; }
+.item-change.down { color: #4ade80; }
+.item-change.up   { color: #f87171; }
+.item-change.same { color: #64748b; }
+.item-alert-badge { font-size: 9px; background: #0c2040; color: #60a5fa; border-radius: 8px; padding: 1px 6px; }
+.item-last-check  { font-size: 9px; color: #334155; }
+.item-no-price    { color: #64748b; font-size: 11px; font-style: italic; }
+
+.empty-state { text-align: center; padding: 24px; color: #334155; font-size: 12px; }
+
+/* Detail panel */
+.detail-panel { background: #1e293b; border: 1px solid #fbbf24; border-radius: 10px; padding: 12px; display: flex; flex-direction: column; gap: 8px; }
+.detail-panel.hidden { display: none; }
+.detail-header { display: flex; align-items: center; gap: 8px; }
+.detail-title  { flex: 1; font-size: 12px; font-weight: 700; color: #e2e8f0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.close-btn { background: none; border: none; color: #64748b; font-size: 16px; cursor: pointer; }
+.close-btn:hover { color: #e2e8f0; }
+
+.price-row { display: flex; align-items: center; gap: 10px; }
+.current-price { font-size: 26px; font-weight: 900; color: #fbbf24; font-variant-numeric: tabular-nums; }
+.price-change  { font-size: 13px; font-weight: 700; }
+.price-change.down { color: #4ade80; }
+.price-change.up   { color: #f87171; }
+
+.alert-row { display: flex; align-items: center; gap: 6px; font-size: 11px; color: #64748b; }
+.alert-row label { white-space: nowrap; }
+.alert-row input {
+  flex: 1; background: #0f172a; border: 1px solid #334155; border-radius: 6px;
+  color: #e2e8f0; font-size: 12px; padding: 5px 8px; outline: none;
+}
+.alert-row input:focus { border-color: #fbbf24; }
+.set-alert-btn {
+  background: #0c2040; border: 1px solid #60a5fa; border-radius: 6px;
+  color: #60a5fa; font-size: 10px; padding: 4px 9px; cursor: pointer; white-space: nowrap;
+}
+.set-alert-btn:hover { background: #1e3a5f; }
+
+.price-chart { border-radius: 7px; background: #0f172a; display: block; }
+
+.detail-footer { display: flex; align-items: center; gap: 5px; flex-wrap: wrap; }
+.stat-badge { font-size: 10px; padding: 2px 7px; border-radius: 8px; }
+.stat-badge.low  { background: #14532d; color: #4ade80; }
+.stat-badge.high { background: #450a0a; color: #f87171; }
+.stat-badge.avg  { background: #1c1a0a; color: #fbbf24; }
+.open-link { font-size: 10px; color: #60a5fa; text-decoration: none; margin-left: auto; }
+.open-link:hover { text-decoration: underline; }
+.remove-btn { background: none; border: none; color: #334155; font-size: 11px; cursor: pointer; }
+.remove-btn:hover { color: #f87171; }
+
+.footer-info { font-size: 10px; color: #1e293b; text-align: right; }

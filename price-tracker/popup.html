@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Price Tracker</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app">
+    <div class="header">
+      <h1>💰 Price Tracker</h1>
+      <button id="btn-track-page" class="track-btn">📍 このページを追跡</button>
+    </div>
+
+    <div id="scrape-status" class="scrape-status hidden"></div>
+
+    <!-- Tracked items -->
+    <div id="items-list" class="items-list"></div>
+
+    <!-- Detail panel -->
+    <div id="detail-panel" class="detail-panel hidden">
+      <div class="detail-header">
+        <span class="detail-title" id="detail-title"></span>
+        <button id="btn-close-detail" class="close-btn">✕</button>
+      </div>
+      <div class="price-row">
+        <span class="current-price" id="detail-price"></span>
+        <span class="price-change" id="detail-change"></span>
+      </div>
+      <div class="alert-row">
+        <label>🔔 アラート価格 (¥)</label>
+        <input type="number" id="alert-price-input" placeholder="この価格以下で通知">
+        <button id="btn-set-alert" class="set-alert-btn">設定</button>
+      </div>
+      <canvas id="price-chart" width="340" height="100" class="price-chart"></canvas>
+      <div class="detail-footer">
+        <span id="detail-low" class="stat-badge low">最安: —</span>
+        <span id="detail-high" class="stat-badge high">最高: —</span>
+        <span id="detail-avg"  class="stat-badge avg">平均: —</span>
+        <a id="detail-link" href="#" target="_blank" class="open-link">ページを開く ↗</a>
+        <button id="btn-remove-item" class="remove-btn">削除</button>
+      </div>
+    </div>
+
+    <div class="footer-info" id="footer-info"></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

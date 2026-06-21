@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Web Trend Monitor</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app">
+    <div class="header">
+      <h1>📡 Web Trend Monitor</h1>
+      <div class="header-right">
+        <span id="last-updated" class="last-updated"></span>
+        <button id="btn-refresh" class="refresh-btn" title="更新">↻</button>
+        <button id="btn-bookmarks" class="bm-btn" title="ブックマーク">🔖</button>
+      </div>
+    </div>
+
+    <!-- Source tabs -->
+    <div class="source-tabs" id="source-tabs">
+      <button class="src-tab active" data-src="all">全て</button>
+      <button class="src-tab" data-src="hn">🔶 HN</button>
+      <button class="src-tab" data-src="gh">⬡ GitHub</button>
+      <button class="src-tab" data-src="reddit">🟠 Reddit</button>
+      <button class="src-tab" data-src="devto">👩‍💻 DEV</button>
+      <button class="src-tab" data-src="bookmarks">🔖 保存</button>
+    </div>
+
+    <!-- Search -->
+    <div class="search-bar">
+      <input type="text" id="search-input" placeholder="🔍 トレンドを検索...">
+      <select id="sort-select" class="sort-sel">
+        <option value="default">デフォルト</option>
+        <option value="score">人気順</option>
+        <option value="comments">コメント順</option>
+      </select>
+    </div>
+
+    <div id="loading-overlay" class="loading-overlay hidden">
+      <div class="loader"></div>
+      <span>最新トレンドを取得中...</span>
+    </div>
+
+    <div id="trend-list" class="trend-list"></div>
+
+    <div class="footer-bar" id="footer-bar"></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
